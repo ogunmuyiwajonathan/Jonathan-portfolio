@@ -1,0 +1,137 @@
+/* Page Header */
+.page-header {
+    margin-bottom: 40px;
+}
+
+.page-header h1 {
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    font-weight: 700;
+    letter-spacing: -2px;
+    line-height: 1.1;
+}
+
+.page-header p {
+    margin-bottom: 8px;
+}
+
+/* Project Grid */
+.works-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-bottom: 60px;
+}
+
+/* Project Card */
+.project-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 32px;
+    padding: 24px;
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+    opacity: 0;
+    transform: translateY(20px);
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card:hover {
+    border-color: #444;
+    transform: translateY(-8px);
+    background-color: #1f1f1f;
+}
+
+.img-box {
+    width: 100%;
+    height: 280px;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img-box.p1 {
+    background: linear-gradient(45deg, #1e1e1e, #333);
+}
+
+.img-box.p2 {
+    background: linear-gradient(45deg, #07424e, #05706d);
+}
+
+.img-box.p3 {
+    background: linear-gradient(45deg, #f12711, #f5af19);
+}
+
+.img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: 0.5s;
+}
+
+.project-card:hover .img-box img {
+    transform: scale(1.05);
+}
+
+.project-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.project-meta span {
+    font-size: 0.7rem;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.project-info h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-top: 5px;
+}
+
+.visit-btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+    background: rgba(255, 255, 255, 0.03);
+    flex-shrink: 0;
+}
+
+.project-card:hover .visit-btn {
+    background: #fff;
+    color: #000;
+    transform: rotate(-45deg);
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-in {
+    animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@media (max-width: 900px) {
+    .works-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .img-box {
+        height: 220px;
+    }
+}
