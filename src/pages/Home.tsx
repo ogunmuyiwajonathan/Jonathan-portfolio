@@ -1,142 +1,375 @@
-import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import {
-    ShieldCheck,
-    FolderKanban,
-    Figma,
-    Code2,
-    Layers,
-    Monitor,
-    Twitter,
-    Linkedin,
-    ArrowUpRight,
-    Sparkle
+    ShieldCheck, FolderKanban, ArrowUpRight, Sparkle,
+    Code2, Palette, Zap, Globe, Database, Smartphone
 } from 'lucide-react';
-import './Home.css';
+import { FaHtml5, FaJava, FaReact } from 'react-icons/fa';
+import { SiTailwindcss, SiTypescript, SiJavascript } from 'react-icons/si';
+import { Linkedin, Github } from 'lucide-react';
+import SpotlightCard from '@/components/react-bits/SpotlightCard';
+import SplitText from '@/components/react-bits/SplitText';
+import BlurText from '@/components/react-bits/BlurText';
+import Skeleton from '@/components/Skeleton';
+import { useState, useEffect } from 'react';
+
+const techStack = [
+    { icon: <FaHtml5 size={30} />, label: 'HTML/CSS', color: 'text-[#e34f26]' },
+    { icon: <SiTailwindcss size={30} />, label: 'Tailwind', color: 'text-[#38bdf8]' },
+    { icon: <SiJavascript size={30} />, label: 'JavaScript', color: 'text-[#f7df1e]' },
+    { icon: <SiTypescript size={30} />, label: 'TypeScript', color: 'text-[#3178c6]' },
+    { icon: <FaReact size={30} />, label: 'React', color: 'text-[#61dafb]' },
+    { icon: <FaJava size={30} />, label: 'Java', color: 'text-foreground' },
+];
+
+const services = [
+    { icon: <Globe size={24} />, title: 'Full Stack Web', desc: 'React, Node, Scale' },
+    { icon: <Palette size={24} />, title: 'UX Strategy', desc: 'Interface, Figma' },
+    { icon: <Database size={24} />, title: 'Data Design', desc: 'SQL, NoSQL Hub' },
+    { icon: <Smartphone size={24} />, title: 'App Precision', desc: 'Mobile-Optimized' },
+];
+
+const skills = [
+    { label: 'Frontend Architecture', level: '95%' },
+    { label: 'Backend Systems', level: '85%' },
+    { label: 'Database & Cloud', level: '80%' },
+    { label: 'UI/UX Design Strategy', level: '90%' },
+];
+
+const marqueeItems = [
+    "Full Stack Development", "UI/UX Design", "React",
+    "Database Architecture", "API Development", "Performance Optimization"
+];
+
+const socials = [
+    { href: "https://linkedin.com/in/ogunmuyiwajonathan", icon: <Linkedin size={22} />, label: "LinkedIn" },
+    { href: "https://github.com/ogunmuyiwajonathan", icon: <Github size={22} />, label: "GitHub" },
+    {
+        href: "https://twitter.com/ogunmuyiwajonathan",
+        icon: (
+            <svg width="20" height="20" viewBox="0 0 512 512" fill="currentColor">
+                <path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.6 318.1 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z" />
+            </svg>
+        ),
+        label: "X / Twitter"
+    }
+];
 
 export default function Home() {
+    const [isLoading, setIsLoading] = useState(true);
+
     useEffect(() => {
-        const cards = document.querySelectorAll('.card');
-        cards.forEach((card, index) => {
-            (card as HTMLElement).style.opacity = '0';
-            (card as HTMLElement).style.transform = 'translateY(30px)';
-            setTimeout(() => {
-                (card as HTMLElement).style.transition = 'opacity 0.8s ease, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)';
-                (card as HTMLElement).style.opacity = '1';
-                (card as HTMLElement).style.transform = 'translateY(0)';
-            }, 100 * index);
-        });
+        const timer = setTimeout(() => {
+            setIsLoading(false);
+        }, 1200);
+        return () => clearTimeout(timer);
     }, []);
 
+    if (isLoading) {
+        return (
+            <div className="min-h-screen bg-background">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+                    <div className="grid grid-cols-1 gap-6 mb-24 lg:grid-cols-4">
+                        <Skeleton className="lg:col-span-3 lg:row-span-2 h-[450px] rounded-[50px]" />
+                        <Skeleton className="h-[250px] rounded-[30px]" />
+                        <Skeleton className="h-[250px] rounded-[30px]" />
+                        <Skeleton className="lg:col-span-full h-[60px] rounded-full mt-4" />
+                        <Skeleton className="lg:col-span-2 h-[200px] rounded-[30px]" />
+                        <Skeleton className="lg:col-span-1 h-[200px] rounded-[30px]" />
+                        <Skeleton className="lg:col-span-1 h-[200px] rounded-[30px]" />
+                    </div>
+                </div>
+            </div>
+        );
+    }
+
     return (
-        <div className="bento-grid">
-            {/* Hero Card */}
-            <div className="card item-hero">
-                <div className="profile-img-box">
-                    <img src="/image.png" alt="Jonathan" />
-                </div>
-                <div className="hero-text">
-                    <span className="subtitle">A full stack Developer</span>
-                    <h1>Jonathan Ogunmuyiwa.</h1>
-                    <p>Building high-end digital products with focus on user experience and visual design.</p>
+        <div className="min-h-screen bg-background">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+                <div className="grid grid-cols-1 gap-6 mb-24 lg:grid-cols-4">
+
+                    {/* ── ROW 1 ─────────────────────────────────────────────────────
+               [  Hero (col-span-2, row-span-2)  ] [ About ] [ Works ]
+               [  Hero (continued)               ] [ Marquee (col-span-2) ]
+          ─────────────────────────────────────────────────────────────── */}
+
+                    {/* Hero Card — fixed padding & layout so nothing is muffled */}
+                    <SpotlightCard className="lg:col-span-3 lg:row-span-2 p-10 md:p-14 flex items-center group relative overflow-hidden">
+                        {/* Ambient glow */}
+                        <div className="absolute inset-0 bg-gradient-to-br from-accent-blue/5 via-transparent to-transparent pointer-events-none" />
+
+                        <div className="relative z-10 flex flex-col md:flex-row items-center gap-10 md:text-left text-center w-full">
+
+                            {/* Avatar */}
+                            <div className="shrink-0 w-[190px] h-[190px]
+                bg-gradient-to-br from-accent-blue to-accent-blue-light
+                rounded-[50px_0_50px_0] overflow-hidden
+                shadow-[0_20px_60px_hsl(var(--accent-blue)/0.35)]
+                transition-transform duration-700 group-hover:scale-[1.04]
+                mx-auto md:mx-0">
+                                <img
+                                    src="/image.png"
+                                    alt="Jonathan Ogunmuyiwa"
+                                    className="w-full h-full object-cover"
+                                />
+                            </div>
+
+                            {/* Text block */}
+                            <div className="flex flex-col flex-1 min-w-0">
+                                <BlurText
+                                    text="Full Stack Developer & UI Designer"
+                                    delay={150}
+                                    animateBy="words"
+                                    direction="top"
+                                    className="text-[0.68rem] uppercase tracking-[3px] text-accent-blue font-bold mb-4 leading-relaxed"
+                                />
+
+                                <SplitText
+                                    text="Jonathan."
+                                    className="text-[clamp(2.4rem,5vw,3.4rem)] leading-[1.05] mb-5 font-bold text-foreground"
+                                    delay={300}
+                                    animationFrom={{ opacity: 0, y: 40 }}
+                                    animationTo={{ opacity: 1, y: 0 }}
+                                    stagger={0.03}
+                                />
+
+                                <p className="text-muted-foreground text-[0.95rem] leading-[1.75] max-w-[420px]">
+                                    I craft high-performance digital experiences that bridge
+                                    the gap between technical excellence and intuitive design.
+                                </p>
+
+                                <div className="flex flex-wrap gap-3 mt-7 justify-center md:justify-start">
+                                    <span className="px-4 py-1.5 bg-accent-blue/10 text-accent-blue
+                    border border-accent-blue/20 rounded-full text-[0.7rem] font-bold whitespace-nowrap">
+                                        ● Available Now
+                                    </span>
+                                    <span className="px-4 py-1.5 bg-secondary text-muted-foreground
+                    border border-border rounded-full text-[0.7rem] font-bold whitespace-nowrap">
+                                        🌍 Remote Worldwide
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </SpotlightCard>
+
+                    {/* About Card */}
+                    <Link to="/about" className="group h-full">
+                        <SpotlightCard className="h-full flex flex-col p-8 transition-all duration-500 hover:-translate-y-1.5">
+                            <div className="mb-8 text-foreground/80 transition-transform duration-500 group-hover:scale-110 w-fit">
+                                <ShieldCheck size={48} strokeWidth={1} />
+                            </div>
+                            <span className="text-[0.65rem] text-muted-foreground uppercase tracking-[2px] mb-2 font-bold">
+                                DISCOVER MORE
+                            </span>
+                            <div className="text-xl font-bold mt-auto flex justify-between items-center text-foreground">
+                                About Me
+                            </div>
+                            <p className="text-muted-foreground text-sm mt-2 leading-relaxed">
+                                Technical expertise & professional journey.
+                            </p>
+                        </SpotlightCard>
+                    </Link>
+
+                    {/* Works Card */}
+                    <Link to="/works" className="group h-full">
+                        <SpotlightCard className="h-full flex flex-col p-8 transition-all duration-500 hover:-translate-y-1.5">
+                            <div className="mb-8 text-foreground/80 transition-transform duration-500 group-hover:scale-110 w-fit">
+                                <FolderKanban size={48} strokeWidth={1} />
+                            </div>
+                            <span className="text-[0.65rem] text-muted-foreground uppercase tracking-[2px] mb-2 font-bold">
+                                PORTFOLIO
+                            </span>
+                            <div className="text-xl font-bold mt-auto flex justify-between items-center text-foreground">
+                                My Works
+                            </div>
+                            <p className="text-muted-foreground text-sm mt-2 leading-relaxed">
+                                A collection of precision-built applications.
+                            </p>
+                        </SpotlightCard>
+                    </Link>
+
+                    {/* Marquee — col-span-2 sits beside the hero's second row */}
+                    <SpotlightCard className="card lg:col-span-full py-4 px-8 rounded-full overflow-hidden self-center">
+                        <div className="flex animate-scroll whitespace-nowrap gap-10">
+                            {[...marqueeItems, ...marqueeItems].map((text, i) => (
+                                <span
+                                    key={i}
+                                    className="text-[0.7rem] uppercase tracking-[2px] text-muted-foreground flex items-center gap-3 font-bold"
+                                >
+                                    ✦ {text}
+                                </span>
+                            ))}
+                        </div>
+                    </SpotlightCard>
+
+                    {/* ── ROW 3 ─────────────────────────────────────────────────────
+               [ Tech Stack (col-span-2) ] [ Socials ] [ Stats ]
+          ─────────────────────────────────────────────────────────────── */}
+
+                    {/* Tech Stack */}
+                    <SpotlightCard className="card lg:col-span-2 p-8 hover:bg-secondary transition-all duration-500 group">
+                        <Link to="/about#specialize">
+                            <div className="grid grid-cols-6 gap-5 mb-8">
+                                {techStack.map(({ icon, label, color }) => (
+                                    <div
+                                        key={label}
+                                        className={`flex justify-center transition-all duration-300 group-hover:scale-110 ${color}`}
+                                        title={label}
+                                    >
+                                        {icon}
+                                    </div>
+                                ))}
+                            </div>
+                            <div className="text-xl font-bold flex justify-between items-center text-foreground">
+                                Core Arsenal
+                            </div>
+                            <span className="flex group-hover:text-accent-blue justify-between items-center">
+                                <p className="text-muted-foreground text-sm mt-2">
+                                    Specialized in modern, highly efficient technology stacks.
+                                </p>
+                                <ArrowUpRight
+                                    size={20}
+                                    className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"
+                                />
+                            </span>
+                        </Link>
+                    </SpotlightCard>
+
+                    {/* Socials */}
+                    <SpotlightCard className="lg:col-span-1 p-8 flex flex-col justify-between group h-full">
+                        <div className="flex gap-3 flex-wrap">
+                            {socials.map((social) => (
+                                <a
+                                    key={social.label}
+                                    href={social.href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    title={social.label}
+                                    className="w-11 h-11 border border-border rounded-full flex items-center justify-center
+                    text-foreground transition-all duration-300 hover:bg-foreground hover:text-background hover:scale-110"
+                                >
+                                    {social.icon}
+                                </a>
+                            ))}
+                        </div>
+                        <div className="mt-6 ">
+                            <span className="text-[0.65rem] text-muted-foreground uppercase tracking-[2px] mb-2 block font-bold">
+                                CONNECT
+                            </span>
+                            <Link
+                                to="/contact"
+                                className="text-xl font-bold flex justify-between items-center
+                  text-foreground group-hover:text-accent-blue transition-colors"
+                            >
+                                Profiles
+                                <ArrowUpRight
+                                    size={20}
+                                    className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"
+                                />
+                            </Link>
+                        </div>
+                    </SpotlightCard>
+
+                    {/* Stats */}
+                    <SpotlightCard className="lg:col-span-1 p-8 flex flex-col justify-center gap-7 h-full">
+                        {[
+                            { value: '04+', label: 'Years of Impact' },
+                            { value: '05+', label: 'Live Deployments' },
+                        ].map(({ value, label }) => (
+                            <div key={label}>
+                                <h3 className="text-4xl font-bold text-foreground leading-none tracking-tight">
+                                    {value}
+                                </h3>
+                                <span className="text-[0.65rem] text-muted-foreground uppercase tracking-[2px] font-bold block mt-1.5">
+                                    {label}
+                                </span>
+                            </div>
+                        ))}
+                    </SpotlightCard>
+
+                    {/* ── ROW 4 ─────────────────────────────────────────────────────
+               [ Services (col-span-2) ] [ Skills (col-span-2) ]
+          ─────────────────────────────────────────────────────────────── */}
+
+                    {/* Services */}
+                    <SpotlightCard className="card lg:col-span-2 p-8">
+                        <div className="text-[0.7rem] font-bold text-muted-foreground tracking-[2px] mb-8 flex items-center gap-2">
+                            <Zap size={14} className="text-accent-blue" /> SYSTEM ARCHITECTURE
+                        </div>
+                        <div className="grid grid-cols-2 gap-6">
+                            {services.map((service) => (
+                                <div key={service.title} className="flex flex-col gap-2">
+                                    <div className="text-accent-blue">{service.icon}</div>
+                                    <div>
+                                        <h4 className="font-bold text-sm text-foreground">{service.title}</h4>
+                                        <p className="text-muted-foreground text-xs mt-1">{service.desc}</p>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </SpotlightCard>
+
+                    {/* Skills */}
+                    <SpotlightCard className="card lg:col-span-2 p-8">
+                        <div className="text-[0.7rem] font-bold text-muted-foreground tracking-[2px] mb-8 flex items-center gap-2">
+                            <Code2 size={14} className="text-accent-blue" /> MASTERY LEVELS
+                        </div>
+                        <div className="space-y-5">
+                            {skills.map((skill) => (
+                                <div key={skill.label}>
+                                    <div className="flex justify-between text-sm mb-1.5 font-bold">
+                                        <span className="text-foreground">{skill.label}</span>
+                                        <span className="text-accent-blue tabular-nums">{skill.level}</span>
+                                    </div>
+                                    <div className="h-2 bg-secondary rounded-full overflow-hidden">
+                                        <div
+                                            className="h-full bg-gradient-to-r from-accent-blue to-accent-blue-light
+                        rounded-full transition-all duration-1000 ease-out"
+                                            style={{ width: skill.level }}
+                                        />
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </SpotlightCard>
+
+                    {/* ── ROW 5 ─────────────────────────────────────────────────────
+               [ CTA (col-span-4) ]
+          ─────────────────────────────────────────────────────────────── */}
+
+                    {/* CTA */}
+                    <SpotlightCard
+                        className="glass-card lg:col-span-4 p-10 md:p-16 group relative
+              overflow-hidden transition-all duration-700 hover:scale-[1.005]"
+                    >
+                        <Link to="/contact">
+                            <Sparkle className="absolute top-8 left-8 opacity-10 text-foreground" size={80} />
+                            <div className="absolute top-0 right-0 w-80 h-80 bg-accent-blue/5 rounded-full
+              blur-[100px] -translate-y-1/2 translate-x-1/2 pointer-events-none" />
+
+                            <div className="relative z-10 flex flex-col md:flex-row justify-between
+              items-center gap-10 text-center md:text-left">
+                                <div className="flex-1">
+                                    <h2 className="text-[clamp(2rem,6vw,3.5rem)] font-bold leading-[1.05]
+                  tracking-tight text-foreground m-0">
+                                        Partnering for <br />
+                                        the <span className="text-muted-foreground">Extraordinary.</span>
+                                    </h2>
+                                    <p className="text-muted-foreground text-base mt-5 max-w-[500px] leading-relaxed">
+                                        I'm currently accepting select freelance partnerships and collaborative ventures.
+                                        Let's build something that matters.
+                                    </p>
+                                </div>
+                                <div className="w-20 h-20 rounded-full border border-border text-foreground flex items-center
+  justify-center transition-all duration-500 shrink-0
+  group-hover:scale-110 group-hover:bg-foreground group-hover:text-background shadow-2xl">
+                                    <ArrowUpRight size={36} strokeWidth={2} />
+                                </div>
+                            </div>
+                        </Link>
+                    </SpotlightCard>
+
                 </div>
             </div>
-
-            {/* Credentials */}
-            <Link to="/about" className="card item-credentials">
-                <div style={{ padding: '10px 0 20px 0', color: '#fff', opacity: 0.9 }}>
-                    <ShieldCheck size={48} strokeWidth={1} />
-                </div>
-                <span className="card-label">MORE ABOUT ME</span>
-                <div className="card-title">
-                    Credentials <ArrowUpRight className="arrow-btn" size={18} />
-                </div>
-            </Link>
-
-            {/* Projects */}
-            <Link to="/works" className="card item-projects">
-                <div style={{ padding: '10px 0 20px 0', color: '#fff', opacity: 0.9 }}>
-                    <FolderKanban size={48} strokeWidth={1} />
-                </div>
-                <span className="card-label">SHOWCASE</span>
-                <div className="card-title">
-                    Projects <ArrowUpRight className="arrow-btn" size={18} />
-                </div>
-            </Link>
-
-            {/* Marquee Row */}
-            <div className="card item-marquee">
-                <div className="marquee-inner">
-                    <div className="marquee-content">
-                        <span>LATEST WORK AND FEATURED ✦</span>
-                        <span>LATEST WORK AND FEATURED ✦</span>
-                        <span>LATEST WORK AND FEATURED ✦</span>
-                        <span>LATEST WORK AND FEATURED ✦</span>
-                        <span>LATEST WORK AND FEATURED ✦</span>
-                        <span>LATEST WORK AND FEATURED ✦</span>
-                    </div>
-                </div>
-            </div>
-
-            {/* Services */}
-            <Link to="/about#specialize" className="card item-services">
-                <div className="icons-row">
-                    <Figma size={32} />
-                    <Code2 size={32} />
-                    <Layers size={32} />
-                    <Monitor size={32} />
-                </div>
-                <span className="card-label">SPECIALIZATION</span>
-                <div className="card-title">
-                    Services Offering <ArrowUpRight className="arrow-btn" size={18} />
-                </div>
-            </Link>
-
-            {/* Socials */}
-            <Link to="/contact" className="card item-socials">
-                <div className="social-circles">
-                    <div className="social-circle">
-                        <Twitter size={18} />
-                    </div>
-                    <div className="social-circle">
-                        <Linkedin size={18} />
-                    </div>
-                </div>
-                <span className="card-label">STAY CONNECTED</span>
-                <div className="card-title">
-                    Profiles <ArrowUpRight className="arrow-btn" size={18} />
-                </div>
-            </Link>
-
-            {/* Stats/Extra */}
-            <div className="card item-stats">
-                <div style={{ marginBottom: '10px' }}>
-                    <h1 style={{ fontSize: '2.2rem', fontWeight: 700 }}>04+</h1>
-                    <span className="card-label" style={{ margin: 0 }}>
-                        Years Experience
-                    </span>
-                </div>
-                <div style={{ marginTop: '15px' }}>
-                    <h1 style={{ fontSize: '2.2rem', fontWeight: 700 }}>20+</h1>
-                    <span className="card-label" style={{ margin: 0 }}>
-                        Projects Done
-                    </span>
-                </div>
-            </div>
-
-            {/* CTA Section */}
-            <Link to="/contact" className="card item-cta">
-                <Sparkle className="sparkle-icon" size={60} />
-                <h2>
-                    Let's work <br /> <span className="accent">together.</span>
-                </h2>
-                <div className="cta-footer">
-                    <span className="card-label" style={{ margin: 0 }}>
-                        Contact Me
-                    </span>
-                    <ArrowUpRight className="arrow-btn" size={32} />
-                </div>
-            </Link>
         </div>
     );
 }
