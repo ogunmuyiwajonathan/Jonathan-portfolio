@@ -85,14 +85,14 @@ export default function About() {
                         </div>
                         <div className="space-y-6">
                             <div className="border-l-2 border-accent-blue pl-4">
-                                <div className="text-text-dim text-[0.85rem] mb-[4px] font-medium">2025 - Present</div>
+                                <div className="text-text-dim text-[0.85rem] mb-[4px] font-medium">2024 - Present</div>
                                 <div className="font-semibold text-[1.1rem] text-white">Freelance Full Stack Developer</div>
                                 <div className="text-text-dim text-[0.9rem] mt-[2px] leading-relaxed">
                                     Crafting modern digital products for clients worldwide. Specializing in React-based applications, responsive design systems, and scalable backend solutions. Successfully delivered 5+ projects with 100% client satisfaction.
                                 </div>
                             </div>
                             <div className="border-l-2 border-border-color pl-4">
-                                <div className="text-text-dim text-[0.85rem] mb-[4px] font-medium">2023 - 2025</div>
+                                <div className="text-text-dim text-[0.85rem] mb-[4px] font-medium">2023 - 2024</div>
                                 <div className="font-semibold text-[1.1rem] text-white">Junior Web Developer</div>
                                 <div className="text-text-dim text-[0.9rem] mt-[2px] leading-relaxed">
                                     Collaborated with cross-functional teams to build and maintain web applications. Gained hands-on experience with modern JavaScript frameworks, RESTful APIs, and database management systems.
