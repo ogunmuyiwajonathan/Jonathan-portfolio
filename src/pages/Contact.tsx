@@ -1,8 +1,8 @@
 import { useState, type FormEvent, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
-    Mail, Phone, MapPin, Sparkles, Instagram, Linkedin, Github, Youtube, 
-    Clock, Calendar, Send, MessageSquare, CheckCircle2, 
+import {
+    Mail, Phone, MapPin, Sparkles, Instagram, Linkedin, Github, Youtube,
+    Clock, Calendar, Send, MessageSquare, CheckCircle2,
     Loader2, PartyPopper, Rocket, X, AlertCircle, WifiOff, RefreshCw
 } from 'lucide-react';
 import SpotlightCard from '../components/react-bits/SpotlightCard';
@@ -96,8 +96,8 @@ export default function Contact() {
                     message = 'Server error. Please try again in a few moments.';
                 }
 
-                setFormStatus({ 
-                    state: 'error', 
+                setFormStatus({
+                    state: 'error',
                     message,
                     errorType
                 });
@@ -115,8 +115,8 @@ export default function Contact() {
                 message = 'Request timed out. Please check your connection and try again.';
             }
 
-            setFormStatus({ 
-                state: 'error', 
+            setFormStatus({
+                state: 'error',
                 message,
                 errorType
             });
@@ -183,7 +183,7 @@ export default function Contact() {
                             {/* Animated Background */}
                             <div className="absolute inset-0 overflow-hidden">
                                 <motion.div
-                                    animate={{ 
+                                    animate={{
                                         scale: [1, 1.2, 1],
                                         opacity: [0.3, 0.5, 0.3]
                                     }}
@@ -197,16 +197,16 @@ export default function Contact() {
                                 {[...Array(12)].map((_, i) => (
                                     <motion.div
                                         key={i}
-                                        initial={{ 
-                                            opacity: 1, 
-                                            x: '50%', 
-                                            y: '50%', 
-                                            scale: 0 
+                                        initial={{
+                                            opacity: 1,
+                                            x: '50%',
+                                            y: '50%',
+                                            scale: 0
                                         }}
-                                        animate={{ 
-                                            opacity: 0, 
-                                            x: `${50 + (Math.random() - 0.5) * 200}%`, 
-                                            y: `${50 + (Math.random() - 0.5) * 200}%`, 
+                                        animate={{
+                                            opacity: 0,
+                                            x: `${50 + (Math.random() - 0.5) * 200}%`,
+                                            y: `${50 + (Math.random() - 0.5) * 200}%`,
                                             scale: Math.random() * 1.5 + 0.5,
                                             rotate: Math.random() * 360
                                         }}
@@ -302,7 +302,7 @@ export default function Contact() {
                             {/* Red Pulsing Background */}
                             <div className="absolute inset-0 overflow-hidden">
                                 <motion.div
-                                    animate={{ 
+                                    animate={{
                                         scale: [1, 1.3, 1],
                                         opacity: [0.2, 0.4, 0.2]
                                     }}
@@ -337,9 +337,9 @@ export default function Contact() {
                                 transition={{ delay: 0.2 }}
                                 className="text-2xl font-bold mb-3 text-red-400"
                             >
-                                {formStatus.errorType === 'network' ? 'Connection Failed' : 
-                                 formStatus.errorType === 'validation' ? 'Validation Error' : 
-                                 'Something Went Wrong'}
+                                {formStatus.errorType === 'network' ? 'Connection Failed' :
+                                    formStatus.errorType === 'validation' ? 'Validation Error' :
+                                        'Something Went Wrong'}
                             </motion.h3>
 
                             <motion.p
@@ -402,7 +402,7 @@ export default function Contact() {
                     </h2>
 
                     <p className="text-[0.95rem] leading-relaxed mb-6">
-                        I'm currently available for freelance projects, full-time positions, and consulting opportunities. 
+                        I'm currently available for freelance projects, full-time positions, and consulting opportunities.
                         Whether you have a specific project in mind or just want to explore possibilities, I'd love to hear from you.
                     </p>
                 </div>
@@ -478,7 +478,7 @@ export default function Contact() {
                         <a href="https://github.com/ogunmuyiwajonathan" target="_blank" rel="noopener noreferrer" className="w-[48px] h-[48px] border border-border-color rounded-full flex items-center justify-center transition-all duration-300 bg-[#161616] text-white no-underline hover:bg-white hover:text-black hover:-translate-y-[5px]" title="GitHub">
                             <Github size={20} />
                         </a>
-                        <a href="www.linkedin.com/in/jonathan-ogunmuyiwa" target="_blank" rel="noopener noreferrer" className="w-[48px] h-[48px] border border-border-color rounded-full flex items-center justify-center transition-all duration-300 bg-[#161616] text-white no-underline hover:bg-[#0077b5] hover:text-white hover:border-[#0077b5] hover:-translate-y-[5px]" title="LinkedIn">
+                        <a href="https://www.linkedin.com/in/jonathan-ogunmuyiwa" target="_blank" rel="noopener noreferrer" className="w-[48px] h-[48px] border border-border-color rounded-full flex items-center justify-center transition-all duration-300 bg-[#161616] text-white no-underline hover:bg-[#0077b5] hover:text-white hover:border-[#0077b5] hover:-translate-y-[5px]" title="LinkedIn">
                             <Linkedin size={20} />
                         </a>
                         <a href="https://wa.me/2349157384644" target="_blank" rel="noopener noreferrer" className="w-[48px] h-[48px] border border-border-color rounded-full flex items-center justify-center transition-all duration-300 bg-[#161616] text-white no-underline hover:bg-[#25d366] hover:text-white hover:border-[#25d366] hover:-translate-y-[5px]" title="WhatsApp">
@@ -536,7 +536,7 @@ export default function Contact() {
                         className="text-[clamp(1.8rem,4vw,2.5rem)] font-bold mb-3 leading-[1.1] text-white"
                     />
                     <p className="text-text-dim text-[0.9rem] leading-relaxed">
-                        Have a project in mind? Fill out the form below and I'll get back to you as soon as possible. 
+                        Have a project in mind? Fill out the form below and I'll get back to you as soon as possible.
                         I typically respond within 24-48 hours.
                     </p>
                 </div>
@@ -545,29 +545,29 @@ export default function Contact() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
                             <label className="text-[0.75rem] text-text-dim uppercase tracking-[1px] font-semibold mb-2 block">Your Name *</label>
-                            <input 
+                            <input
                                 className={`
                                     w-full bg-[#1d1d1d] border rounded-[12px] p-[16px_20px] text-white text-[0.95rem] transition-all duration-300 font-inherit focus:outline-none focus:bg-[#222]
                                     ${formStatus.state === 'error' ? 'border-red-500/50 focus:border-red-500' : 'border-transparent focus:border-[#444]'}
                                 `}
-                                type="text" 
+                                type="text"
                                 name="name"
-                                placeholder="John Doe" 
-                                required 
+                                placeholder="John Doe"
+                                required
                                 disabled={formStatus.state === 'submitting'}
                             />
                         </div>
                         <div>
                             <label className="text-[0.75rem] text-text-dim uppercase tracking-[1px] font-semibold mb-2 block">Email Address *</label>
-                            <input 
+                            <input
                                 className={`
                                     w-full bg-[#1d1d1d] border rounded-[12px] p-[16px_20px] text-white text-[0.95rem] transition-all duration-300 font-inherit focus:outline-none focus:bg-[#222]
                                     ${formStatus.state === 'error' ? 'border-red-500/50 focus:border-red-500' : 'border-transparent focus:border-[#444]'}
                                 `}
-                                type="email" 
+                                type="email"
                                 name="email"
-                                placeholder="john@example.com" 
-                                required 
+                                placeholder="john@example.com"
+                                required
                                 disabled={formStatus.state === 'submitting'}
                             />
                         </div>
@@ -600,22 +600,22 @@ export default function Contact() {
 
                     <div>
                         <label className="text-[0.75rem] text-text-dim uppercase tracking-[1px] font-semibold mb-2 block">Subject *</label>
-                        <input 
+                        <input
                             className={`
                                 w-full bg-[#1d1d1d] border rounded-[12px] p-[16px_20px] text-white text-[0.95rem] transition-all duration-300 font-inherit focus:outline-none focus:bg-[#222]
                                 ${formStatus.state === 'error' ? 'border-red-500/50 focus:border-red-500' : 'border-transparent focus:border-[#444]'}
                             `}
-                            type="text" 
+                            type="text"
                             name="subject"
-                            placeholder="Project Inquiry: E-commerce Website" 
-                            required 
+                            placeholder="Project Inquiry: E-commerce Website"
+                            required
                             disabled={formStatus.state === 'submitting'}
                         />
                     </div>
 
                     <div>
                         <label className="text-[0.75rem] text-text-dim uppercase tracking-[1px] font-semibold mb-2 block">Tell me about your project *</label>
-                        <textarea 
+                        <textarea
                             className={`
                                 w-full bg-[#1d1d1d] border rounded-[12px] p-[16px_20px] text-white text-[0.95rem] transition-all duration-300 font-inherit focus:outline-none focus:bg-[#222] min-h-[160px] resize-none
                                 ${formStatus.state === 'error' ? 'border-red-500/50 focus:border-red-500' : 'border-transparent focus:border-[#444]'}
@@ -628,28 +628,28 @@ export default function Contact() {
                     </div>
 
                     <div className="flex items-start gap-3 p-4 rounded-xl bg-white/5 border border-border-color">
-                        <input 
-                            type="checkbox" 
-                            id="newsletter" 
+                        <input
+                            type="checkbox"
+                            id="newsletter"
                             name="newsletter"
-                            className="mt-1 w-4 h-4 rounded border-border-color bg-[#1d1d1d] text-accent-blue focus:ring-accent-blue" 
+                            className="mt-1 w-4 h-4 rounded border-border-color bg-[#1d1d1d] text-accent-blue focus:ring-accent-blue"
                             disabled={formStatus.state === 'submitting'}
                         />
                         <label htmlFor="newsletter" className="text-[0.85rem] text-text-dim cursor-pointer">
-                            Keep me updated with occasional emails about new projects, articles, and industry insights. 
+                            Keep me updated with occasional emails about new projects, articles, and industry insights.
                             Unsubscribe anytime.
                         </label>
                     </div>
 
                     {/* Submit Button with States */}
-                    <button 
-                        type="submit" 
+                    <button
+                        type="submit"
                         disabled={formStatus.state === 'submitting'}
                         className={`
                             border-none p-[18px] rounded-[12px] font-semibold cursor-pointer transition-all duration-300 text-[1rem] 
                             flex items-center justify-center gap-2 group relative overflow-hidden
-                            ${formStatus.state === 'submitting' 
-                                ? 'bg-text-dim text-white cursor-not-allowed' 
+                            ${formStatus.state === 'submitting'
+                                ? 'bg-text-dim text-white cursor-not-allowed'
                                 : formStatus.state === 'error'
                                     ? 'bg-red-500 text-white hover:bg-red-600'
                                     : 'bg-white text-black hover:bg-accent-blue hover:text-white'

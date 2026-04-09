@@ -41,7 +41,7 @@ const marqueeItems = [
 ];
 
 const socials = [
-    { href: "https://linkedin.com/in/ogunmuyiwajonathan", icon: <Linkedin size={22} />, label: "LinkedIn" },
+    { href: "https://www.linkedin.com/in/jonathan-ogunmuyiwa", icon: <Linkedin size={22} />, label: "LinkedIn" },
     { href: "https://github.com/ogunmuyiwajonathan", icon: <Github size={22} />, label: "GitHub" },
     {
         href: "https://wa.me/2349157384644",
