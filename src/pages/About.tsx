@@ -16,10 +16,11 @@ import {
     Zap,
     Award,
     BookOpen,
-    Heart
+    Heart,
+    X
 } from 'lucide-react';
-import { FaReact, FaJava, FaFigma, FaGitAlt, FaHtml5, FaNodeJs, FaDocker } from 'react-icons/fa';
-import { SiTailwindcss, SiMysql, SiTypescript, SiMongodb, SiJavascript, SiNextdotjs, SiRedux, SiExpress, SiPostgresql, SiGraphql, SiJest, SiWebpack } from 'react-icons/si';
+import { FaReact, FaJava, FaFigma, FaGitAlt, FaHtml5, FaNodeJs } from 'react-icons/fa';
+import { SiTailwindcss, SiMysql, SiTypescript, SiMongodb, SiJavascript, SiNextdotjs } from 'react-icons/si';
 import SpotlightCard from '../components/react-bits/SpotlightCard';
 import BlurText from '../components/react-bits/BlurText';
 import Skeleton from '../components/Skeleton';
@@ -28,6 +29,7 @@ import { useState, useEffect } from 'react';
 
 export default function About() {
     const [isLoading, setIsLoading] = useState(true);
+    const [educationExpanded, setEducationExpanded] = useState(false);
 
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -35,6 +37,26 @@ export default function About() {
         }, 1200);
         return () => clearTimeout(timer);
     }, []);
+
+    useEffect(() => {
+        if (!educationExpanded) return;
+        const onKey = (e: KeyboardEvent) => {
+            if (e.key === 'Escape') setEducationExpanded(false);
+        };
+        window.addEventListener('keydown', onKey);
+        return () => window.removeEventListener('keydown', onKey);
+    }, [educationExpanded]);
+
+    useEffect(() => {
+        if (educationExpanded) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+        return () => {
+            document.body.style.overflow = '';
+        };
+    }, [educationExpanded]);
 
     if (isLoading) {
         return (
@@ -54,7 +76,7 @@ export default function About() {
             <div className="grid grid-cols-1 gap-6 mb-[60px] lg:grid-cols-4">
                 {/* Profile Image Card */}
                 <SpotlightCard className="lg:col-span-1 p-0 bg-gradient-to-br from-[#2ea9ff] to-[#0056b3] h-[320px] lg:h-auto overflow-hidden group border border-border-color rounded-[30px]" spotlightColor="rgba(46, 169, 255, 0.2)">
-                    <img src="/image.png" alt="Jonathan Ogunmuyiwa - Full Stack Developer" className="w-full h-full object-cover block transition-all duration-[800ms] group-hover:scale-110" />
+                    <img src="/logo.jpg" alt="Jonathan Ogunmuyiwa - Full Stack Developer" className="w-full h-full object-cover block transition-all duration-[800ms] group-hover:scale-110" />
                 </SpotlightCard>
 
                 {/* Self Summary Card */}
@@ -102,30 +124,99 @@ export default function About() {
                     </SpotlightCard>
                 </div>
 
-                {/* Education Card */}
-                <SpotlightCard className="card lg:col-span-2">
-                    <div className="text-[0.75rem] font-semibold text-text-dim tracking-[1.5px] mb-[25px] flex items-center gap-[8px]">
-                        <GraduationCap size={14} /> EDUCATION & CERTIFICATIONS
-                    </div>
-                    <div className="space-y-6">
-                        <div className="border-l-2 border-accent-blue pl-4">
-                            <div className="text-text-dim text-[0.85rem] mb-[4px] font-medium">2025 - 2027</div>
-                            <div className="font-semibold text-[1.1rem] text-white">ADSE - Advanced Software Engineering</div>
-                            <div className="text-text-dim text-[0.9rem] mt-[2px]">Aptech Computer Education</div>
-                            <p className="text-text-dim text-[0.85rem] mt-2 leading-relaxed">
-                                Comprehensive program covering advanced software engineering principles, system design, database architecture, and enterprise application development.
-                            </p>
+                {/* Education Card — click to bring forward and scroll full content */}
+                <div
+                    className={`lg:col-span-2 ${educationExpanded ? 'min-h-[min(88vh,680px)]' : ''}`}
+                >
+                    {educationExpanded && (
+                        <button
+                            type="button"
+                            aria-label="Close education details"
+                            className="fixed inset-0 z-[90] bg-black/65 backdrop-blur-[2px] cursor-default"
+                            onClick={() => setEducationExpanded(false)}
+                        />
+                    )}
+                    <div
+                        role={educationExpanded ? undefined : 'button'}
+                        tabIndex={educationExpanded ? -1 : 0}
+                        aria-expanded={educationExpanded}
+                        aria-label={educationExpanded ? undefined : 'Expand education section'}
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            if (!educationExpanded) setEducationExpanded(true);
+                        }}
+                        onKeyDown={(e) => {
+                            if (!educationExpanded && (e.key === 'Enter' || e.key === ' ')) {
+                                e.preventDefault();
+                                setEducationExpanded(true);
+                            }
+                        }}
+                        className={`rounded-[30px] outline-none transition-shadow ${
+                            educationExpanded ? 'cursor-default' : 'cursor-pointer focus-visible:ring-2 focus-visible:ring-accent-blue/50'
+                        }`}
+                    >
+                    <SpotlightCard
+                        className={`card flex min-h-0 flex-col transition-all duration-300 ease-out ${
+                            educationExpanded
+                                ? '!fixed !left-1/2 !top-1/2 !-translate-x-1/2 !-translate-y-1/2 z-[100] w-[min(92vw,560px)] max-h-[min(88vh,680px)] !overflow-hidden shadow-2xl ring-1 ring-accent-blue/25'
+                                : 'hover:ring-1 hover:ring-white/10'
+                        }`}
+                    >
+                        <div className="flex items-start justify-between gap-3 mb-[20px] shrink-0">
+                            <div className="text-[0.75rem] font-semibold text-text-dim tracking-[1.5px] flex items-center gap-[8px]">
+                                <GraduationCap size={14} /> EDUCATION & CERTIFICATIONS
+                            </div>
+                            {educationExpanded && (
+                                <button
+                                    type="button"
+                                    aria-label="Close"
+                                    className="shrink-0 rounded-lg p-1.5 text-text-dim hover:bg-white/10 hover:text-white transition-colors"
+                                    onClick={(e) => {
+                                        e.stopPropagation();
+                                        setEducationExpanded(false);
+                                    }}
+                                >
+                                    <X size={18} />
+                                </button>
+                            )}
                         </div>
-                        <div className="border-l-2 border-border-color pl-4">
-                            <div className="text-text-dim text-[0.85rem] mb-[4px] font-medium">2022 - 2023</div>
-                            <div className="font-semibold text-[1.1rem] text-white">Web Development Fundamentals</div>
-                            <div className="text-text-dim text-[0.9rem] mt-[2px]">Self-Directed Learning & Online Bootcamps</div>
-                            <p className="text-text-dim text-[0.85rem] mt-2 leading-relaxed">
-                                Mastered HTML, CSS, JavaScript, and React through intensive online courses, documentation study, and hands-on project building.
-                            </p>
+                        <div
+                            className={`space-y-6 min-h-0 ${
+                                educationExpanded
+                                    ? 'min-h-0 flex-1 overflow-y-auto overflow-x-hidden pr-1 -mr-1 [scrollbar-gutter:stable]'
+                                    : 'max-h-[220px] overflow-hidden'
+                            }`}
+                        >
+                            <div className="border-l-2 border-accent-blue pl-4">
+                                <div className="text-text-dim text-[0.85rem] mb-[4px] font-medium">2024 – 2027</div>
+                                <div className="font-semibold text-[1.1rem] text-white">ADSE — Advanced Software Engineering</div>
+                                <div className="text-text-dim text-[0.9rem] mt-[2px] leading-relaxed">
+                                    Currently pursuing a Diploma in Software Development &amp; Artificial Intelligence at Aptech Computer Education.
+                                </div>
+                                <p className="text-text-dim text-[0.85rem] mt-3 leading-relaxed">
+                                    Building practical skills in Web Development, Python, React, Java, TypeScript, JavaScript, Mobile Apps, Database Management, and AI Integration.
+                                </p>
+                                <p className="text-text-dim text-[0.85rem] mt-2 leading-relaxed">
+                                    Gaining hands-on experience through projects in responsive web applications, Python automation scripts, mobile apps, and AI chatbots.
+                                </p>
+                            </div>
+                            <div className="border-l-2 border-border-color pl-4">
+                                <div className="text-text-dim text-[0.85rem] mb-[4px] font-medium">2022 - 2023</div>
+                                <div className="font-semibold text-[1.1rem] text-white">Web Development Fundamentals</div>
+                                <div className="text-text-dim text-[0.9rem] mt-[2px]">Self-Directed Learning & Online Bootcamps</div>
+                                <p className="text-text-dim text-[0.85rem] mt-2 leading-relaxed">
+                                    Mastered HTML, CSS, JavaScript, and React through intensive online courses, documentation study, and hands-on project building.
+                                </p>
+                            </div>
                         </div>
+                        {!educationExpanded && (
+                            <p className="text-[0.7rem] text-accent-blue/90 mt-4 text-center font-medium tracking-wide shrink-0">
+                                Click to expand · scroll for full details
+                            </p>
+                        )}
+                    </SpotlightCard>
                     </div>
-                </SpotlightCard>
+                </div>
 
                 {/* Skills Card */}
                 <SpotlightCard className="card lg:col-span-2">

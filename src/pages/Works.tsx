@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { ArrowRight, ExternalLink, X, Calendar, Tag } from 'lucide-react';
 import SpotlightCard from '../components/react-bits/SpotlightCard';
 import SplitText from '../components/react-bits/SplitText';
-import BlurText from '../components/react-bits/BlurText';
 import Skeleton from '../components/Skeleton';
 
 interface Project {
