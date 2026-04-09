@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import {
     Mail, Phone, MapPin, Sparkles, Instagram, Linkedin, Github, Youtube,
     Clock, Calendar, Send, MessageSquare, CheckCircle2,
-    Loader2, PartyPopper, Rocket, X, AlertCircle, WifiOff, RefreshCw, ChevronDown
+    Loader2, PartyPopper, Rocket, X, AlertCircle, WifiOff, RefreshCw
 } from 'lucide-react';
 import SpotlightCard from '../components/react-bits/SpotlightCard';
 import BlurText from '../components/react-bits/BlurText';
@@ -15,7 +15,9 @@ const PROJECT_OPTIONS = [
     { value: "webapp", label: "Web Application" },
     { value: "ecommerce", label: "E-commerce Platform" },
     { value: "redesign", label: "Website Redesign" },
-    { value: "consulting", label: "Technical Consulting" },
+    { value: "mobile", label: "Mobile App (Flutter)" },
+    { value: "fullstack", label: "Full-Stack Development" },
+    { value: "automation", label: "Python Automation & Scripting" },
     { value: "other", label: "Other" },
 ];
 
