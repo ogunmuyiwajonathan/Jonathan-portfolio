@@ -8,6 +8,16 @@ import {
 import SpotlightCard from '../components/react-bits/SpotlightCard';
 import BlurText from '../components/react-bits/BlurText';
 import Skeleton from '../components/Skeleton';
+import SlickDropdown from '../components/SlickDropdown';
+
+const PROJECT_OPTIONS = [
+    { value: "website", label: "Website Development" },
+    { value: "webapp", label: "Web Application" },
+    { value: "ecommerce", label: "E-commerce Platform" },
+    { value: "redesign", label: "Website Redesign" },
+    { value: "consulting", label: "Technical Consulting" },
+    { value: "other", label: "Other" },
+];
 
 
 interface FormStatus {
@@ -576,29 +586,14 @@ export default function Contact() {
                     {/* Project Type Select */}
                     <div>
                         <label className="text-[0.75rem] text-text-dim uppercase tracking-[1px] font-semibold mb-2 block">Project Type</label>
-                        <div className="relative">
-                            <select
-                                value={projectType}
-                                onChange={(e) => setProjectType(e.target.value)}
-                                disabled={formStatus.state === 'submitting'}
-                                className={`
-                                    w-full bg-[#1d1d1d] border rounded-[12px] p-[16px_45px_16px_20px] text-[0.95rem] transition-all duration-300 font-inherit focus:outline-none focus:bg-[#222] cursor-pointer appearance-none
-                                    ${projectType ? 'text-white' : 'text-text-dim'}
-                                    ${formStatus.state === 'error' ? 'border-red-500/50 focus:border-red-500' : 'border-transparent focus:border-[#444]'}
-                                    disabled:opacity-50 disabled:cursor-not-allowed
-                                `}
-                                style={{ colorScheme: 'dark' }}
-                            >
-                                <option value="" disabled hidden>Select a project type</option>
-                                <option value="website">Website Development</option>
-                                <option value="webapp">Web Application</option>
-                                <option value="ecommerce">E-commerce Platform</option>
-                                <option value="redesign">Website Redesign</option>
-                                <option value="consulting">Technical Consulting</option>
-                                <option value="other">Other</option>
-                            </select>
-                            <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 text-text-dim pointer-events-none transition-transform duration-300" size={20} />
-                        </div>
+                        <SlickDropdown 
+                            options={PROJECT_OPTIONS}
+                            value={projectType}
+                            onChange={(val) => setProjectType(val)}
+                            placeholder="Select a project type"
+                            disabled={formStatus.state === 'submitting'}
+                            hasError={formStatus.state === 'error'}
+                        />
                     </div>
 
                     <div>
