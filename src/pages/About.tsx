@@ -75,7 +75,7 @@ export default function About() {
         <>
             <div className="grid grid-cols-1 gap-6 mb-[60px] lg:grid-cols-4">
                 {/* Profile Image Card */}
-                <SpotlightCard className="lg:col-span-1 p-0 bg-gradient-to-br from-[#2ea9ff] to-[#0056b3] h-[320px] lg:h-auto overflow-hidden group border border-border-color rounded-[30px]" spotlightColor="rgba(46, 169, 255, 0.2)">
+                <SpotlightCard className="lg:col-span-1 !p-0 bg-gradient-to-br from-[#2ea9ff] to-[#0056b3] h-[320px] lg:h-auto overflow-hidden group border border-border-color rounded-[30px]" spotlightColor="rgba(46, 169, 255, 0.2)">
                     <img src="/logo.jpg" alt="Jonathan Ogunmuyiwa - Full Stack Developer" className="w-full h-full object-cover block transition-all duration-[800ms] group-hover:scale-110" />
                 </SpotlightCard>
 
