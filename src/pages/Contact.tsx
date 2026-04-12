@@ -516,15 +516,11 @@ export default function Contact() {
                     <div className="space-y-2 text-[0.8rem]">
                         <div className="flex justify-between">
                             <span className="text-text-dim">Monday - Friday</span>
-                            <span className="text-white">9:00 AM - 6:00 PM</span>
-                        </div>
-                        <div className="flex justify-between">
-                            <span className="text-text-dim">Saturday</span>
-                            <span className="text-white">10:00 AM - 4:00 PM</span>
+                            <span className="text-white">6:00 AM - 12:00 AM</span>
                         </div>
                         <div className="flex justify-between">
                             <span className="text-text-dim">Sunday</span>
-                            <span className="text-text-dim">Closed</span>
+                            <span className="text-white">3:00 PM - 11:00 AM</span>
                         </div>
                     </div>
                     <p className="text-[0.75rem] text-text-dim mt-3 pt-3 border-t border-border-color">
