@@ -338,7 +338,7 @@ export default function About() {
                             <Github size={20} />
                         </a>
                     </div>
-                    <Link to="/contact" className="flex justify-between items-center mt-auto pt-[20px] group hover:text-white border-t border-border-color">
+                    <Link to="/contact#connect" className="flex justify-between items-center mt-auto pt-[20px] group hover:text-white border-t border-border-color">
                         <div>
                             <span className="text-[0.65rem] text-text-dim uppercase tracking-[1px]">View All</span>
                             <p className="font-semibold text-[0.9rem]">Social Profiles</p>

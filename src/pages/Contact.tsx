@@ -39,6 +39,12 @@ export default function Contact() {
     useEffect(() => {
         const timer = setTimeout(() => {
             setIsLoading(false);
+            // Auto scroll to hash section when page UI finishes loading
+            if (window.location.hash === '#connect') {
+                setTimeout(() => {
+                    document.getElementById('connect')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 100);
+            }
         }, 1200);
         return () => clearTimeout(timer);
     }, []);
@@ -470,7 +476,6 @@ export default function Contact() {
                 </div>
 
                 {/* Availability Status */}
-                {/* Availability Status */}
                 <div className="p-5 sm:p-6 rounded-[16px] bg-gradient-to-br from-accent-blue/10 to-accent-blue/5 border border-accent-blue/30 mb-8 backdrop-blur-xl">
                     <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 sm:gap-0">
                         <div className="flex items-center gap-4">
@@ -486,7 +491,7 @@ export default function Contact() {
                                     Open for new projects
                                 </span>
                                 <p className="text-[0.8rem] text-text-dim">
-                                    Typical response time: <span className="text-green-400 font-medium">24–48 hours</span>
+                                    Typical response time: <br /><span className="text-green-400 font-medium">24–48 hours</span>
                                 </p>
                             </div>
                         </div>
@@ -499,7 +504,7 @@ export default function Contact() {
                 </div>
 
                 {/* Social Profiles */}
-                <div className="mt-[40px]">
+                <div id="connect" className="mt-[40px] scroll-mt-24">
                     <h2 className="text-[0.8rem] tracking-[2px] text-white mb-[20px] uppercase font-bold">Connect Online</h2>
                     <p className="text-text-dim text-[0.85rem] mb-4">
                         Follow my work and get insights into my development process across these platforms.
@@ -526,25 +531,38 @@ export default function Contact() {
                 </div>
 
                 {/* Working Hours */}
-                <div className="mt-8 p-4 rounded-xl bg-white/5 border border-border-color">
-                    <div className="flex items-center gap-2 mb-3">
-                        <Clock size={16} className="text-accent-blue" />
-                        <span className="text-[0.8rem] font-semibold text-white">Working Hours</span>
-                    </div>
-                    <div className="space-y-2 text-[0.8rem]">
-                        <div className="flex justify-between">
-                            <span className="text-text-dim">Monday - Saturday</span>
-                            <span className="text-white">6:00 AM - 12:00 AM</span>
-                        </div>
-                        <div className="flex justify-between">
-                            <span className="text-text-dim">Sunday</span>
-                            <span className="text-white">3:00 PM - 11:00 AM</span>
-                        </div>
-                    </div>
-                    <p className="text-[0.75rem] text-text-dim mt-3 pt-3 border-t border-border-color">
-                        All times are in West Africa Time (WAT, UTC+1)
-                    </p>
-                </div>
+                <div className="mt-8 p-6 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 shadow-xl">
+  <div className="flex items-center gap-3 mb-4">
+    <div className="p-2 rounded-xl bg-accent-blue/10 border border-accent-blue/20">
+      <Clock size={18} className="text-accent-blue" />
+    </div>
+    <span className="text-sm font-semibold tracking-tight text-white">
+      Working Hours
+    </span>
+  </div>
+
+  <div className="space-y-4 text-sm">
+    {/* Monday - Saturday */}
+    <div className="flex justify-between items-center py-1">
+      <span className="text-text-dim">Monday — Saturday</span>
+      <span className="font-medium text-white">6:00 AM — 12:00 AM</span>
+    </div>
+
+    {/* Sunday */}
+    <div className="flex justify-between items-center py-1">
+      <span className="text-text-dim">Sunday</span>
+      <span className="font-medium text-white">3:00 PM — 11:00 PM</span>
+    </div>
+  </div>
+
+  {/* Footer note with subtle separator */}
+  <div className="mt-5 pt-4 border-t border-white/10">
+    <p className="text-[0.8rem] text-text-dim flex items-center gap-1.5">
+      <span className="inline-block w-1 h-1 rounded-full bg-accent-blue/60" />
+      All times are in West Africa Time (WAT, UTC+1)
+    </p>
+  </div>
+</div>
             </div>
 
             {/* Right Column - Contact Form */}
@@ -602,7 +620,7 @@ export default function Contact() {
                     {/* Project Type Select */}
                     <div>
                         <label className="text-[0.75rem] text-text-dim uppercase tracking-[1px] font-semibold mb-2 block">Project Type</label>
-                        <SlickDropdown 
+                        <SlickDropdown
                             options={PROJECT_OPTIONS}
                             value={projectType}
                             onChange={(val) => setProjectType(val)}
