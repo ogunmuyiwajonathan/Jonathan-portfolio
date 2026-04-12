@@ -470,14 +470,32 @@ export default function Contact() {
                 </div>
 
                 {/* Availability Status */}
-                <div className="p-4 rounded-xl bg-accent-blue/10 border border-accent-blue/20 mb-8">
-                    <div className="flex items-center gap-2 mb-2">
-                        <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                        <span className="text-[0.8rem] font-semibold text-white">Currently Available</span>
+                {/* Availability Status */}
+                <div className="p-5 sm:p-6 rounded-[16px] bg-gradient-to-br from-accent-blue/10 to-accent-blue/5 border border-accent-blue/30 mb-8 backdrop-blur-xl">
+                    <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 sm:gap-0">
+                        <div className="flex items-center gap-4">
+                            {/* Animated Glowing Status Indicator */}
+                            <div className="relative flex items-center justify-center shrink-0">
+                                <div className="w-3 h-3 rounded-full bg-green-500 animate-pulse" />
+                                <div className="absolute w-5 h-5 rounded-full border border-green-500/30 animate-ping" />
+                            </div>
+
+                            {/* Informational Text */}
+                            <div>
+                                <span className="text-[0.95rem] sm:text-[1rem] font-semibold tracking-tight text-white block mb-0.5">
+                                    Open for new projects
+                                </span>
+                                <p className="text-[0.8rem] text-text-dim">
+                                    Typical response time: <span className="text-green-400 font-medium">24–48 hours</span>
+                                </p>
+                            </div>
+                        </div>
+
+                        {/* Availability Badge */}
+                        <div className="px-3 py-1.5 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-[0.65rem] font-bold tracking-[1.5px] uppercase shrink-0">
+                            Available Now
+                        </div>
                     </div>
-                    <p className="text-[0.8rem] text-text-dim">
-                        I'm currently accepting new projects. Typical response time: 24-48 hours.
-                    </p>
                 </div>
 
                 {/* Social Profiles */}
