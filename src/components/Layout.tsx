@@ -33,7 +33,7 @@ export default function Layout() {
                     }}
                 >
                     <img 
-                        src="/70%.png" 
+                        src="/earth-bg.png" 
                         alt="Earth" 
                         className="w-full h-full object-contain opacity-90 transition-all"
                         style={{
