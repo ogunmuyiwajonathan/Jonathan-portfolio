@@ -476,7 +476,7 @@ export default function Contact() {
                         <span className="text-[0.8rem] font-semibold text-white">Currently Available</span>
                     </div>
                     <p className="text-[0.8rem] text-text-dim">
-                        I'm accepting new projects for Q2 2025. Typical response time: 24-48 hours.
+                        I'm currently accepting new projects. Typical response time: 24-48 hours.
                     </p>
                 </div>
 
