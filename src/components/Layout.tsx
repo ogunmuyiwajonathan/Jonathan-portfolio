@@ -204,7 +204,7 @@ export default function Layout() {
             <div className="hidden lg:flex fixed right-6 top-1/2 -translate-y-1/2 flex-col gap-6 p-4 rounded-full bg-white/5 border border-white/10 backdrop-blur-xl z-[1000] shadow-[0_0_30px_rgba(0,100,255,0.15)]">
                 {[
                     { icon: Github, href: "https://github.com/ogunmuyiwajonathan", label: "GitHub" },
-                    { icon: Linkedin, href: "https://linkedin.com/in/ogunmuyiwajonathan", label: "LinkedIn" },
+                    { icon: Linkedin, href: "https://www.linkedin.com/in/jonathan-ogunmuyiwa", label: "LinkedIn" },
                     { icon: WhatsAppIcon, href: "https://wa.me/2349157384644", label: "WhatsApp" },
                     { icon: Mail, href: "mailto:ogunmuyiwajonathan@gmail.com", label: "Email" },
                 ].map((social, i) => {
