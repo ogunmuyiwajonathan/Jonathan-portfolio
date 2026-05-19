@@ -273,7 +273,7 @@ export default function Home() {
                     <SpotlightCard className="lg:col-span-1 p-8 flex flex-col justify-center gap-7 h-full">
                         {[
                             { value: '04+', label: 'Years of Impact' },
-                            { value: '05+', label: 'Live Deployments' },
+                            { value: '06+', label: 'Live Deployments' },
                         ].map(({ value, label }) => (
                             <div key={label}>
                                 <h3 className="text-4xl font-bold text-foreground leading-none tracking-tight">

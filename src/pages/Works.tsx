@@ -18,14 +18,36 @@ interface Project {
 
 const projects: Project[] = [
     {
-        title: "Portfolio Website",
-        category: "HTML / CSS / JS",
-        description: "My very first website — a personal portfolio built to kickstart my journey as a developer.",
-        fullDescription: "This was my very first website, marking the beginning of my journey as a developer. I built it from scratch using pure HTML, CSS, and JavaScript — no frameworks, no shortcuts. It taught me the fundamentals of web structure, responsive design, and user experience. This project holds a special place as the foundation of everything I've built since.",
-        highlights: ["First-ever website built from scratch", "Pure HTML, CSS & JavaScript — no frameworks", "Responsive layout for all screen sizes", "Deployed and live on Vercel"],
-        image: "/port.png",
-        link: "https://port-murex-tau.vercel.app/",
-        gradient: "from-[#1e1e1e] to-[#333333]",
+        title: "LifeOS",
+        category: "React / Productivity App",
+        description: "A comprehensive AI-powered life operating system and productivity dashboard.",
+        fullDescription: "LifeOS is an advanced productivity platform and dashboard. It includes various features like a Decision Engine powered by AI, comprehensive habit tracking, task management, journaling, and customizable widgets. Built with modern web technologies, it offers a beautifully designed, responsive, and intuitive interface to help users optimize their daily routines.",
+        highlights: ["AI-powered Decision Engine integration", "Advanced habit and task tracking system", "Beautifully designed responsive dashboard", "Supabase authentication and data syncing"],
+        image: "/lifeos.png",
+        link: "https://life-o-system.vercel.app/",
+        gradient: "from-[#081a14] to-[#081a14]",
+        year: "2026"
+    },
+    {
+        title: "Belleville Dental Care",
+        category: "React / TypeScript",
+        description: "A modern platform for a dental clinic featuring appointment scheduling and patient resources.",
+        fullDescription: "Belleville Dental Care is a modern, highly-performant healthcare web application built with React and TypeScript. It features a complete appointment scheduling system, detailed service descriptions, a patient resources section, and a clean professional look that instills confidence in patients. TypeScript was used throughout for type safety and scalability.",
+        highlights: ["Built with React and TypeScript for type-safe development", "Appointment scheduling and service description pages", "Patient resources and information hub", "Clean healthcare-grade UI design"],
+        image: "/belleville.png",
+        link: "https://project-belleville-dental.vercel.app/",
+        gradient: "from-[#2b5876] to-[#4e4376]",
+        year: "2026"
+    },
+    {
+        title: "Tasty Crust",
+        category: "Tailwind CSS / UI / UX",
+        description: "An appetizing and responsive restaurant web application with fluid visual styling.",
+        fullDescription: "Tasty Crust is a fully responsive web application for a bakery and restaurant, designed with a strong focus on UI/UX quality. I used Tailwind CSS to build a pixel-perfect, appetizing interface that draws the user in. The project included menus, booking sections, and a cart experience — all styled for maximum visual appeal and ease of use.",
+        highlights: ["Styled with Tailwind CSS for rapid, clean design", "Dedicated menu, booking & cart sections", "Strong UX focus with accessible color contrast", "Mobile-first, fully responsive layout"],
+        image: "/crust.png",
+        link: "https://tasty-crust.vercel.app/",
+        gradient: "from-[#f12711] to-[#f5af19]",
         year: "2025"
     },
     {
@@ -40,27 +62,16 @@ const projects: Project[] = [
         year: "2025"
     },
     {
-        title: "Tasty Crust",
-        category: "Tailwind CSS / UI / UX",
-        description: "An appetizing and responsive restaurant web application with fluid visual styling.",
-        fullDescription: "Tasty Crust is a fully responsive web application for a bakery and restaurant, designed with a strong focus on UI/UX quality. I used Tailwind CSS to build a pixel-perfect, appetizing interface that draws the user in. The project included menus, booking sections, and a cart experience — all styled for maximum visual appeal and ease of use.",
-        highlights: ["Styled with Tailwind CSS for rapid, clean design", "Dedicated menu, booking & cart sections", "Strong UX focus with accessible color contrast", "Mobile-first, fully responsive layout"],
-        image: "/crust.png",
-        link: "https://tasty-crust.vercel.app/",
-        gradient: "from-[#f12711] to-[#f5af19]",
+        title: "Portfolio Website",
+        category: "HTML / CSS / JS",
+        description: "My very first website — a personal portfolio built to kickstart my journey as a developer.",
+        fullDescription: "This was my very first website, marking the beginning of my journey as a developer. I built it from scratch using pure HTML, CSS, and JavaScript — no frameworks, no shortcuts. It taught me the fundamentals of web structure, responsive design, and user experience. This project holds a special place as the foundation of everything I've built since.",
+        highlights: ["First-ever website built from scratch", "Pure HTML, CSS & JavaScript — no frameworks", "Responsive layout for all screen sizes", "Deployed and live on Vercel"],
+        image: "/port.png",
+        link: "https://port-murex-tau.vercel.app/",
+        gradient: "from-[#1e1e1e] to-[#333333]",
         year: "2025"
     },
-    {
-        title: "Belleville Dental Care",
-        category: "React / TypeScript",
-        description: "A modern platform for a dental clinic featuring appointment scheduling and patient resources.",
-        fullDescription: "Belleville Dental Care is a modern, highly-performant healthcare web application built with React and TypeScript. It features a complete appointment scheduling system, detailed service descriptions, a patient resources section, and a clean professional look that instills confidence in patients. TypeScript was used throughout for type safety and scalability.",
-        highlights: ["Built with React and TypeScript for type-safe development", "Appointment scheduling and service description pages", "Patient resources and information hub", "Clean healthcare-grade UI design"],
-        image: "/belleville.png",
-        link: "https://project-belleville-dental.vercel.app/",
-        gradient: "from-[#2b5876] to-[#4e4376]",
-        year: "2026"
-    }
 ];
 
 export default function Works() {
@@ -136,7 +147,8 @@ export default function Works() {
                         </div>
                     ))
                 ) : (
-                    projects.map((project, i) => (
+                    <>
+                        {projects.map((project, i) => (
                         <div key={i} className="group flex flex-col h-full animate-on-load">
                             <SpotlightCard className="p-6 flex flex-col h-full transition-all duration-500 group-hover:-translate-y-2 group-hover:bg-[#1f1f1f]/80 sm:p-8">
                                 {/* Image */}
@@ -182,7 +194,21 @@ export default function Works() {
                                 </div>
                             </SpotlightCard>
                         </div>
-                    ))
+                        ))}
+                        
+                        {/* Coming Soon Card */}
+                        <div className="group flex flex-col h-full animate-on-load">
+                            <SpotlightCard className="p-6 flex flex-col h-full transition-all duration-500 sm:p-8 items-center justify-center min-h-[350px] border-dashed border-2 border-white/10 bg-transparent opacity-60 hover:opacity-100 hover:border-white/30">
+                                <div className="text-center space-y-4">
+                                    <div className="text-5xl mb-4">🚀</div>
+                                    <h3 className="text-[1.4rem] font-bold text-foreground">More Projects Coming Soon</h3>
+                                    <p className="text-text-dim text-[0.9rem] max-w-[250px] mx-auto">
+                                        I'm constantly working on new ideas and experiments. Check back later!
+                                    </p>
+                                </div>
+                            </SpotlightCard>
+                        </div>
+                    </>
                 )}
             </div>
 
