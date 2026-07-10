@@ -107,8 +107,12 @@ export default function Home() {
                 transition-transform duration-700 group-hover:scale-[1.04]
                 mx-auto md:mx-0">
                                 <img
-                                    src="/image.png"
+                                    src="/image.webp"
                                     alt="Jonathan Ogunmuyiwa"
+                                    width={190}
+                                    height={190}
+                                    fetchPriority="high"
+                                    decoding="async"
                                     className="w-full h-full object-cover"
                                 />
                             </div>

@@ -23,9 +23,25 @@ const projects: Project[] = [
         description: "A comprehensive AI-powered life operating system and productivity dashboard.",
         fullDescription: "LifeOS is an advanced productivity platform and dashboard. It includes various features like a Decision Engine powered by AI, comprehensive habit tracking, task management, journaling, and customizable widgets. Built with modern web technologies, it offers a beautifully designed, responsive, and intuitive interface to help users optimize their daily routines.",
         highlights: ["AI-powered Decision Engine integration", "Advanced habit and task tracking system", "Beautifully designed responsive dashboard", "Supabase authentication and data syncing"],
-        image: "/lifeos.png",
+        image: "/lifeos.webp",
         link: "https://life-o-system.vercel.app/",
         gradient: "from-[#081a14] to-[#081a14]",
+        year: "2026"
+    },
+    {
+        title: "Solibu Stories",
+        category: "React / Three.js / Convex",
+        description: "A digital story-reading platform for discovering, browsing, and reading books.",
+        fullDescription: "Solibu Stories is a full-stack digital reading platform built with React, TypeScript, and Convex. It features a curated library with search and filtering, an in-browser reading experience with page navigation, immersive 3D book animations powered by Three.js and React Three Fiber, dark and sepia reading themes, an admin panel for managing books and users, and a favorites and reviews system.",
+        highlights: [
+            "3D book animations with Three.js and React Three Fiber",
+            "Full-stack architecture with Convex backend and Clerk auth",
+            "Dark and sepia reading themes for comfortable browsing",
+            "Admin panel, favorites, and reviews system"
+        ],
+        image: "/solibu.webp",
+        link: "https://solibu-stories.vercel.app/",
+        gradient: "from-[#1a1a2e] to-[#16213e]",
         year: "2026"
     },
     {
@@ -34,7 +50,7 @@ const projects: Project[] = [
         description: "A modern platform for a dental clinic featuring appointment scheduling and patient resources.",
         fullDescription: "Belleville Dental Care is a modern, highly-performant healthcare web application built with React and TypeScript. It features a complete appointment scheduling system, detailed service descriptions, a patient resources section, and a clean professional look that instills confidence in patients. TypeScript was used throughout for type safety and scalability.",
         highlights: ["Built with React and TypeScript for type-safe development", "Appointment scheduling and service description pages", "Patient resources and information hub", "Clean healthcare-grade UI design"],
-        image: "/belleville.png",
+        image: "/belleville.webp",
         link: "https://project-belleville-dental.vercel.app/",
         gradient: "from-[#2b5876] to-[#4e4376]",
         year: "2026"
@@ -45,7 +61,7 @@ const projects: Project[] = [
         description: "An appetizing and responsive restaurant web application with fluid visual styling.",
         fullDescription: "Tasty Crust is a fully responsive web application for a bakery and restaurant, designed with a strong focus on UI/UX quality. I used Tailwind CSS to build a pixel-perfect, appetizing interface that draws the user in. The project included menus, booking sections, and a cart experience — all styled for maximum visual appeal and ease of use.",
         highlights: ["Styled with Tailwind CSS for rapid, clean design", "Dedicated menu, booking & cart sections", "Strong UX focus with accessible color contrast", "Mobile-first, fully responsive layout"],
-        image: "/crust.png",
+        image: "/crust.webp",
         link: "https://tasty-crust.vercel.app/",
         gradient: "from-[#f12711] to-[#f5af19]",
         year: "2025"
@@ -56,7 +72,7 @@ const projects: Project[] = [
         description: "A professional landing page and marketing site designed for Stalworld Tech.",
         fullDescription: "Stalworld Tech is a professional landing page and marketing site I designed and built from the ground up. The goal was to create a clean, modern experience that communicates the company's brand credibility and highlights their services. I focused on optimized conversion flows, responsive design, and smooth visual transitions using React.js.",
         highlights: ["Built with React.js for a dynamic experience", "Custom responsive UI with smooth transitions", "Optimized for conversions and visual branding", "Deployed live on Vercel"],
-        image: "/graphic.png",
+        image: "/graphic.webp",
         link: "https://stalworldtech.vercel.app/",
         gradient: "from-[#07424e] to-[#05706d]",
         year: "2025"
@@ -67,7 +83,7 @@ const projects: Project[] = [
         description: "My very first website — a personal portfolio built to kickstart my journey as a developer.",
         fullDescription: "This was my very first website, marking the beginning of my journey as a developer. I built it from scratch using pure HTML, CSS, and JavaScript — no frameworks, no shortcuts. It taught me the fundamentals of web structure, responsive design, and user experience. This project holds a special place as the foundation of everything I've built since.",
         highlights: ["First-ever website built from scratch", "Pure HTML, CSS & JavaScript — no frameworks", "Responsive layout for all screen sizes", "Deployed and live on Vercel"],
-        image: "/port.png",
+        image: "/port.webp",
         link: "https://port-murex-tau.vercel.app/",
         gradient: "from-[#1e1e1e] to-[#333333]",
         year: "2025"
@@ -156,6 +172,10 @@ export default function Works() {
                                     <img
                                         src={project.image}
                                         alt={project.title}
+                                        width={400}
+                                        height={260}
+                                        loading="lazy"
+                                        decoding="async"
                                         className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
                                     />
                                 </div>
@@ -227,6 +247,10 @@ export default function Works() {
                             <img
                                 src={selectedProject.image}
                                 alt={selectedProject.title}
+                                width={400}
+                                height={100}
+                                loading="lazy"
+                                decoding="async"
                                 className="h-full object-contain"
                             />
                         </div>

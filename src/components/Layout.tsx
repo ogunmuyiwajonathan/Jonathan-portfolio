@@ -33,8 +33,12 @@ export default function Layout() {
                     }}
                 >
                     <img 
-                        src="/earth-bg.png" 
+                        src="/earth-bg.webp" 
                         alt="Earth" 
+                        width={800}
+                        height={800}
+                        fetchPriority="high"
+                        decoding="async"
                         className="w-full h-full object-contain opacity-90 transition-all"
                         style={{
                             filter: 'brightness(1.2) contrast(1.1)',
@@ -72,8 +76,12 @@ export default function Layout() {
                         }}
                     >
                         <img 
-                            src="/moon.png" 
+                            src="/moon.webp" 
                             alt="Moon" 
+                            width={80}
+                            height={80}
+                            loading="lazy"
+                            decoding="async"
                             className="w-full h-full object-contain"
                             style={{
                                 filter: 'brightness(1.5) drop-shadow(0 0 10px rgba(255,255,255,0.2))',
