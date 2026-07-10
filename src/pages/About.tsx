@@ -20,7 +20,7 @@ import {
     X
 } from 'lucide-react';
 import { FaReact, FaJava, FaFigma, FaGitAlt, FaHtml5, FaNodeJs } from 'react-icons/fa';
-import { SiTailwindcss, SiMysql, SiTypescript, SiMongodb, SiJavascript, SiNextdotjs } from 'react-icons/si';
+import { SiTailwindcss, SiMysql, SiTypescript, SiMongodb, SiJavascript, SiNextdotjs,SiPython } from 'react-icons/si';
 import SpotlightCard from '../components/react-bits/SpotlightCard';
 import BlurText from '../components/react-bits/BlurText';
 import Skeleton from '../components/Skeleton';
@@ -76,7 +76,7 @@ export default function About() {
             <div className="grid grid-cols-1 gap-6 mb-[60px] lg:grid-cols-4">
                 {/* Profile Image Card */}
                 <SpotlightCard className="lg:col-span-1 !p-0 bg-gradient-to-br from-[#2ea9ff] to-[#0056b3] h-[320px] lg:h-auto overflow-hidden group border border-border-color rounded-[30px]" spotlightColor="rgba(46, 169, 255, 0.2)">
-                    <img src="/profile.webp" alt="Jonathan Ogunmuyiwa - Full Stack Developer" width={400} height={500} loading="eager" fetchPriority="high" decoding="async" className="w-full h-full object-cover block transition-all duration-[800ms] group-hover:scale-110" />
+                    <img src="/images/profile.webp" alt="Jonathan Ogunmuyiwa - Full Stack Developer" width={400} height={500} loading="eager" fetchPriority="high" decoding="async" className="w-full h-full object-cover block transition-all duration-[800ms] group-hover:scale-110" />
                 </SpotlightCard>
 
                 {/* Self Summary Card */}
@@ -124,7 +124,7 @@ export default function About() {
                     </SpotlightCard>
                 </div>
 
-                {/* Education Card — click to bring forward and scroll full content */}
+                {/* Education Card â€” click to bring forward and scroll full content */}
                 <div
                     className={`lg:col-span-2 ${educationExpanded ? 'min-h-[min(88vh,680px)]' : ''}`}
                 >
@@ -188,8 +188,8 @@ export default function About() {
                             }`}
                         >
                             <div className="border-l-2 border-accent-blue pl-4">
-                                <div className="text-text-dim text-[0.85rem] mb-[4px] font-medium">2024 – 2027</div>
-                                <div className="font-semibold text-[1.1rem] text-white">ADSE — Advanced Software Engineering</div>
+                                <div className="text-text-dim text-[0.85rem] mb-[4px] font-medium">2024 â€“ 2027</div>
+                                <div className="font-semibold text-[1.1rem] text-white">ADSE â€” Advanced Software Engineering</div>
                                 <div className="text-text-dim text-[0.9rem] mt-[2px] leading-relaxed">
                                     Currently pursuing a Diploma in Software Development &amp; Artificial Intelligence at Aptech Computer Education.
                                 </div>
@@ -211,7 +211,7 @@ export default function About() {
                         </div>
                         {!educationExpanded && (
                             <p className="text-[0.7rem] text-accent-blue/90 mt-4 text-center font-medium tracking-wide shrink-0">
-                                Click to expand · scroll for full details
+                                Click to expand Â· scroll for full details
                             </p>
                         )}
                     </SpotlightCard>
@@ -272,6 +272,10 @@ export default function About() {
                             <FaGitAlt size={26} className="text-[#f05032]" />
                             <span className="text-[0.6rem] text-text-dim uppercase tracking-[1px]">Git</span>
                         </div>
+                        <div className="flex flex-col items-center gap-[6px] p-3 rounded-xl bg-white/5 hover:bg-white/10 transition-all duration-300" title="Git">
+                            <SiPython size={26} className="text-[#f05032]" />
+                            <span className="text-[0.6rem] text-text-dim uppercase tracking-[1px]">Python</span>
+                        </div>
                     </div>
                 </SpotlightCard>
 
@@ -287,7 +291,7 @@ export default function About() {
                             </div>
                             <div>
                                 <h4 className="font-semibold text-[0.95rem] text-white">Full Stack Web Development</h4>
-                                <p className="text-text-dim text-[0.85rem] leading-relaxed">End-to-end application development using React, Node.js, and modern databases. From concept to deployment.</p>
+                                <p className="text-text-dim text-[0.85rem] leading-relaxed">Building scalable, high-performance web applications from concept to deployment using modern technologies like React, Next.js, Node.js, Express, TypeScript, and SQL/NoSQL databases. I develop responsive frontends, robust backend APIs, authentication systems, database architectures, third-party integrations, cloud deployment, performance optimization, and ongoing maintenance to deliver secure, user-focused digital experiences.</p>
                             </div>
                         </div>
                         <div className="flex items-start gap-3">
@@ -315,6 +319,15 @@ export default function About() {
                             <div>
                                 <h4 className="font-semibold text-[0.95rem] text-white">API Development</h4>
                                 <p className="text-text-dim text-[0.85rem] leading-relaxed">RESTful and GraphQL API design and integration for seamless data flow between systems.</p>
+                            </div>
+                        </div>
+                        <div className="flex items-start gap-3">
+                            <div className="w-8 h-8 rounded-lg bg-accent-blue/20 flex items-center justify-center shrink-0">
+                                <Sparkles size={16} className="text-accent-blue" />
+                            </div>
+                            <div>
+                                <h4 className="font-semibold text-[0.95rem] text-white">AI Agent Automation</h4>
+                                <p className="text-text-dim text-[0.85rem] leading-relaxed">Designing and deploying intelligent AI agents that automate repetitive tasks, streamline workflows, and improve business efficiency. I build custom agents capable of reasoning, using tools, integrating with APIs, managing workflows, processing documents, and connecting with platforms such as Slack, Discord, Gmail, Notion, GitHub, CRMs, and databases.</p>
                             </div>
                         </div>
                     </div>

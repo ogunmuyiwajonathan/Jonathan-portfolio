@@ -87,12 +87,12 @@ export default function Home() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
                 <div className="grid grid-cols-1 gap-6 mb-24 lg:grid-cols-4">
 
-                    {/* ── ROW 1 ─────────────────────────────────────────────────────
+                    {/* â”€â”€ ROW 1 â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
                [  Hero (col-span-2, row-span-2)  ] [ About ] [ Works ]
                [  Hero (continued)               ] [ Marquee (col-span-2) ]
-          ─────────────────────────────────────────────────────────────── */}
+          â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
 
-                    {/* Hero Card — fixed padding & layout so nothing is muffled */}
+                    {/* Hero Card â€” fixed padding & layout so nothing is muffled */}
                     <SpotlightCard className="lg:col-span-3 lg:row-span-2 p-10 md:p-14 flex items-center group relative overflow-hidden">
                         {/* Ambient glow */}
                         <div className="absolute inset-0 bg-gradient-to-br from-accent-blue/5 via-transparent to-transparent pointer-events-none" />
@@ -107,7 +107,7 @@ export default function Home() {
                 transition-transform duration-700 group-hover:scale-[1.04]
                 mx-auto md:mx-0">
                                 <img
-                                    src="/image.webp"
+                                    src="/images/image.webp"
                                     alt="Jonathan Ogunmuyiwa"
                                     width={190}
                                     height={190}
@@ -144,11 +144,11 @@ export default function Home() {
                                 <div className="flex flex-wrap gap-3 mt-7 justify-center md:justify-start">
                                     <span className="px-4 py-1.5 bg-accent-blue/10 text-accent-blue
                     border border-accent-blue/20 rounded-full text-[0.7rem] font-bold whitespace-nowrap">
-                                        ● Available Now
+                                        â— Available Now
                                     </span>
                                     <span className="px-4 py-1.5 bg-secondary text-muted-foreground
                     border border-border rounded-full text-[0.7rem] font-bold whitespace-nowrap">
-                                        🌍 Remote Worldwide
+                                        ðŸŒ Remote Worldwide
                                     </span>
                                 </div>
                             </div>
@@ -191,7 +191,7 @@ export default function Home() {
                         </SpotlightCard>
                     </Link>
 
-                    {/* Marquee — col-span-2 sits beside the hero's second row */}
+                    {/* Marquee â€” col-span-2 sits beside the hero's second row */}
                     <SpotlightCard className="card lg:col-span-full py-4 px-8 rounded-full overflow-hidden self-center">
                         <div className="flex animate-scroll whitespace-nowrap gap-10">
                             {[...marqueeItems, ...marqueeItems].map((text, i) => (
@@ -199,15 +199,15 @@ export default function Home() {
                                     key={i}
                                     className="text-[0.7rem] uppercase tracking-[2px] text-muted-foreground flex items-center gap-3 font-bold"
                                 >
-                                    ✦ {text}
+                                    âœ¦ {text}
                                 </span>
                             ))}
                         </div>
                     </SpotlightCard>
 
-                    {/* ── ROW 3 ─────────────────────────────────────────────────────
+                    {/* â”€â”€ ROW 3 â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
                [ Tech Stack (col-span-2) ] [ Socials ] [ Stats ]
-          ─────────────────────────────────────────────────────────────── */}
+          â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
 
                     {/* Tech Stack */}
                     <SpotlightCard className="card lg:col-span-2 p-8 hover:bg-secondary transition-all duration-500 group">
@@ -290,9 +290,9 @@ export default function Home() {
                         ))}
                     </SpotlightCard>
 
-                    {/* ── ROW 4 ─────────────────────────────────────────────────────
+                    {/* â”€â”€ ROW 4 â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
                [ Services (col-span-2) ] [ Skills (col-span-2) ]
-          ─────────────────────────────────────────────────────────────── */}
+          â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
 
                     {/* Services */}
                     <SpotlightCard className="card lg:col-span-2 p-8">
@@ -336,9 +336,9 @@ export default function Home() {
                         </div>
                     </SpotlightCard>
 
-                    {/* ── ROW 5 ─────────────────────────────────────────────────────
+                    {/* â”€â”€ ROW 5 â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
                [ CTA (col-span-4) ]
-          ─────────────────────────────────────────────────────────────── */}
+          â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
 
                     {/* CTA */}
                     <SpotlightCard

@@ -25,7 +25,7 @@ export default function Layout() {
     return (
         <div className="container relative min-h-screen">
             <div className="fixed inset-0 z-[-1] pointer-events-none">
-                {/* Realistic Earth — top-left corner, shiny and glowing */}
+                {/* Realistic Earth â€” top-left corner, shiny and glowing */}
                 <div 
                     className="absolute top-[-15vw] left-[-10vw] w-[45vw] -z-20 h-[45vw] overflow-hidden"
                     style={{
@@ -33,7 +33,7 @@ export default function Layout() {
                     }}
                 >
                     <img 
-                        src="/earth-bg.webp" 
+                        src="/images/earth-bg.webp" 
                         alt="Earth" 
                         width={800}
                         height={800}
@@ -76,7 +76,7 @@ export default function Layout() {
                         }}
                     >
                         <img 
-                            src="/moon.webp" 
+                            src="/images/moon.webp" 
                             alt="Moon" 
                             width={80}
                             height={80}
@@ -274,7 +274,7 @@ export default function Layout() {
                 </ul>
 
                 <p className="text-[0.75rem] text-[#444]">
-                    © {new Date().getFullYear()} Jonathan Ogunmuyiwa. All rights reserved.
+                    Â© {new Date().getFullYear()} Jonathan Ogunmuyiwa. All rights reserved.
                 </p>
             </footer>
         </div>

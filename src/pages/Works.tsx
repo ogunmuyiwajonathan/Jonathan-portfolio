@@ -18,17 +18,6 @@ interface Project {
 
 const projects: Project[] = [
     {
-        title: "LifeOS",
-        category: "React / Productivity App",
-        description: "A comprehensive AI-powered life operating system and productivity dashboard.",
-        fullDescription: "LifeOS is an advanced productivity platform and dashboard. It includes various features like a Decision Engine powered by AI, comprehensive habit tracking, task management, journaling, and customizable widgets. Built with modern web technologies, it offers a beautifully designed, responsive, and intuitive interface to help users optimize their daily routines.",
-        highlights: ["AI-powered Decision Engine integration", "Advanced habit and task tracking system", "Beautifully designed responsive dashboard", "Supabase authentication and data syncing"],
-        image: "/lifeos.webp",
-        link: "https://life-o-system.vercel.app/",
-        gradient: "from-[#081a14] to-[#081a14]",
-        year: "2026"
-    },
-    {
         title: "Solibu Stories",
         category: "React / Three.js / Convex",
         description: "A digital story-reading platform for discovering, browsing, and reading books.",
@@ -41,7 +30,18 @@ const projects: Project[] = [
         ],
         image: "/solibu.webp",
         link: "https://solibu-stories.vercel.app/",
-        gradient: "from-[#1a1a2e] to-[#16213e]",
+        gradient: "from-[#0d0d10] to-[#b1862f]",
+        year: "2026"
+    },
+    {
+        title: "LifeOS",
+        category: "React / Productivity App",
+        description: "A comprehensive AI-powered life operating system and productivity dashboard.",
+        fullDescription: "LifeOS is an advanced productivity platform and dashboard. It includes various features like a Decision Engine powered by AI, comprehensive habit tracking, task management, journaling, and customizable widgets. Built with modern web technologies, it offers a beautifully designed, responsive, and intuitive interface to help users optimize their daily routines.",
+        highlights: ["AI-powered Decision Engine integration", "Advanced habit and task tracking system", "Beautifully designed responsive dashboard", "Supabase authentication and data syncing"],
+        image: "/lifeos.webp",
+        link: "https://life-o-system.vercel.app/",
+        gradient: "from-[#081a14] to-[#081a14]",
         year: "2026"
     },
     {
