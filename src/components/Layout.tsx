@@ -281,7 +281,7 @@ export default function Layout() {
                 </ul>
 
                 <p className="text-[0.75rem] text-[#444]">
-                    Â© {new Date().getFullYear()} Jonathan Ogunmuyiwa. All rights reserved.
+                    © {new Date().getFullYear()} Jonathan Ogunmuyiwa. All rights reserved.
                 </p>
             </footer>
 

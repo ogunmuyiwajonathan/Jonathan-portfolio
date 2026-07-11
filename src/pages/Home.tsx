@@ -31,10 +31,11 @@ const services = [
 ];
 
 const skills = [
-    { label: 'Frontend Architecture', level: '95%' },
-    { label: 'Backend Systems', level: '85%' },
+    { label: 'Frontend Architecture', level: '90%' },
+    { label: 'Backend Systems', level: '80%' },
     { label: 'Database & Cloud', level: '80%' },
     { label: 'UI/UX Design Strategy', level: '90%' },
+    { label: 'Agentic AI Development', level: '85%' },
 ];
 
 
@@ -147,7 +148,7 @@ export default function Home() {
                                 <div className="flex flex-wrap gap-3 mt-7 justify-center md:justify-start">
                                     <span className="px-4 py-1.5 bg-accent-blue/10 text-accent-blue
                     border border-accent-blue/20 rounded-full text-[0.7rem] font-bold whitespace-nowrap">
-                                        â— Available Now
+                                        ● Available Now
                                     </span>
                                     <span className="px-4 py-1.5 bg-secondary text-muted-foreground
                     border border-border rounded-full text-[0.7rem] font-bold whitespace-nowrap">
@@ -202,7 +203,7 @@ export default function Home() {
                                     key={i}
                                     className="text-[0.7rem] uppercase tracking-[2px] text-muted-foreground flex items-center gap-3 font-bold"
                                 >
-                                    âœ¦ {text}
+                                    ✔ {text}
                                 </span>
                             ))}
                         </div>

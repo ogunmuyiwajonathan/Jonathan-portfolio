@@ -1,0 +1,82 @@
+- generic [ref=f11e2]:
+  - heading "Jonathan." [level=1] [ref=f11e5]
+  - generic [ref=f11e10]:
+    - generic:
+      - generic:
+        - img "Earth"
+      - generic:
+        - generic:
+          - img "Moon"
+    - navigation [ref=f11e11]:
+      - link "Jonathan." [ref=f11e12] [cursor=pointer]:
+        - /url: /
+      - list [ref=f11e13]:
+        - listitem [ref=f11e14]:
+          - link "Home" [ref=f11e15] [cursor=pointer]:
+            - /url: /
+        - listitem [ref=f11e16]:
+          - link "About" [ref=f11e17] [cursor=pointer]:
+            - /url: /about
+        - listitem [ref=f11e18]:
+          - link "Works" [ref=f11e19] [cursor=pointer]:
+            - /url: /works
+        - listitem [ref=f11e20]:
+          - link "Contact" [ref=f11e21] [cursor=pointer]:
+            - /url: /contact
+      - link "Let's talk" [ref=f11e23] [cursor=pointer]:
+        - /url: /contact
+    - generic [ref=f11e24]:
+      - link "GitHub" [ref=f11e25] [cursor=pointer]:
+        - /url: https://github.com/ogunmuyiwajonathan
+      - link "LinkedIn" [ref=f11e29] [cursor=pointer]:
+        - /url: https://www.linkedin.com/in/jonathan-ogunmuyiwa
+      - link "WhatsApp" [ref=f11e34] [cursor=pointer]:
+        - /url: https://wa.me/2349157384644
+      - link "Email" [ref=f11e37] [cursor=pointer]:
+        - /url: mailto:ogunmuyiwajonathan@gmail.com
+    - banner [ref=f11e43]:
+      - generic [ref=f11e44]:
+        - generic [ref=f11e45]: C
+        - generic [ref=f11e46]: h
+        - generic [ref=f11e47]: e
+        - generic [ref=f11e48]: c
+        - generic [ref=f11e49]: k
+        - generic [ref=f11e51]: o
+        - generic [ref=f11e52]: u
+        - generic [ref=f11e53]: t
+        - generic [ref=f11e55]: m
+        - generic [ref=f11e56]: "y"
+        - generic [ref=f11e58]: f
+        - generic [ref=f11e59]: e
+        - generic [ref=f11e60]: a
+        - generic [ref=f11e61]: t
+        - generic [ref=f11e62]: u
+        - generic [ref=f11e63]: r
+        - generic [ref=f11e64]: e
+        - generic [ref=f11e65]: d
+        - generic [ref=f11e67]: p
+        - generic [ref=f11e68]: r
+        - generic [ref=f11e69]: o
+        - generic [ref=f11e70]: j
+        - generic [ref=f11e71]: e
+        - generic [ref=f11e72]: c
+        - generic [ref=f11e73]: t
+        - generic [ref=f11e74]: s
+        - generic [ref=f11e75]: .
+    - contentinfo [ref=f11e109]:
+      - link "Jonathan." [ref=f11e110] [cursor=pointer]:
+        - /url: /
+      - list [ref=f11e111]:
+        - listitem [ref=f11e112]:
+          - link "Home" [ref=f11e113] [cursor=pointer]:
+            - /url: /
+        - listitem [ref=f11e114]:
+          - link "About" [ref=f11e115] [cursor=pointer]:
+            - /url: /about
+        - listitem [ref=f11e116]:
+          - link "Works" [ref=f11e117] [cursor=pointer]:
+            - /url: /works
+        - listitem [ref=f11e118]:
+          - link "Contact" [ref=f11e119] [cursor=pointer]:
+            - /url: /contact
+      - paragraph [ref=f11e120]: Â© 2026 Jonathan Ogunmuyiwa. All rights reserved.

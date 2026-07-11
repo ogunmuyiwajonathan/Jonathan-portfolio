@@ -1,0 +1,166 @@
+- generic [ref=f3e3]:
+  - generic:
+    - generic:
+      - img "Earth"
+    - generic:
+      - generic:
+        - img "Moon"
+  - navigation [ref=f3e4]:
+    - link "Jonathan." [ref=f3e5] [cursor=pointer]:
+      - /url: /
+    - list [ref=f3e6]:
+      - listitem [ref=f3e7]:
+        - link "Home" [ref=f3e8] [cursor=pointer]:
+          - /url: /
+      - listitem [ref=f3e9]:
+        - link "About" [ref=f3e10] [cursor=pointer]:
+          - /url: /about
+      - listitem [ref=f3e11]:
+        - link "Works" [ref=f3e12] [cursor=pointer]:
+          - /url: /works
+      - listitem [ref=f3e13]:
+        - link "Contact" [ref=f3e14] [cursor=pointer]:
+          - /url: /contact
+    - link "Let's talk" [ref=f3e16] [cursor=pointer]:
+      - /url: /contact
+  - generic [ref=f3e17]:
+    - link "GitHub" [ref=f3e18] [cursor=pointer]:
+      - /url: https://github.com/ogunmuyiwajonathan
+    - link "LinkedIn" [ref=f3e22] [cursor=pointer]:
+      - /url: https://www.linkedin.com/in/jonathan-ogunmuyiwa
+    - link "WhatsApp" [ref=f3e27] [cursor=pointer]:
+      - /url: https://wa.me/2349157384644
+    - link "Email" [ref=f3e30] [cursor=pointer]:
+      - /url: mailto:ogunmuyiwajonathan@gmail.com
+  - generic [ref=f3e37]:
+    - generic [ref=f3e39]:
+      - img "Jonathan Ogunmuyiwa" [ref=f3e41]
+      - generic [ref=f3e42]:
+        - paragraph [ref=f3e43]:
+          - generic [ref=f3e44]: Full
+          - generic [ref=f3e45]: Stack
+          - generic [ref=f3e46]: Developer
+          - generic [ref=f3e47]: "&"
+          - generic [ref=f3e48]: UI
+          - generic [ref=f3e49]: Designer
+        - generic [ref=f3e50]:
+          - generic [ref=f3e51]: J
+          - generic [ref=f3e52]: o
+          - generic [ref=f3e53]: "n"
+          - generic [ref=f3e54]: a
+          - generic [ref=f3e55]: t
+          - generic [ref=f3e56]: h
+          - generic [ref=f3e57]: a
+          - generic [ref=f3e58]: "n"
+          - generic [ref=f3e59]: .
+        - paragraph [ref=f3e60]: I craft high-performance digital experiences that bridge the gap between technical excellence and intuitive design.
+        - generic [ref=f3e61]:
+          - generic [ref=f3e62]: ● Available Now
+          - generic [ref=f3e63]: 🌍 Remote Worldwide
+    - link "DISCOVER MORE About Me Technical expertise & professional journey." [ref=f3e64] [cursor=pointer]:
+      - /url: /about
+      - generic [ref=f3e65]:
+        - generic [ref=f3e70]: DISCOVER MORE
+        - generic [ref=f3e71]: About Me
+        - paragraph [ref=f3e72]: Technical expertise & professional journey.
+    - link "PORTFOLIO My Works A collection of precision-built applications." [ref=f3e73] [cursor=pointer]:
+      - /url: /works
+      - generic [ref=f3e74]:
+        - generic [ref=f3e78]: PORTFOLIO
+        - generic [ref=f3e79]: My Works
+        - paragraph [ref=f3e80]: A collection of precision-built applications.
+    - generic [ref=f3e82]:
+      - generic [ref=f3e83]: ✦ Full Stack Development
+      - generic [ref=f3e84]: ✦ UI/UX Design
+      - generic [ref=f3e85]: ✦ React
+      - generic [ref=f3e86]: ✦ Database Architecture
+      - generic [ref=f3e87]: ✦ API Development
+      - generic [ref=f3e88]: ✦ Performance Optimization
+      - generic [ref=f3e89]: ✦ Full Stack Development
+      - generic [ref=f3e90]: ✦ UI/UX Design
+      - generic [ref=f3e91]: ✦ React
+      - generic [ref=f3e92]: ✦ Database Architecture
+      - generic [ref=f3e93]: ✦ API Development
+      - generic [ref=f3e94]: ✦ Performance Optimization
+    - link "Core Arsenal Specialized in modern, highly efficient technology stacks." [ref=f3e96] [cursor=pointer]:
+      - /url: /about#specialize
+      - generic [ref=f3e97]:
+        - generic "HTML/CSS" [ref=f3e98]
+        - generic "Tailwind" [ref=f3e101]
+        - generic "JavaScript" [ref=f3e104]
+        - generic "TypeScript" [ref=f3e107]
+        - generic "React" [ref=f3e110]
+        - generic "Java" [ref=f3e113]
+      - generic [ref=f3e116]: Core Arsenal
+      - paragraph [ref=f3e118]: Specialized in modern, highly efficient technology stacks.
+    - generic [ref=f3e122]:
+      - generic [ref=f3e123]:
+        - link "LinkedIn" [ref=f3e124] [cursor=pointer]:
+          - /url: https://www.linkedin.com/in/jonathan-ogunmuyiwa
+        - link "GitHub" [ref=f3e129] [cursor=pointer]:
+          - /url: https://github.com/ogunmuyiwajonathan
+        - link "WhatsApp" [ref=f3e133] [cursor=pointer]:
+          - /url: https://wa.me/2349157384644
+      - generic [ref=f3e136]:
+        - generic [ref=f3e137]: CONNECT
+        - link "Profiles" [ref=f3e138] [cursor=pointer]:
+          - /url: /contact
+    - generic [ref=f3e142]:
+      - generic [ref=f3e143]:
+        - heading "04+" [level=3] [ref=f3e144]
+        - generic [ref=f3e145]: Years of Impact
+      - generic [ref=f3e146]:
+        - heading "06+" [level=3] [ref=f3e147]
+        - generic [ref=f3e148]: Live Deployments
+    - generic [ref=f3e149]:
+      - generic [ref=f3e150]: SYSTEM ARCHITECTURE
+      - generic [ref=f3e153]:
+        - generic [ref=f3e159]:
+          - heading "Full Stack Web" [level=4] [ref=f3e160]
+          - paragraph [ref=f3e161]: React, Node, Scale
+        - generic [ref=f3e170]:
+          - heading "UX Strategy" [level=4] [ref=f3e171]
+          - paragraph [ref=f3e172]: Interface, Figma
+        - generic [ref=f3e179]:
+          - heading "Data Design" [level=4] [ref=f3e180]
+          - paragraph [ref=f3e181]: SQL, NoSQL Hub
+        - generic [ref=f3e186]:
+          - heading "App Precision" [level=4] [ref=f3e187]
+          - paragraph [ref=f3e188]: Mobile-Optimized
+    - generic [ref=f3e189]:
+      - generic [ref=f3e190]: MASTERY LEVELS
+      - generic [ref=f3e195]:
+        - generic [ref=f3e197]:
+          - generic [ref=f3e198]: Frontend Architecture
+          - generic [ref=f3e199]: 95%
+        - generic [ref=f3e203]:
+          - generic [ref=f3e204]: Backend Systems
+          - generic [ref=f3e205]: 85%
+        - generic [ref=f3e209]:
+          - generic [ref=f3e210]: Database & Cloud
+          - generic [ref=f3e211]: 80%
+        - generic [ref=f3e215]:
+          - generic [ref=f3e216]: UI/UX Design Strategy
+          - generic [ref=f3e217]: 90%
+    - link [ref=f3e221] [cursor=pointer]:
+      - /url: /contact
+      - generic [ref=f3e225]:
+        - heading "Partnering for the Extraordinary." [level=2] [ref=f3e226]
+        - paragraph [ref=f3e227]: I'm currently accepting select freelance partnerships and collaborative ventures. Let's build something that matters.
+  - contentinfo [ref=f3e232]:
+    - link "Jonathan." [ref=f3e233] [cursor=pointer]:
+      - /url: /
+    - list [ref=f3e234]:
+      - listitem [ref=f3e235]:
+        - link "Home" [ref=f3e236] [cursor=pointer]:
+          - /url: /
+      - listitem [ref=f3e237]:
+        - link "About" [ref=f3e238] [cursor=pointer]:
+          - /url: /about
+      - listitem [ref=f3e239]:
+        - link "Works" [ref=f3e240] [cursor=pointer]:
+          - /url: /works
+      - listitem [ref=f3e241]:
+        - link "Contact" [ref=f3e242] [cursor=pointer]:
+          - /url: /contact
+    - paragraph [ref=f3e243]: © 2026 Jonathan Ogunmuyiwa. All rights reserved.

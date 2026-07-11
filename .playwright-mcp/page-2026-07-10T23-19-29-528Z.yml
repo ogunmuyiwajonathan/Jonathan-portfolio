@@ -1,0 +1,140 @@
+- generic [ref=e10]:
+  - generic:
+    - generic:
+      - img "Earth"
+    - generic:
+      - generic:
+        - img "Moon"
+  - navigation [ref=e11]:
+    - link "Jonathan." [ref=e12] [cursor=pointer]:
+      - /url: /
+    - list [ref=e13]:
+      - listitem [ref=e14]:
+        - link "Home" [ref=e15] [cursor=pointer]:
+          - /url: /
+      - listitem [ref=e16]:
+        - link "About" [ref=e17] [cursor=pointer]:
+          - /url: /about
+      - listitem [ref=e18]:
+        - link "Works" [ref=e19] [cursor=pointer]:
+          - /url: /works
+      - listitem [ref=e20]:
+        - link "Contact" [ref=e21] [cursor=pointer]:
+          - /url: /contact
+    - link "Let's talk" [ref=e23] [cursor=pointer]:
+      - /url: /contact
+  - generic [ref=e24]:
+    - link "GitHub" [ref=e25] [cursor=pointer]:
+      - /url: https://github.com/ogunmuyiwajonathan
+    - link "LinkedIn" [ref=e29] [cursor=pointer]:
+      - /url: https://www.linkedin.com/in/jonathan-ogunmuyiwa
+    - link "WhatsApp" [ref=e34] [cursor=pointer]:
+      - /url: https://wa.me/2349157384644
+    - link "Email" [ref=e37] [cursor=pointer]:
+      - /url: mailto:ogunmuyiwajonathan@gmail.com
+  - generic [ref=e42]:
+    - banner [ref=e43]:
+      - generic [ref=e44]:
+        - generic [ref=e45]: C
+        - generic [ref=e46]: h
+        - generic [ref=e47]: e
+        - generic [ref=e48]: c
+        - generic [ref=e49]: k
+        - generic [ref=e51]: o
+        - generic [ref=e52]: u
+        - generic [ref=e53]: t
+        - generic [ref=e55]: m
+        - generic [ref=e56]: "y"
+        - generic [ref=e58]: f
+        - generic [ref=e59]: e
+        - generic [ref=e60]: a
+        - generic [ref=e61]: t
+        - generic [ref=e62]: u
+        - generic [ref=e63]: r
+        - generic [ref=e64]: e
+        - generic [ref=e65]: d
+        - generic [ref=e67]: p
+        - generic [ref=e68]: r
+        - generic [ref=e69]: o
+        - generic [ref=e70]: j
+        - generic [ref=e71]: e
+        - generic [ref=e72]: c
+        - generic [ref=e73]: t
+        - generic [ref=e74]: s
+        - generic [ref=e75]: .
+    - generic [ref=e76]:
+      - generic [ref=e122]:
+        - img "Solibu Stories" [ref=e124]
+        - generic [ref=e125]: React / Three.js / Convex
+        - heading "Solibu Stories" [level=3] [ref=e126]
+        - paragraph [ref=e127]: A digital story-reading platform for discovering, browsing, and reading books.
+        - generic [ref=e128]:
+          - link "View Website" [ref=e129] [cursor=pointer]:
+            - /url: https://solibu-stories.vercel.app/
+          - button "Read More" [ref=e134] [cursor=pointer]
+      - generic [ref=e138]:
+        - img "LifeOS" [ref=e140]
+        - generic [ref=e141]: React / Productivity App
+        - heading "LifeOS" [level=3] [ref=e142]
+        - paragraph [ref=e143]: A comprehensive AI-powered life operating system and productivity dashboard.
+        - generic [ref=e144]:
+          - link "View Website" [ref=e145] [cursor=pointer]:
+            - /url: https://life-o-system.vercel.app/
+          - button "Read More" [ref=e150] [cursor=pointer]
+      - generic [ref=e154]:
+        - img "Belleville Dental Care" [ref=e156]
+        - generic [ref=e157]: React / TypeScript
+        - heading "Belleville Dental Care" [level=3] [ref=e158]
+        - paragraph [ref=e159]: A modern platform for a dental clinic featuring appointment scheduling and patient resources.
+        - generic [ref=e160]:
+          - link "View Website" [ref=e161] [cursor=pointer]:
+            - /url: https://project-belleville-dental.vercel.app/
+          - button "Read More" [ref=e166] [cursor=pointer]
+      - generic [ref=e170]:
+        - img "Tasty Crust" [ref=e172]
+        - generic [ref=e173]: Tailwind CSS / UI / UX
+        - heading "Tasty Crust" [level=3] [ref=e174]
+        - paragraph [ref=e175]: An appetizing and responsive restaurant web application with fluid visual styling.
+        - generic [ref=e176]:
+          - link "View Website" [ref=e177] [cursor=pointer]:
+            - /url: https://tasty-crust.vercel.app/
+          - button "Read More" [ref=e182] [cursor=pointer]
+      - generic [ref=e186]:
+        - img "Stalworld Tech" [ref=e188]
+        - generic [ref=e189]: React.js / Web Design
+        - heading "Stalworld Tech" [level=3] [ref=e190]
+        - paragraph [ref=e191]: A professional landing page and marketing site designed for Stalworld Tech.
+        - generic [ref=e192]:
+          - link "View Website" [ref=e193] [cursor=pointer]:
+            - /url: https://stalworldtech.vercel.app/
+          - button "Read More" [ref=e198] [cursor=pointer]
+      - generic [ref=e202]:
+        - img "Portfolio Website" [ref=e204]
+        - generic [ref=e205]: HTML / CSS / JS
+        - heading "Portfolio Website" [level=3] [ref=e206]
+        - paragraph [ref=e207]: "My very first website Ã¢â‚¬â€\x9d a personal portfolio built to kickstart my journey as a developer."
+        - generic [ref=e208]:
+          - link "View Website" [ref=e209] [cursor=pointer]:
+            - /url: https://port-murex-tau.vercel.app/
+          - button "Read More" [ref=e214] [cursor=pointer]
+      - generic [ref=e219]:
+        - generic [ref=e220]: Ã°Å¸Å¡â‚¬
+        - heading "More Projects Coming Soon" [level=3] [ref=e221]
+        - paragraph [ref=e222]: I'm constantly working on new ideas and experiments. Check back later!
+  - contentinfo [ref=e109]:
+    - link "Jonathan." [ref=e110] [cursor=pointer]:
+      - /url: /
+    - list [ref=e111]:
+      - listitem [ref=e112]:
+        - link "Home" [ref=e113] [cursor=pointer]:
+          - /url: /
+      - listitem [ref=e114]:
+        - link "About" [ref=e115] [cursor=pointer]:
+          - /url: /about
+      - listitem [ref=e116]:
+        - link "Works" [ref=e117] [cursor=pointer]:
+          - /url: /works
+      - listitem [ref=e118]:
+        - link "Contact" [ref=e119] [cursor=pointer]:
+          - /url: /contact
+    - paragraph [ref=e120]: Â© 2026 Jonathan Ogunmuyiwa. All rights reserved.

@@ -1,0 +1,82 @@
+- generic [ref=e2]:
+  - heading "Jonathan." [level=1] [ref=e5]
+  - generic [ref=e10]:
+    - generic:
+      - generic:
+        - img "Earth"
+      - generic:
+        - generic:
+          - img "Moon"
+    - navigation [ref=e11]:
+      - link "Jonathan." [ref=e12] [cursor=pointer]:
+        - /url: /
+      - list [ref=e13]:
+        - listitem [ref=e14]:
+          - link "Home" [ref=e15] [cursor=pointer]:
+            - /url: /
+        - listitem [ref=e16]:
+          - link "About" [ref=e17] [cursor=pointer]:
+            - /url: /about
+        - listitem [ref=e18]:
+          - link "Works" [ref=e19] [cursor=pointer]:
+            - /url: /works
+        - listitem [ref=e20]:
+          - link "Contact" [ref=e21] [cursor=pointer]:
+            - /url: /contact
+      - link "Let's talk" [ref=e23] [cursor=pointer]:
+        - /url: /contact
+    - generic [ref=e24]:
+      - link "GitHub" [ref=e25] [cursor=pointer]:
+        - /url: https://github.com/ogunmuyiwajonathan
+      - link "LinkedIn" [ref=e29] [cursor=pointer]:
+        - /url: https://www.linkedin.com/in/jonathan-ogunmuyiwa
+      - link "WhatsApp" [ref=e34] [cursor=pointer]:
+        - /url: https://wa.me/2349157384644
+      - link "Email" [ref=e37] [cursor=pointer]:
+        - /url: mailto:ogunmuyiwajonathan@gmail.com
+    - banner [ref=e43]:
+      - generic [ref=e44]:
+        - generic [ref=e45]: C
+        - generic [ref=e46]: h
+        - generic [ref=e47]: e
+        - generic [ref=e48]: c
+        - generic [ref=e49]: k
+        - generic [ref=e51]: o
+        - generic [ref=e52]: u
+        - generic [ref=e53]: t
+        - generic [ref=e55]: m
+        - generic [ref=e56]: "y"
+        - generic [ref=e58]: f
+        - generic [ref=e59]: e
+        - generic [ref=e60]: a
+        - generic [ref=e61]: t
+        - generic [ref=e62]: u
+        - generic [ref=e63]: r
+        - generic [ref=e64]: e
+        - generic [ref=e65]: d
+        - generic [ref=e67]: p
+        - generic [ref=e68]: r
+        - generic [ref=e69]: o
+        - generic [ref=e70]: j
+        - generic [ref=e71]: e
+        - generic [ref=e72]: c
+        - generic [ref=e73]: t
+        - generic [ref=e74]: s
+        - generic [ref=e75]: .
+    - contentinfo [ref=e109]:
+      - link "Jonathan." [ref=e110] [cursor=pointer]:
+        - /url: /
+      - list [ref=e111]:
+        - listitem [ref=e112]:
+          - link "Home" [ref=e113] [cursor=pointer]:
+            - /url: /
+        - listitem [ref=e114]:
+          - link "About" [ref=e115] [cursor=pointer]:
+            - /url: /about
+        - listitem [ref=e116]:
+          - link "Works" [ref=e117] [cursor=pointer]:
+            - /url: /works
+        - listitem [ref=e118]:
+          - link "Contact" [ref=e119] [cursor=pointer]:
+            - /url: /contact
+      - paragraph [ref=e120]: Â© 2026 Jonathan Ogunmuyiwa. All rights reserved.
