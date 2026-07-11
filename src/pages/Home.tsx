@@ -152,7 +152,7 @@ export default function Home() {
                                     </span>
                                     <span className="px-4 py-1.5 bg-secondary text-muted-foreground
                     border border-border rounded-full text-[0.7rem] font-bold whitespace-nowrap">
-                                        ðŸŒ Remote Worldwide
+                                        🌍 Remote Worldwide
                                     </span>
                                 </div>
                             </div>
