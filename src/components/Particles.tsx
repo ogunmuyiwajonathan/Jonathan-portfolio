@@ -129,30 +129,30 @@ const Particles: React.FC<ParticlesProps> = ({
       alpha: true
     });
     const gl = renderer.gl;
-    (container as any).appendChild(gl.canvas);
+    (container as HTMLElement).appendChild(gl.canvas);
     gl.clearColor(0, 0, 0, 0);
 
     const camera = new Camera(gl, { fov: 15 });
     camera.position.set(0, 0, cameraDistance);
 
     const resize = () => {
-      const width = (container as any).clientWidth;
-      const height = (container as any).clientHeight;
+      const width = (container as HTMLElement).clientWidth;
+      const height = (container as HTMLElement).clientHeight;
       renderer.setSize(width, height);
       camera.perspective({ aspect: gl.canvas.width / gl.canvas.height });
     };
     window.addEventListener('resize', resize, false);
     resize();
 
-    const handleMouseMove = (e: any) => {
-      const rect = (container as any).getBoundingClientRect();
+    const handleMouseMove = (e: MouseEvent) => {
+      const rect = (container as HTMLElement).getBoundingClientRect();
       const x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
       const y = -(((e.clientY - rect.top) / rect.height) * 2 - 1);
       mouseRef.current = { x, y };
     };
 
     if (moveParticlesOnHover) {
-      (container as any).addEventListener('mousemove', handleMouseMove);
+      (container as HTMLElement).addEventListener('mousemove', handleMouseMove);
     }
 
     const count = particleCount;
@@ -232,11 +232,11 @@ const Particles: React.FC<ParticlesProps> = ({
     return () => {
       window.removeEventListener('resize', resize);
       if (moveParticlesOnHover) {
-        (container as any).removeEventListener('mousemove', handleMouseMove);
+        (container as HTMLElement).removeEventListener('mousemove', handleMouseMove);
       }
       cancelAnimationFrame(animationFrameId);
-      if ((container as any).contains(gl.canvas)) {
-        (container as any).removeChild(gl.canvas);
+      if ((container as HTMLElement).contains(gl.canvas)) {
+        (container as HTMLElement).removeChild(gl.canvas);
       }
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps

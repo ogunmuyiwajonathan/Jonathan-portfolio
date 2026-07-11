@@ -24,7 +24,7 @@ const techStack = [
 ];
 
 const services = [
-    { icon: <Globe size={24} />, title: 'Full Stack Web', desc: 'React, Node, Scale' },
+    { icon: <Globe size={24} />, title: 'Full Stack Web', desc: 'React, Node, Python' },
     { icon: <Palette size={24} />, title: 'UX Strategy', desc: 'Interface, Figma' },
     { icon: <Database size={24} />, title: 'Data Design', desc: 'SQL, NoSQL Hub' },
     { icon: <Smartphone size={24} />, title: 'App Precision', desc: 'Mobile-Optimized' },
@@ -317,7 +317,7 @@ export default function Home() {
           â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
 
                     {/* Services */}
-                    <SpotlightCard className="card p-8">
+                    <SpotlightCard className="card lg:col-span-2 p-8">
                         <div className="text-[0.7rem] font-bold text-muted-foreground tracking-[2px] mb-8 flex items-center gap-2">
                             <Zap size={14} className="text-accent-blue" /> SYSTEM ARCHITECTURE
                         </div>
@@ -361,6 +361,7 @@ export default function Home() {
                     </ScrollReveal>
 
                     {/* --- ROW: Testimonials --- */}
+                    {/*
                     <ScrollReveal direction="up" delay={0} className="lg:col-span-4">
                         <SpotlightCard className="p-8 md:p-12">
                             <div className="text-[0.7rem] font-bold text-muted-foreground tracking-[2px] mb-8 flex items-center gap-2">
@@ -381,6 +382,7 @@ export default function Home() {
                             </div>
                         </SpotlightCard>
                     </ScrollReveal>
+                    */}
 
                     {/* CTA */}
                     <ScrollReveal direction="up" delay={0.1} className="lg:col-span-4">

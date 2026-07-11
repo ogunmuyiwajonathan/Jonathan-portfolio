@@ -107,7 +107,7 @@ export default function Layout() {
                     moveParticlesOnHover={false}
                     particleHoverFactor={1}
                     alphaParticles={false}
-                    particleBaseSize={150}
+                    particleBaseSize={75}
                     sizeRandomness={1}
                     cameraDistance={20}
                     disableRotation={false}
