@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { NavLink, Outlet, useLocation } from 'react-router-dom';
-import { Menu, X, Github, Linkedin, Mail } from 'lucide-react';
+import { Menu, X, Github, Linkedin, Mail, ChevronUp } from 'lucide-react';
 import { AnimatePresence, motion } from 'framer-motion';
 import CursorSpotlight from './CursorSpotlight';
 import PageProgress from './PageProgress';
@@ -14,6 +14,7 @@ const WhatsAppIcon = ({ size = 22, className = "" }: { size?: number, className?
 
 export default function Layout() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [showTop, setShowTop] = useState(false);
     const location = useLocation();
 
     useEffect(() => {
@@ -21,6 +22,12 @@ export default function Layout() {
         document.body.style.overflow = 'auto';
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }, [location]);
+
+    useEffect(() => {
+        const handleScroll = () => setShowTop(window.scrollY > 400);
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
 
     return (
         <div className="container relative min-h-screen">
@@ -277,6 +284,27 @@ export default function Layout() {
                     Â© {new Date().getFullYear()} Jonathan Ogunmuyiwa. All rights reserved.
                 </p>
             </footer>
+
+            {/* Back to Top */}
+            <AnimatePresence>
+                {showTop && (
+                    <motion.button
+                        initial={{ opacity: 0, y: 20, scale: 0.8 }}
+                        animate={{ opacity: 1, y: 0, scale: 1 }}
+                        exit={{ opacity: 0, y: 20, scale: 0.8 }}
+                        transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+                        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                        className="fixed bottom-8 right-8 z-[999] w-12 h-12 rounded-full
+                                   bg-white/10 border border-white/10 backdrop-blur-xl
+                                   text-white flex items-center justify-center
+                                   hover:bg-white/20 hover:scale-110 transition-all duration-300
+                                   shadow-[0_4px_20px_rgba(0,0,0,0.3)]"
+                        aria-label="Back to top"
+                    >
+                        <ChevronUp size={20} />
+                    </motion.button>
+                )}
+            </AnimatePresence>
         </div>
     );
 }

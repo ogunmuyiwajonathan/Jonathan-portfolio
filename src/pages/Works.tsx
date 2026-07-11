@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+﻿import { useEffect, useState } from 'react';
 import { ArrowRight, ExternalLink, X, Calendar, Tag } from 'lucide-react';
 import SpotlightCard from '../components/react-bits/SpotlightCard';
 import SplitText from '../components/react-bits/SplitText';
@@ -13,6 +13,7 @@ interface Project {
     image: string;
     link: string;
     gradient: string;
+    accentColor: string;
     year: string;
 }
 
@@ -28,9 +29,10 @@ const projects: Project[] = [
             "Dark and sepia reading themes for comfortable browsing",
             "Admin panel, favorites, and reviews system"
         ],
-        image: "/solibu.webp",
+        image: "/images/solibu-full.webp",
         link: "https://solibu-stories.vercel.app/",
         gradient: "from-[#0d0d10] to-[#b1862f]",
+        accentColor: "#b1862f",
         year: "2026"
     },
     {
@@ -39,9 +41,10 @@ const projects: Project[] = [
         description: "A comprehensive AI-powered life operating system and productivity dashboard.",
         fullDescription: "LifeOS is an advanced productivity platform and dashboard. It includes various features like a Decision Engine powered by AI, comprehensive habit tracking, task management, journaling, and customizable widgets. Built with modern web technologies, it offers a beautifully designed, responsive, and intuitive interface to help users optimize their daily routines.",
         highlights: ["AI-powered Decision Engine integration", "Advanced habit and task tracking system", "Beautifully designed responsive dashboard", "Supabase authentication and data syncing"],
-        image: "/lifeos.webp",
+        image: "/images/lifeos-full.webp",
         link: "https://life-o-system.vercel.app/",
         gradient: "from-[#081a14] to-[#081a14]",
+        accentColor: "#10b981",
         year: "2026"
     },
     {
@@ -50,9 +53,10 @@ const projects: Project[] = [
         description: "A modern platform for a dental clinic featuring appointment scheduling and patient resources.",
         fullDescription: "Belleville Dental Care is a modern, highly-performant healthcare web application built with React and TypeScript. It features a complete appointment scheduling system, detailed service descriptions, a patient resources section, and a clean professional look that instills confidence in patients. TypeScript was used throughout for type safety and scalability.",
         highlights: ["Built with React and TypeScript for type-safe development", "Appointment scheduling and service description pages", "Patient resources and information hub", "Clean healthcare-grade UI design"],
-        image: "/belleville.webp",
+        image: "/images/belleville-full.webp",
         link: "https://project-belleville-dental.vercel.app/",
         gradient: "from-[#2b5876] to-[#4e4376]",
+        accentColor: "#4e4376",
         year: "2026"
     },
     {
@@ -61,9 +65,10 @@ const projects: Project[] = [
         description: "An appetizing and responsive restaurant web application with fluid visual styling.",
         fullDescription: "Tasty Crust is a fully responsive web application for a bakery and restaurant, designed with a strong focus on UI/UX quality. I used Tailwind CSS to build a pixel-perfect, appetizing interface that draws the user in. The project included menus, booking sections, and a cart experience — all styled for maximum visual appeal and ease of use.",
         highlights: ["Styled with Tailwind CSS for rapid, clean design", "Dedicated menu, booking & cart sections", "Strong UX focus with accessible color contrast", "Mobile-first, fully responsive layout"],
-        image: "/crust.webp",
+        image: "/images/crust-full.webp",
         link: "https://tasty-crust.vercel.app/",
         gradient: "from-[#f12711] to-[#f5af19]",
+        accentColor: "#f12711",
         year: "2025"
     },
     {
@@ -72,9 +77,10 @@ const projects: Project[] = [
         description: "A professional landing page and marketing site designed for Stalworld Tech.",
         fullDescription: "Stalworld Tech is a professional landing page and marketing site I designed and built from the ground up. The goal was to create a clean, modern experience that communicates the company's brand credibility and highlights their services. I focused on optimized conversion flows, responsive design, and smooth visual transitions using React.js.",
         highlights: ["Built with React.js for a dynamic experience", "Custom responsive UI with smooth transitions", "Optimized for conversions and visual branding", "Deployed live on Vercel"],
-        image: "/graphic.webp",
+        image: "/images/graphic-full.webp",
         link: "https://stalworldtech.vercel.app/",
         gradient: "from-[#07424e] to-[#05706d]",
+        accentColor: "#05706d",
         year: "2025"
     },
     {
@@ -83,9 +89,10 @@ const projects: Project[] = [
         description: "My very first website — a personal portfolio built to kickstart my journey as a developer.",
         fullDescription: "This was my very first website, marking the beginning of my journey as a developer. I built it from scratch using pure HTML, CSS, and JavaScript — no frameworks, no shortcuts. It taught me the fundamentals of web structure, responsive design, and user experience. This project holds a special place as the foundation of everything I've built since.",
         highlights: ["First-ever website built from scratch", "Pure HTML, CSS & JavaScript — no frameworks", "Responsive layout for all screen sizes", "Deployed and live on Vercel"],
-        image: "/port.webp",
+        image: "/images/port-full.webp",
         link: "https://port-murex-tau.vercel.app/",
         gradient: "from-[#1e1e1e] to-[#333333]",
+        accentColor: "#6b7280",
         year: "2025"
     },
 ];
@@ -171,6 +178,8 @@ export default function Works() {
                                 <div className={`w-full h-[220px] sm:h-[260px] rounded-[20px] overflow-hidden mb-6 flex items-center justify-center bg-gradient-to-tr ${project.gradient}`}>
                                     <img
                                         src={project.image}
+                                        srcSet={`${project.image.replace('-full.', '-300w.')} 300w, ${project.image.replace('-full.', '-600w.')} 600w, ${project.image} 1024w`}
+                                        sizes="(max-width: 768px) calc(100vw - 48px), calc((1140px - 48px) / 2)"
                                         alt={project.title}
                                         width={400}
                                         height={260}
@@ -199,17 +208,33 @@ export default function Works() {
                                         href={project.link}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="flex items-center gap-2 px-5 py-2.5 bg-accent-blue text-white rounded-full text-[0.8rem] font-bold transition-all duration-300 hover:bg-accent-blue/80 hover:scale-105"
+                                        className="relative flex items-center gap-2 px-5 py-2.5 text-white rounded-full text-[0.8rem] font-bold transition-all duration-300 hover:scale-105 overflow-hidden group/btn shadow-lg shadow-black/20 hover:shadow-xl hover:shadow-black/30" style={{ backgroundColor: project.accentColor }}
                                     >
-                                        <ExternalLink size={14} />
-                                        View Website
+                                        <span className="relative z-10 flex items-center gap-2 transition-transform duration-300 group-hover/btn:translate-x-1">
+                                            <ExternalLink size={14} className="transition-transform duration-300 group-hover/btn:rotate-[-12deg] group-hover/btn:scale-110" />
+                                            View Website
+                                        </span>
+                                        <span
+                                            className="absolute inset-0 -translate-x-full group-hover/btn:translate-x-full transition-transform duration-700 ease-in-out pointer-events-none"
+                                            style={{
+                                                background: "linear-gradient(105deg, transparent 30%, rgba(255,255,255,0.25) 50%, transparent 70%)"
+                                            }}
+                                        />
                                     </a>
                                     <button
                                         onClick={() => setSelectedProject(project)}
-                                        className="flex items-center gap-2 px-5 py-2.5 border border-white/10 text-text-dim rounded-full text-[0.8rem] font-bold transition-all duration-300 hover:border-white/30 hover:text-foreground hover:scale-105 cursor-pointer"
+                                        className="relative flex items-center gap-2 px-5 py-2.5 border border-white/10 text-text-dim rounded-full text-[0.8rem] font-bold transition-all duration-300 hover:border-white/30 hover:text-foreground hover:scale-105 cursor-pointer overflow-hidden group/btn"
                                     >
-                                        Read More
-                                        <ArrowRight size={14} />
+                                        <span className="relative z-10 flex items-center gap-2 transition-transform duration-300 group-hover/btn:translate-x-1">
+                                            Read More
+                                            <ArrowRight size={14} className="transition-transform duration-300 group-hover/btn:translate-x-1" />
+                                        </span>
+                                        <span
+                                            className="absolute inset-0 -translate-x-full group-hover/btn:translate-x-full transition-transform duration-700 ease-in-out pointer-events-none"
+                                            style={{
+                                                background: "linear-gradient(105deg, transparent 30%, rgba(255,255,255,0.15) 50%, transparent 70%)"
+                                            }}
+                                        />
                                     </button>
                                 </div>
                             </SpotlightCard>
@@ -302,10 +327,18 @@ export default function Works() {
                                 href={selectedProject.link}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex items-center justify-center gap-2 w-full py-3 bg-accent-blue text-white rounded-full font-bold text-[0.9rem] transition-all hover:bg-accent-blue/80 hover:scale-[1.02]"
+                                className="relative flex items-center justify-center gap-2 w-full py-3 text-white rounded-full font-bold text-[0.9rem] transition-all hover:scale-[1.02] overflow-hidden group/btn shadow-lg shadow-black/20 hover:shadow-xl hover:shadow-black/30" style={{ backgroundColor: selectedProject.accentColor }}
                             >
-                                <ExternalLink size={16} />
-                                Visit {selectedProject.title}
+                                <span className="relative z-10 flex items-center gap-2 transition-transform duration-300 group-hover/btn:translate-x-1">
+                                    <ExternalLink size={16} className="transition-transform duration-300 group-hover/btn:rotate-[-12deg] group-hover/btn:scale-110" />
+                                    Visit {selectedProject.title}
+                                </span>
+                                <span
+                                    className="absolute inset-0 -translate-x-full group-hover/btn:translate-x-full transition-transform duration-700 ease-in-out pointer-events-none"
+                                    style={{
+                                        background: "linear-gradient(105deg, transparent 30%, rgba(255,255,255,0.3) 50%, transparent 70%)"
+                                    }}
+                                />
                             </a>
                         </div>
                     </div>

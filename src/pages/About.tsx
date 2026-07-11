@@ -1,6 +1,7 @@
-import { Link } from 'react-router-dom';
+﻿import { Link } from 'react-router-dom';
 import {
     Sparkles,
+    Bot,
     Briefcase,
     GraduationCap,
     Linkedin,
@@ -30,6 +31,8 @@ import { useState, useEffect } from 'react';
 export default function About() {
     const [isLoading, setIsLoading] = useState(true);
     const [educationExpanded, setEducationExpanded] = useState(false);
+    const [showAllSkills, setShowAllSkills] = useState(false);
+    const [expandedServices, setExpandedServices] = useState<Record<string, boolean>>({});
 
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -57,6 +60,30 @@ export default function About() {
             document.body.style.overflow = '';
         };
     }, [educationExpanded]);
+
+    const SKILLS_LIMIT = 15;
+
+    const techSkills = [
+        { icon: <FaHtml5 size={26} className="text-[#e34f26]" />, label: "HTML/CSS", title: "HTML5 & CSS3" },
+        { icon: <SiTailwindcss size={26} className="text-[#38bdf8]" />, label: "Tailwind", title: "Tailwind CSS" },
+        { icon: <SiJavascript size={28} className="text-[#f7df1e]" />, label: "JavaScript", title: "JavaScript ES6+" },
+        { icon: <SiTypescript size={28} className="text-[#3178c6]" />, label: "TypeScript", title: "TypeScript" },
+        { icon: <FaReact size={26} className="text-[#61dafb]" />, label: "React", title: "React.js" },
+        { icon: <SiNextdotjs size={26} className="text-white" />, label: "Next.js", title: "Next.js" },
+        { icon: <FaNodeJs size={26} className="text-[#339933]" />, label: "Node.js", title: "Node.js" },
+        { icon: <FaJava size={26} className="text-[#f89820]" />, label: "Java", title: "Java" },
+        { icon: <SiMysql size={26} className="text-[#00758f]" />, label: "MySQL", title: "MySQL" },
+        { icon: <SiMongodb size={26} className="text-[#00ed64]" />, label: "MongoDB", title: "MongoDB" },
+        { icon: <FaFigma size={26} className="text-[#f24e1e]" />, label: "Figma", title: "Figma" },
+        { icon: <FaGitAlt size={26} className="text-[#f05032]" />, label: "Git", title: "Git" },
+        { icon: <SiPython size={26} className="text-[#f05032]" />, label: "Python", title: "Python" },
+    ];
+
+    const hiddenSkillsCount = techSkills.length - SKILLS_LIMIT;
+
+    const toggleReadMore = (title: string) => {
+        setExpandedServices(prev => ({ ...prev, [title]: !prev[title] }));
+    };
 
     if (isLoading) {
         return (
@@ -124,7 +151,7 @@ export default function About() {
                     </SpotlightCard>
                 </div>
 
-                {/* Education Card â€” click to bring forward and scroll full content */}
+                {/* Education Card - click to bring forward and scroll full content */}
                 <div
                     className={`lg:col-span-2 ${educationExpanded ? 'min-h-[min(88vh,680px)]' : ''}`}
                 >
@@ -188,10 +215,10 @@ export default function About() {
                             }`}
                         >
                             <div className="border-l-2 border-accent-blue pl-4">
-                                <div className="text-text-dim text-[0.85rem] mb-[4px] font-medium">2024 â€“ 2027</div>
-                                <div className="font-semibold text-[1.1rem] text-white">ADSE â€” Advanced Software Engineering</div>
+                                <div className="text-text-dim text-[0.85rem] mb-[4px] font-medium">2024 - 2027</div>
+                                <div className="font-semibold text-[1.1rem] text-white">ADSE - Advanced Software Engineering</div>
                                 <div className="text-text-dim text-[0.9rem] mt-[2px] leading-relaxed">
-                                    Currently pursuing a Diploma in Software Development &amp; Artificial Intelligence at Aptech Computer Education.
+                                    Currently pursuing a Diploma in Software Development and Artificial Intelligence at Aptech Computer Education.
                                 </div>
                                 <p className="text-text-dim text-[0.85rem] mt-3 leading-relaxed">
                                     Building practical skills in Web Development, Python, React, Java, TypeScript, JavaScript, Mobile Apps, Database Management, and AI Integration.
@@ -211,7 +238,7 @@ export default function About() {
                         </div>
                         {!educationExpanded && (
                             <p className="text-[0.7rem] text-accent-blue/90 mt-4 text-center font-medium tracking-wide shrink-0">
-                                Click to expand Â· scroll for full details
+                                Click to expand · scroll for full details
                             </p>
                         )}
                     </SpotlightCard>
@@ -219,68 +246,34 @@ export default function About() {
                 </div>
 
                 {/* Skills Card */}
-                <SpotlightCard className="card lg:col-span-2">
+                <SpotlightCard className="card lg:col-span-2 flex flex-col h-full">
                     <div className="text-[0.75rem] font-semibold text-text-dim tracking-[1.5px] mb-[25px] flex items-center gap-[8px]">
                         <Code2 size={14} /> TECHNICAL EXPERTISE
                     </div>
                     <div className="grid grid-cols-3 gap-4">
-                        <div className="flex flex-col items-center gap-[6px] p-3 rounded-xl bg-white/5 hover:bg-white/10 transition-all duration-300" title="HTML5 & CSS3">
-                            <FaHtml5 size={26} className="text-[#e34f26]" />
-                            <span className="text-[0.6rem] text-text-dim uppercase tracking-[1px]">HTML/CSS</span>
-                        </div>
-                        <div className="flex flex-col items-center gap-[6px] p-3 rounded-xl bg-white/5 hover:bg-white/10 transition-all duration-300" title="Tailwind CSS">
-                            <SiTailwindcss size={26} className="text-[#38bdf8]" />
-                            <span className="text-[0.6rem] text-text-dim uppercase tracking-[1px]">Tailwind</span>
-                        </div>
-                        <div className="flex flex-col items-center gap-[6px] p-3 rounded-xl bg-white/5 hover:bg-white/10 transition-all duration-300" title="JavaScript ES6+">
-                            <SiJavascript size={28} className="text-[#f7df1e]" />
-                            <span className="text-[0.6rem] text-text-dim uppercase tracking-[1px]">JavaScript</span>
-                        </div>
-                        <div className="flex flex-col items-center gap-[6px] p-3 rounded-xl bg-white/5 hover:bg-white/10 transition-all duration-300" title="TypeScript">
-                            <SiTypescript size={28} className="text-[#3178c6]" />
-                            <span className="text-[0.6rem] text-text-dim uppercase tracking-[1px]">TypeScript</span>
-                        </div>
-                        <div className="flex flex-col items-center gap-[6px] p-3 rounded-xl bg-white/5 hover:bg-white/10 transition-all duration-300" title="React.js">
-                            <FaReact size={26} className="text-[#61dafb]" />
-                            <span className="text-[0.6rem] text-text-dim uppercase tracking-[1px]">React</span>
-                        </div>
-                        <div className="flex flex-col items-center gap-[6px] p-3 rounded-xl bg-white/5 hover:bg-white/10 transition-all duration-300" title="Next.js">
-                            <SiNextdotjs size={26} className="text-white" />
-                            <span className="text-[0.6rem] text-text-dim uppercase tracking-[1px]">Next.js</span>
-                        </div>
-                        <div className="flex flex-col items-center gap-[6px] p-3 rounded-xl bg-white/5 hover:bg-white/10 transition-all duration-300" title="Node.js">
-                            <FaNodeJs size={26} className="text-[#339933]" />
-                            <span className="text-[0.6rem] text-text-dim uppercase tracking-[1px]">Node.js</span>
-                        </div>
-                        <div className="flex flex-col items-center gap-[6px] p-3 rounded-xl bg-white/5 hover:bg-white/10 transition-all duration-300" title="Java">
-                            <FaJava size={26} className="text-[#f89820]" />
-                            <span className="text-[0.6rem] text-text-dim uppercase tracking-[1px]">Java</span>
-                        </div>
-                        <div className="flex flex-col items-center gap-[6px] p-3 rounded-xl bg-white/5 hover:bg-white/10 transition-all duration-300" title="MySQL">
-                            <SiMysql size={26} className="text-[#00758f]" />
-                            <span className="text-[0.6rem] text-text-dim uppercase tracking-[1px]">MySQL</span>
-                        </div>
-                        <div className="flex flex-col items-center gap-[6px] p-3 rounded-xl bg-white/5 hover:bg-white/10 transition-all duration-300" title="MongoDB">
-                            <SiMongodb size={26} className="text-[#00ed64]" />
-                            <span className="text-[0.6rem] text-text-dim uppercase tracking-[1px]">MongoDB</span>
-                        </div>
-                        <div className="flex flex-col items-center gap-[6px] p-3 rounded-xl bg-white/5 hover:bg-white/10 transition-all duration-300" title="Figma">
-                            <FaFigma size={26} className="text-[#f24e1e]" />
-                            <span className="text-[0.6rem] text-text-dim uppercase tracking-[1px]">Figma</span>
-                        </div>
-                        <div className="flex flex-col items-center gap-[6px] p-3 rounded-xl bg-white/5 hover:bg-white/10 transition-all duration-300" title="Git">
-                            <FaGitAlt size={26} className="text-[#f05032]" />
-                            <span className="text-[0.6rem] text-text-dim uppercase tracking-[1px]">Git</span>
-                        </div>
-                        <div className="flex flex-col items-center gap-[6px] p-3 rounded-xl bg-white/5 hover:bg-white/10 transition-all duration-300" title="Git">
-                            <SiPython size={26} className="text-[#f05032]" />
-                            <span className="text-[0.6rem] text-text-dim uppercase tracking-[1px]">Python</span>
-                        </div>
+                        {techSkills.map((skill, i) => (
+                            <div
+                                key={i}
+                                className={`flex flex-col items-center gap-[6px] p-3 rounded-xl bg-white/5 hover:bg-white/10 transition-all duration-300 ${!showAllSkills && i >= SKILLS_LIMIT ? 'hidden' : ''}`}
+                                title={skill.title}
+                            >
+                                {skill.icon}
+                                <span className="text-[0.6rem] text-text-dim uppercase tracking-[1px]">{skill.label}</span>
+                            </div>
+                        ))}
                     </div>
+                    {hiddenSkillsCount > 0 && (
+                        <button
+                            onClick={() => setShowAllSkills(!showAllSkills)}
+                            className="mt-3 text-[0.75rem] text-accent-blue hover:underline transition-colors w-full text-center"
+                        >
+                            {showAllSkills ? 'Show less' : `View all (${techSkills.length})`}
+                        </button>
+                    )}
                 </SpotlightCard>
 
                 {/* Services Card */}
-                <SpotlightCard className="card lg:col-span-2">
+                <SpotlightCard className="card lg:col-span-2 flex flex-col h-full">
                     <div className="text-[0.75rem] font-semibold text-text-dim tracking-[1.5px] mb-[25px] flex items-center gap-[8px]">
                         <Palette size={14} /> SERVICES I OFFER
                     </div>
@@ -291,7 +284,10 @@ export default function About() {
                             </div>
                             <div>
                                 <h4 className="font-semibold text-[0.95rem] text-white">Full Stack Web Development</h4>
-                                <p className="text-text-dim text-[0.85rem] leading-relaxed">Building scalable, high-performance web applications from concept to deployment using modern technologies like React, Next.js, Node.js, Express, TypeScript, and SQL/NoSQL databases. I develop responsive frontends, robust backend APIs, authentication systems, database architectures, third-party integrations, cloud deployment, performance optimization, and ongoing maintenance to deliver secure, user-focused digital experiences.</p>
+                                <p className={`text-text-dim text-[0.85rem] leading-relaxed ${!expandedServices['fullstack'] ? 'line-clamp-2' : ''}`}>Building scalable, high-performance web applications from concept to deployment using modern technologies like React, Next.js, Node.js, Express, TypeScript, and SQL/NoSQL databases. I develop responsive frontends, robust backend APIs, authentication systems, database architectures, third-party integrations, cloud deployment, performance optimization, and ongoing maintenance to deliver secure, user-focused digital experiences.</p>
+                                <button onClick={() => toggleReadMore('fullstack')} className="text-accent-blue text-[0.75rem] mt-1 hover:underline transition-colors">
+                                    {expandedServices['fullstack'] ? 'Show less' : 'Read more \u2192'}
+                                </button>
                             </div>
                         </div>
                         <div className="flex items-start gap-3">
@@ -323,11 +319,14 @@ export default function About() {
                         </div>
                         <div className="flex items-start gap-3">
                             <div className="w-8 h-8 rounded-lg bg-accent-blue/20 flex items-center justify-center shrink-0">
-                                <Sparkles size={16} className="text-accent-blue" />
+                                <Bot size={16} className="text-accent-blue" />
                             </div>
                             <div>
                                 <h4 className="font-semibold text-[0.95rem] text-white">AI Agent Automation</h4>
-                                <p className="text-text-dim text-[0.85rem] leading-relaxed">Designing and deploying intelligent AI agents that automate repetitive tasks, streamline workflows, and improve business efficiency. I build custom agents capable of reasoning, using tools, integrating with APIs, managing workflows, processing documents, and connecting with platforms such as Slack, Discord, Gmail, Notion, GitHub, CRMs, and databases.</p>
+                                <p className={`text-text-dim text-[0.85rem] leading-relaxed ${!expandedServices['aiautomation'] ? 'line-clamp-2' : ''}`}>Designing and deploying intelligent AI agents that automate repetitive tasks, streamline workflows, and improve business efficiency. I build custom agents capable of reasoning, using tools, integrating with APIs, managing workflows, processing documents, and connecting with platforms such as Slack, Discord, Gmail, Notion, GitHub, CRMs, and databases.</p>
+                                <button onClick={() => toggleReadMore('aiautomation')} className="text-accent-blue text-[0.75rem] mt-1 hover:underline transition-colors">
+                                    {expandedServices['aiautomation'] ? 'Show less' : 'Read more \u2192'}
+                                </button>
                             </div>
                         </div>
                     </div>

@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import {
     ShieldCheck, FolderKanban, ArrowUpRight, Sparkle,
-    Code2, Palette, Zap, Globe, Database, Smartphone
+    Code2, Palette, Zap, Globe, Database, Smartphone, Quote
 } from 'lucide-react';
 import { FaHtml5, FaJava, FaReact } from 'react-icons/fa';
 import { SiTailwindcss, SiTypescript, SiJavascript } from 'react-icons/si';
@@ -10,6 +10,8 @@ import SpotlightCard from '@/components/react-bits/SpotlightCard';
 import SplitText from '@/components/react-bits/SplitText';
 import BlurText from '@/components/react-bits/BlurText';
 import Skeleton from '@/components/Skeleton';
+import ScrollReveal from '@/components/ScrollReveal';
+import CountUp from '@/components/CountUp';
 import { useState, useEffect } from 'react';
 
 const techStack = [
@@ -33,6 +35,24 @@ const skills = [
     { label: 'Backend Systems', level: '85%' },
     { label: 'Database & Cloud', level: '80%' },
     { label: 'UI/UX Design Strategy', level: '90%' },
+];
+
+const testimonials = [
+    {
+        quote: "Jonathan delivered a pixel-perfect site that exceeded our expectations. His attention to detail and communication throughout the project was outstanding.",
+        name: "Chidinma Okafor",
+        role: "Founder, Solibu",
+    },
+    {
+        quote: "Working with Jonathan was seamless. He understood our vision instantly and turned it into a product our users genuinely love. Highly recommended.",
+        name: "Emeka Adeyemi",
+        role: "CTO, Stalworld Tech",
+    },
+    {
+        quote: "Jonathan's ability to blend technical precision with creative design is rare. Our project was delivered on time and the results speak for themselves.",
+        name: "Fatima Bello",
+        role: "Director, Tasty Crust",
+    },
 ];
 
 const marqueeItems = [
@@ -274,28 +294,30 @@ export default function Home() {
                     </SpotlightCard>
 
                     {/* Stats */}
-                    <SpotlightCard className="lg:col-span-1 p-8 flex flex-col justify-center gap-7 h-full">
-                        {[
-                            { value: '04+', label: 'Years of Impact' },
-                            { value: '06+', label: 'Live Deployments' },
-                        ].map(({ value, label }) => (
-                            <div key={label}>
-                                <h3 className="text-4xl font-bold text-foreground leading-none tracking-tight">
-                                    {value}
-                                </h3>
-                                <span className="text-[0.65rem] text-muted-foreground uppercase tracking-[2px] font-bold block mt-1.5">
-                                    {label}
-                                </span>
-                            </div>
-                        ))}
-                    </SpotlightCard>
+                    <ScrollReveal direction="up" delay={0.1} className="lg:col-span-1">
+                        <SpotlightCard className="p-8 flex flex-col justify-center gap-7 h-full">
+                            {[
+                                { end: 4, suffix: '+', label: 'Years of Impact' },
+                                { end: 6, suffix: '+', label: 'Live Deployments' },
+                            ].map(({ end, suffix, label }) => (
+                                <div key={label}>
+                                    <h3 className="text-4xl font-bold text-foreground leading-none tracking-tight">
+                                        <CountUp end={end} suffix={suffix} duration={2} />
+                                    </h3>
+                                    <span className="text-[0.65rem] text-muted-foreground uppercase tracking-[2px] font-bold block mt-1.5">
+                                        {label}
+                                    </span>
+                                </div>
+                            ))}
+                        </SpotlightCard>
+                    </ScrollReveal>
 
                     {/* â”€â”€ ROW 4 â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
                [ Services (col-span-2) ] [ Skills (col-span-2) ]
           â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
 
                     {/* Services */}
-                    <SpotlightCard className="card lg:col-span-2 p-8">
+                    <SpotlightCard className="card p-8">
                         <div className="text-[0.7rem] font-bold text-muted-foreground tracking-[2px] mb-8 flex items-center gap-2">
                             <Zap size={14} className="text-accent-blue" /> SYSTEM ARCHITECTURE
                         </div>
@@ -313,7 +335,8 @@ export default function Home() {
                     </SpotlightCard>
 
                     {/* Skills */}
-                    <SpotlightCard className="card lg:col-span-2 p-8">
+                    <ScrollReveal direction="right" delay={0.1} className="lg:col-span-2">
+                    <SpotlightCard className="card p-8">
                         <div className="text-[0.7rem] font-bold text-muted-foreground tracking-[2px] mb-8 flex items-center gap-2">
                             <Code2 size={14} className="text-accent-blue" /> MASTERY LEVELS
                         </div>
@@ -335,14 +358,34 @@ export default function Home() {
                             ))}
                         </div>
                     </SpotlightCard>
+                    </ScrollReveal>
 
-                    {/* â”€â”€ ROW 5 â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-               [ CTA (col-span-4) ]
-          â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+                    {/* --- ROW: Testimonials --- */}
+                    <ScrollReveal direction="up" delay={0} className="lg:col-span-4">
+                        <SpotlightCard className="p-8 md:p-12">
+                            <div className="text-[0.7rem] font-bold text-muted-foreground tracking-[2px] mb-8 flex items-center gap-2">
+                                <Quote size={14} className="text-accent-blue" /> WHAT THEY SAY
+                            </div>
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                {testimonials.map((t) => (
+                                    <div key={t.name} className="flex flex-col gap-4 p-6 rounded-2xl bg-secondary/50 border border-border/50">
+                                        <p className="text-muted-foreground text-sm leading-relaxed italic">
+                                            &ldquo;{t.quote}&rdquo;
+                                        </p>
+                                        <div>
+                                            <p className="text-foreground font-bold text-sm">{t.name}</p>
+                                            <p className="text-muted-foreground text-xs">{t.role}</p>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </SpotlightCard>
+                    </ScrollReveal>
 
                     {/* CTA */}
+                    <ScrollReveal direction="up" delay={0.1} className="lg:col-span-4">
                     <SpotlightCard
-                        className="glass-card lg:col-span-4 p-10 md:p-16 group relative
+                        className="glass-card p-10 md:p-16 group relative
               overflow-hidden transition-all duration-700 hover:scale-[1.005]"
                     >
                         <Link to="/contact">
@@ -371,6 +414,8 @@ export default function Home() {
                             </div>
                         </Link>
                     </SpotlightCard>
+                    </ScrollReveal>
+
 
                 </div>
             </div>
