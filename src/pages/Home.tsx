@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import {
     ShieldCheck, FolderKanban, ArrowUpRight, Sparkle,
-    Code2, Palette, Zap, Globe, Database, Smartphone, Quote
+    Code2, Palette, Zap, Globe, Database, Smartphone
 } from 'lucide-react';
 import { FaHtml5, FaJava, FaReact } from 'react-icons/fa';
 import { SiTailwindcss, SiTypescript, SiJavascript } from 'react-icons/si';
@@ -37,23 +37,6 @@ const skills = [
     { label: 'UI/UX Design Strategy', level: '90%' },
 ];
 
-const testimonials = [
-    {
-        quote: "Jonathan delivered a pixel-perfect site that exceeded our expectations. His attention to detail and communication throughout the project was outstanding.",
-        name: "Chidinma Okafor",
-        role: "Founder, Solibu",
-    },
-    {
-        quote: "Working with Jonathan was seamless. He understood our vision instantly and turned it into a product our users genuinely love. Highly recommended.",
-        name: "Emeka Adeyemi",
-        role: "CTO, Stalworld Tech",
-    },
-    {
-        quote: "Jonathan's ability to blend technical precision with creative design is rare. Our project was delivered on time and the results speak for themselves.",
-        name: "Fatima Bello",
-        role: "Director, Tasty Crust",
-    },
-];
 
 const marqueeItems = [
     "Full Stack Development", "UI/UX Design", "React",
@@ -298,7 +281,7 @@ export default function Home() {
                         <SpotlightCard className="p-8 flex flex-col justify-center gap-7 h-full">
                             {[
                                 { end: 4, suffix: '+', label: 'Years of Impact' },
-                                { end: 6, suffix: '+', label: 'Live Deployments' },
+                                { end: 7, suffix: '+', label: 'Live Deployments' },
                             ].map(({ end, suffix, label }) => (
                                 <div key={label}>
                                     <h3 className="text-4xl font-bold text-foreground leading-none tracking-tight">
