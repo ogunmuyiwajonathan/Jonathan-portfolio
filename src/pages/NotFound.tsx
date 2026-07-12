@@ -1,8 +1,10 @@
 import { Link } from 'react-router-dom';
+import { usePageTitle } from '@/hooks/usePageTitle';
 import { ArrowLeft, Home } from 'lucide-react';
 import FuzzyText from '@/components/react-bits/FuzzyText';
 
 export default function NotFound() {
+    usePageTitle('Page Not Found');
     return (
         <div className="min-h-screen bg-background flex flex-col items-center justify-center text-center px-6 relative overflow-hidden">
 

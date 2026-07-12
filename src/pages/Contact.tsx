@@ -1,4 +1,5 @@
 import { useState, type FormEvent, useEffect } from 'react';
+import { usePageTitle } from '@/hooks/usePageTitle';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
     Mail, Phone, MapPin, Sparkles, Instagram, Linkedin, Github, Youtube,
@@ -31,6 +32,7 @@ interface FormStatus {
 export default function Contact() {
     const [formStatus, setFormStatus] = useState<FormStatus>({ state: 'idle' });
     const [showSuccessModal, setShowSuccessModal] = useState(false);
+    usePageTitle('Contact');
     const [showErrorModal, setShowErrorModal] = useState(false);
     const [retryCount, setRetryCount] = useState(0);
     const [projectType, setProjectType] = useState<string>('');

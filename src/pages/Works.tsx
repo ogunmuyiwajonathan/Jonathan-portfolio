@@ -1,4 +1,5 @@
-ï»¿import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
+import { usePageTitle } from '@/hooks/usePageTitle';
 import { ArrowRight, ExternalLink, X, Calendar, Tag } from 'lucide-react';
 import SpotlightCard from '../components/react-bits/SpotlightCard';
 import SplitText from '../components/react-bits/SplitText';
@@ -63,7 +64,7 @@ const projects: Project[] = [
         title: "Tasty Crust",
         category: "Tailwind CSS / UI / UX",
         description: "An appetizing and responsive restaurant web application with fluid visual styling.",
-        fullDescription: "Tasty Crust is a fully responsive web application for a bakery and restaurant, designed with a strong focus on UI/UX quality. I used Tailwind CSS to build a pixel-perfect, appetizing interface that draws the user in. The project included menus, booking sections, and a cart experience â€” all styled for maximum visual appeal and ease of use.",
+        fullDescription: "Tasty Crust is a fully responsive web application for a bakery and restaurant, designed with a strong focus on UI/UX quality. I used Tailwind CSS to build a pixel-perfect, appetizing interface that draws the user in. The project included menus, booking sections, and a cart experience — all styled for maximum visual appeal and ease of use.",
         highlights: ["Styled with Tailwind CSS for rapid, clean design", "Dedicated menu, booking & cart sections", "Strong UX focus with accessible color contrast", "Mobile-first, fully responsive layout"],
         image: "/images/crust-full.webp",
         link: "https://tasty-crust.vercel.app/",
@@ -86,9 +87,9 @@ const projects: Project[] = [
     {
         title: "Portfolio Website",
         category: "HTML / CSS / JS",
-        description: "My very first website â€” a personal portfolio built to kickstart my journey as a developer.",
-        fullDescription: "This was my very first website, marking the beginning of my journey as a developer. I built it from scratch using pure HTML, CSS, and JavaScript â€” no frameworks, no shortcuts. It taught me the fundamentals of web structure, responsive design, and user experience. This project holds a special place as the foundation of everything I've built since.",
-        highlights: ["First-ever website built from scratch", "Pure HTML, CSS & JavaScript â€” no frameworks", "Responsive layout for all screen sizes", "Deployed and live on Vercel"],
+        description: "My very first website — a personal portfolio built to kickstart my journey as a developer.",
+        fullDescription: "This was my very first website, marking the beginning of my journey as a developer. I built it from scratch using pure HTML, CSS, and JavaScript — no frameworks, no shortcuts. It taught me the fundamentals of web structure, responsive design, and user experience. This project holds a special place as the foundation of everything I've built since.",
+        highlights: ["First-ever website built from scratch", "Pure HTML, CSS & JavaScript — no frameworks", "Responsive layout for all screen sizes", "Deployed and live on Vercel"],
         image: "/images/port-full.webp",
         link: "https://port-murex-tau.vercel.app/",
         gradient: "from-[#1e1e1e] to-[#333333]",
@@ -101,6 +102,7 @@ export default function Works() {
     const [selectedProject, setSelectedProject] = useState<Project | null>(null);
     const [isLoading, setIsLoading] = useState(true);
 
+    usePageTitle('Works');
     useEffect(() => {
         // Simulate loading delay
         const timer = setTimeout(() => {
@@ -245,7 +247,7 @@ export default function Works() {
                         <div className="group flex flex-col h-full animate-on-load">
                             <SpotlightCard className="p-6 flex flex-col h-full transition-all duration-500 sm:p-8 items-center justify-center min-h-[350px] border-dashed border-2 border-white/10 bg-transparent opacity-60 hover:opacity-100 hover:border-white/30">
                                 <div className="text-center space-y-4">
-                                    <div className="text-5xl mb-4">ðŸš€</div>
+                                    <div className="text-5xl mb-4">??</div>
                                     <h3 className="text-[1.4rem] font-bold text-foreground">More Projects Coming Soon</h3>
                                     <p className="text-text-dim text-[0.9rem] max-w-[250px] mx-auto">
                                         I'm constantly working on new ideas and experiments. Check back later!
@@ -316,7 +318,7 @@ export default function Works() {
                                 <ul className="space-y-2">
                                     {selectedProject.highlights.map((h, i) => (
                                         <li key={i} className="flex items-start gap-2 text-[0.9rem] text-white/80">
-                                            <span className="text-accent-blue mt-1.5 shrink-0">âœ¦</span>
+                                            <span className="text-accent-blue mt-1.5 shrink-0">?</span>
                                             {h}
                                         </li>
                                     ))}

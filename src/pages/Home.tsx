@@ -13,6 +13,7 @@ import Skeleton from '@/components/Skeleton';
 import ScrollReveal from '@/components/ScrollReveal';
 import CountUp from '@/components/CountUp';
 import { useState, useEffect } from 'react';
+import { usePageTitle } from '@/hooks/usePageTitle';
 
 const techStack = [
     { icon: <FaHtml5 size={30} />, label: 'HTML/CSS', color: 'text-[#e34f26]' },
@@ -61,6 +62,7 @@ const socials = [
 export default function Home() {
     const [isLoading, setIsLoading] = useState(true);
 
+    usePageTitle('Portfolio');
     useEffect(() => {
         const timer = setTimeout(() => {
             setIsLoading(false);
@@ -91,12 +93,6 @@ export default function Home() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
                 <div className="grid grid-cols-1 gap-6 mb-24 lg:grid-cols-4">
 
-                    {/* â”€â”€ ROW 1 â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-               [  Hero (col-span-2, row-span-2)  ] [ About ] [ Works ]
-               [  Hero (continued)               ] [ Marquee (col-span-2) ]
-          â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
-
-                    {/* Hero Card â€” fixed padding & layout so nothing is muffled */}
                     <SpotlightCard className="lg:col-span-3 lg:row-span-2 p-10 md:p-14 flex items-center group relative overflow-hidden">
                         {/* Ambient glow */}
                         <div className="absolute inset-0 bg-gradient-to-br from-accent-blue/5 via-transparent to-transparent pointer-events-none" />

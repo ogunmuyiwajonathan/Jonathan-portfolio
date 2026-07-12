@@ -1,4 +1,4 @@
-﻿import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import {
     Sparkles,
     Bot,
@@ -26,10 +26,12 @@ import SpotlightCard from '../components/react-bits/SpotlightCard';
 import BlurText from '../components/react-bits/BlurText';
 import Skeleton from '../components/Skeleton';
 import { useState, useEffect } from 'react';
+import { usePageTitle } from '@/hooks/usePageTitle';
 
 
 export default function About() {
     const [isLoading, setIsLoading] = useState(true);
+    usePageTitle('About');
     const [educationExpanded, setEducationExpanded] = useState(false);
     const [showAllSkills, setShowAllSkills] = useState(false);
     const [expandedServices, setExpandedServices] = useState<Record<string, boolean>>({});
@@ -238,7 +240,7 @@ export default function About() {
                         </div>
                         {!educationExpanded && (
                             <p className="text-[0.7rem] text-accent-blue/90 mt-4 text-center font-medium tracking-wide shrink-0">
-                                Click to expand · scroll for full details
+                                Click to expand � scroll for full details
                             </p>
                         )}
                     </SpotlightCard>
