@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Layout from './components/Layout';
 import Home from './pages/Home';
 import About from './pages/About';
@@ -8,11 +8,24 @@ import Contact from './pages/Contact';
 import NotFound from './pages/NotFound';
 import LoadingScreen from './components/LoadingScreen';
 
+declare const gtag: (...args: unknown[]) => void;
+
+function AnalyticsTracker() {
+  const location = useLocation();
+
+  useEffect(() => {
+    gtag('config', 'G-7FVH9XHPMP', {
+      page_path: location.pathname + location.search,
+    });
+  }, [location]);
+
+  return null;
+}
+
 function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Init theme from localStorage immediately
     const saved = localStorage.getItem('theme');
     if (saved === 'light') {
       document.documentElement.classList.remove('dark');
@@ -28,6 +41,7 @@ function App() {
     <>
       <LoadingScreen isLoading={isLoading} />
       <Router>
+        <AnalyticsTracker />
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
