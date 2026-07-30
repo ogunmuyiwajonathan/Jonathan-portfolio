@@ -17,7 +17,8 @@ const IMAGE_CONFIG = {
   "crust":       { w: 510, h: 260, retina: true, srcset: true, eager: false },
   "graphic":     { w: 510, h: 260, retina: true, srcset: true, eager: false },
   "port":        { w: 510, h: 260, retina: true, srcset: true, eager: false },
-  "solibu":      { w: 510, h: 260, retina: true, srcset: true, eager: false },
+  "drolatoye":   { w: 510, h: 260, retina: true, srcset: true, eager: false },
+  "solibu":      { w: 510, h: 260, retina: true, srcset: true, eager: false }
 };
 
 function getMaxDimensions(name) {

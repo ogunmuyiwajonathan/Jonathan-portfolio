@@ -278,7 +278,7 @@ export default function Home() {
                         <SpotlightCard className="p-8 flex flex-col justify-center gap-7 h-full">
                             {[
                                 { end: 4, suffix: '+', label: 'Years of Impact' },
-                                { end: 7, suffix: '+', label: 'Live Deployments' },
+                                { end: 8, suffix: '+', label: 'Live Deployments' },
                             ].map(({ end, suffix, label }) => (
                                 <div key={label}>
                                     <h3 className="text-4xl font-bold text-foreground leading-none tracking-tight">

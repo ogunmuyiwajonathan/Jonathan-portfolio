@@ -23,6 +23,7 @@ const WORK_IMAGES = [
   { src: "/images/crust-full.webp", title: "Tasty Crust" },
   { src: "/images/graphic-full.webp", title: "Stalworld Tech" },
   { src: "/images/port-full.webp", title: "Portfolio Website" },
+  { src: "/images/drolatoye-full.webp", title: "Dr. Olatoye" },
 ];
 
 function escapeXml(str) {
@@ -83,7 +84,7 @@ async function main() {
   const urlCount = ROUTES.length;
   const imageCount = WORK_IMAGES.length;
 
-  console.log(`Generated sitemap → ${OUT_PATH}`);
+  console.log(`Generated sitemap ? ${OUT_PATH}`);
   console.log(`  URLs:   ${urlCount}`);
   console.log(`  Images: ${imageCount}`);
 }

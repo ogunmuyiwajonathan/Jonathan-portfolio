@@ -20,6 +20,23 @@ interface Project {
 
 const projects: Project[] = [
     {
+        title: "Dr. Olatoye",
+        category: "React / Tailwind CSS / Framer Motion",
+        description: "A professional landing page for a Nigerian educational consultant serving schools across Nigeria and Ghana.",
+        fullDescription: "Dr. Olatoye is a professional landing page built for an educational consultant with over 30 years of experience serving private schools across Nigeria. The site showcases Dr. Olatoye's services â€” school growth programmes, teacher training, clinical school diagnosis, and consultancy â€” alongside an educational materials catalog featuring 40+ authored books. It features an animated hero with rotating taglines and live statistics counters, a comprehensive services showcase, WhatsApp integration for instant client communication and ordering, client testimonials, and multiple conversion touchpoints. Built with React, Tailwind CSS, and Framer Motion, the site uses a professional navy-and-green aesthetic that communicates trust and educational expertise. The layout is fully responsive and mobile-first, optimized for the African market where most users browse on smartphones.",
+        highlights: [
+            "Animated hero with rotating taglines and live statistics counter",
+            "WhatsApp integration for instant client communication and ordering",
+            "Educational materials catalog showcasing 40+ authored books",
+            "Fully responsive mobile-first design optimized for African markets"
+        ],
+        image: "/images/drolatoye-full.webp",
+        link: "https://dr-olatoye.vercel.app/",
+        gradient: "from-[#052653] to-[#2E7D32]",
+        accentColor: "#2E7D32",
+        year: "2026"
+    },
+    {
         title: "Solibu Stories",
         category: "React / Three.js / Convex",
         description: "A digital story-reading platform for discovering, browsing, and reading books.",
@@ -64,7 +81,7 @@ const projects: Project[] = [
         title: "Tasty Crust",
         category: "Tailwind CSS / UI / UX",
         description: "An appetizing and responsive restaurant web application with fluid visual styling.",
-        fullDescription: "Tasty Crust is a fully responsive web application for a bakery and restaurant, designed with a strong focus on UI/UX quality. I used Tailwind CSS to build a pixel-perfect, appetizing interface that draws the user in. The project included menus, booking sections, and a cart experience — all styled for maximum visual appeal and ease of use.",
+        fullDescription: "Tasty Crust is a fully responsive web application for a bakery and restaurant, designed with a strong focus on UI/UX quality. I used Tailwind CSS to build a pixel-perfect, appetizing interface that draws the user in. The project included menus, booking sections, and a cart experience ï¿½ all styled for maximum visual appeal and ease of use.",
         highlights: ["Styled with Tailwind CSS for rapid, clean design", "Dedicated menu, booking & cart sections", "Strong UX focus with accessible color contrast", "Mobile-first, fully responsive layout"],
         image: "/images/crust-full.webp",
         link: "https://tasty-crust.vercel.app/",
@@ -87,9 +104,9 @@ const projects: Project[] = [
     {
         title: "Portfolio Website",
         category: "HTML / CSS / JS",
-        description: "My very first website — a personal portfolio built to kickstart my journey as a developer.",
-        fullDescription: "This was my very first website, marking the beginning of my journey as a developer. I built it from scratch using pure HTML, CSS, and JavaScript — no frameworks, no shortcuts. It taught me the fundamentals of web structure, responsive design, and user experience. This project holds a special place as the foundation of everything I've built since.",
-        highlights: ["First-ever website built from scratch", "Pure HTML, CSS & JavaScript — no frameworks", "Responsive layout for all screen sizes", "Deployed and live on Vercel"],
+        description: "My very first website ï¿½ a personal portfolio built to kickstart my journey as a developer.",
+        fullDescription: "This was my very first website, marking the beginning of my journey as a developer. I built it from scratch using pure HTML, CSS, and JavaScript ï¿½ no frameworks, no shortcuts. It taught me the fundamentals of web structure, responsive design, and user experience. This project holds a special place as the foundation of everything I've built since.",
+        highlights: ["First-ever website built from scratch", "Pure HTML, CSS & JavaScript ï¿½ no frameworks", "Responsive layout for all screen sizes", "Deployed and live on Vercel"],
         image: "/images/port-full.webp",
         link: "https://port-murex-tau.vercel.app/",
         gradient: "from-[#1e1e1e] to-[#333333]",

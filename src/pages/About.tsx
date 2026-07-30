@@ -33,6 +33,7 @@ export default function About() {
     const [isLoading, setIsLoading] = useState(true);
     usePageTitle('About');
     const [educationExpanded, setEducationExpanded] = useState(false);
+    const [experienceExpanded, setExperienceExpanded] = useState(false);
     const [showAllSkills, setShowAllSkills] = useState(false);
     const [expandedServices, setExpandedServices] = useState<Record<string, boolean>>({});
 
@@ -53,7 +54,16 @@ export default function About() {
     }, [educationExpanded]);
 
     useEffect(() => {
-        if (educationExpanded) {
+        if (!experienceExpanded) return;
+        const onKey = (e: KeyboardEvent) => {
+            if (e.key === 'Escape') setExperienceExpanded(false);
+        };
+        window.addEventListener('keydown', onKey);
+        return () => window.removeEventListener('keydown', onKey);
+    }, [experienceExpanded]);
+
+    useEffect(() => {
+        if (educationExpanded || experienceExpanded) {
             document.body.style.overflow = 'hidden';
         } else {
             document.body.style.overflow = '';
@@ -61,7 +71,7 @@ export default function About() {
         return () => {
             document.body.style.overflow = '';
         };
-    }, [educationExpanded]);
+    }, [educationExpanded, experienceExpanded]);
 
     const SKILLS_LIMIT = 15;
 
@@ -128,29 +138,99 @@ export default function About() {
                     </p>
                 </SpotlightCard>
 
-                {/* Experience Card */}
-                <div className="lg:col-span-2" id="specialize">
-                    <SpotlightCard className="card h-full">
-                        <div className="text-[0.75rem] font-semibold text-text-dim tracking-[1.5px] mb-[25px] flex items-center gap-[8px]">
-                            <Briefcase size={14} /> PROFESSIONAL EXPERIENCE
-                        </div>
-                        <div className="space-y-6">
-                            <div className="border-l-2 border-accent-blue pl-4">
-                                <div className="text-text-dim text-[0.85rem] mb-[4px] font-medium">2024 - Present</div>
-                                <div className="font-semibold text-[1.1rem] text-white">Freelance Full Stack Developer</div>
-                                <div className="text-text-dim text-[0.9rem] mt-[2px] leading-relaxed">
-                                    Crafting modern digital products for clients worldwide. Specializing in React-based applications, responsive design systems, and scalable backend solutions. Successfully delivered 5+ projects with 100% client satisfaction.
+                {/* Experience Card - click to bring forward and scroll full content */}
+                <div
+                    className={`lg:col-span-2 ${experienceExpanded ? 'min-h-[min(88vh,680px)]' : ''}`}
+                    id="specialize"
+                >
+                    {experienceExpanded && (
+                        <button
+                            type="button"
+                            aria-label="Close experience details"
+                            className="fixed inset-0 z-[90] bg-black/65 backdrop-blur-[2px] cursor-default"
+                            onClick={() => setExperienceExpanded(false)}
+                        />
+                    )}
+                    <div
+                        role={experienceExpanded ? undefined : 'button'}
+                        tabIndex={experienceExpanded ? -1 : 0}
+                        aria-expanded={experienceExpanded}
+                        aria-label={experienceExpanded ? undefined : 'Expand experience section'}
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            if (!experienceExpanded) setExperienceExpanded(true);
+                        }}
+                        onKeyDown={(e) => {
+                            if (!experienceExpanded && (e.key === 'Enter' || e.key === ' ')) {
+                                e.preventDefault();
+                                setExperienceExpanded(true);
+                            }
+                        }}
+                        className={`rounded-[30px] outline-none transition-shadow ${
+                            experienceExpanded ? 'cursor-default' : 'cursor-pointer focus-visible:ring-2 focus-visible:ring-accent-blue/50'
+                        }`}
+                    >
+                        <SpotlightCard
+                            className={`card flex min-h-0 flex-col transition-all duration-300 ease-out ${
+                                experienceExpanded
+                                    ? '!fixed !left-1/2 !top-1/2 !-translate-x-1/2 !-translate-y-1/2 z-[100] w-[min(92vw,560px)] max-h-[min(88vh,680px)] !overflow-hidden shadow-2xl ring-1 ring-accent-blue/25'
+                                    : 'hover:ring-1 hover:ring-white/10'
+                            }`}
+                        >
+                            <div className="flex items-start justify-between gap-3 mb-[25px] shrink-0">
+                                <div className="text-[0.75rem] font-semibold text-text-dim tracking-[1.5px] flex items-center gap-[8px]">
+                                    <Briefcase size={14} /> PROFESSIONAL EXPERIENCE
+                                </div>
+                                {experienceExpanded && (
+                                    <button
+                                        type="button"
+                                        aria-label="Close"
+                                        className="shrink-0 rounded-lg p-1.5 text-text-dim hover:bg-white/10 hover:text-white transition-colors"
+                                        onClick={(e) => {
+                                            e.stopPropagation();
+                                            setExperienceExpanded(false);
+                                        }}
+                                    >
+                                        <X size={18} />
+                                    </button>
+                                )}
+                            </div>
+                            <div
+                                className={`space-y-6 min-h-0 ${
+                                    experienceExpanded
+                                        ? 'min-h-0 flex-1 overflow-y-auto overflow-x-hidden pr-1 -mr-1 [scrollbar-gutter:stable]'
+                                        : 'max-h-[220px] overflow-hidden'
+                                }`}
+                            >
+                                <div className="border-l-2 border-accent-blue pl-4">
+                                    <div className="text-text-dim text-[0.85rem] mb-[4px] font-medium">2026 - Present</div>
+                                    <div className="font-semibold text-[1.1rem] text-white">Full Stack Developer</div>
+                                    <div className="text-text-dim text-[0.9rem] mt-[2px] leading-relaxed">
+                                        Building and maintaining full stack web applications at Stalworld Tech, working across the frontend and backend to ship reliable, scalable features.
+                                    </div>
+                                </div>
+                                <div className="border-l-2 border-border-color pl-4">
+                                    <div className="text-text-dim text-[0.85rem] mb-[4px] font-medium">2024 - Present</div>
+                                    <div className="font-semibold text-[1.1rem] text-white">Freelance Full Stack Developer</div>
+                                    <div className="text-text-dim text-[0.9rem] mt-[2px] leading-relaxed">
+                                        Crafted modern digital products for clients worldwide. Specialized in React-based applications, responsive design systems, and scalable backend solutions. Successfully delivered projects with 100% client satisfaction.
+                                    </div>
+                                </div>
+                                <div className="border-l-2 border-border-color pl-4">
+                                    <div className="text-text-dim text-[0.85rem] mb-[4px] font-medium">2023 - 2024</div>
+                                    <div className="font-semibold text-[1.1rem] text-white">Junior Web Developer</div>
+                                    <div className="text-text-dim text-[0.9rem] mt-[2px] leading-relaxed">
+                                        Collaborated with cross-functional teams to build and maintain web applications. Gained hands-on experience with modern JavaScript frameworks, RESTful APIs, and database management systems.
+                                    </div>
                                 </div>
                             </div>
-                            <div className="border-l-2 border-border-color pl-4">
-                                <div className="text-text-dim text-[0.85rem] mb-[4px] font-medium">2023 - 2024</div>
-                                <div className="font-semibold text-[1.1rem] text-white">Junior Web Developer</div>
-                                <div className="text-text-dim text-[0.9rem] mt-[2px] leading-relaxed">
-                                    Collaborated with cross-functional teams to build and maintain web applications. Gained hands-on experience with modern JavaScript frameworks, RESTful APIs, and database management systems.
-                                </div>
-                            </div>
-                        </div>
-                    </SpotlightCard>
+                            {!experienceExpanded && (
+                                <p className="text-[0.7rem] text-accent-blue/90 mt-4 text-center font-medium tracking-wide shrink-0">
+                                    Click to expand â€” scroll for full details
+                                </p>
+                            )}
+                        </SpotlightCard>
+                    </div>
                 </div>
 
                 {/* Education Card - click to bring forward and scroll full content */}
@@ -240,7 +320,7 @@ export default function About() {
                         </div>
                         {!educationExpanded && (
                             <p className="text-[0.7rem] text-accent-blue/90 mt-4 text-center font-medium tracking-wide shrink-0">
-                                Click to expand · scroll for full details
+                                Click to expand ï¿½ scroll for full details
                             </p>
                         )}
                     </SpotlightCard>

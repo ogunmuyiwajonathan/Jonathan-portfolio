@@ -1,26 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://jonworld.vercel.app/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://jonworld.vercel.app/about</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://jonworld.vercel.app/works</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+      <image:image>
+        <image:loc>https://jonworld.vercel.app/images/solibu-full.webp</image:loc>
+        <image:title>Solibu Stories</image:title>
+      </image:image>
+      <image:image>
+        <image:loc>https://jonworld.vercel.app/images/lifeos-full.webp</image:loc>
+        <image:title>LifeOS</image:title>
+      </image:image>
+      <image:image>
+        <image:loc>https://jonworld.vercel.app/images/belleville-full.webp</image:loc>
+        <image:title>Belleville Dental Care</image:title>
+      </image:image>
+      <image:image>
+        <image:loc>https://jonworld.vercel.app/images/crust-full.webp</image:loc>
+        <image:title>Tasty Crust</image:title>
+      </image:image>
+      <image:image>
+        <image:loc>https://jonworld.vercel.app/images/graphic-full.webp</image:loc>
+        <image:title>Stalworld Tech</image:title>
+      </image:image>
+      <image:image>
+        <image:loc>https://jonworld.vercel.app/images/port-full.webp</image:loc>
+        <image:title>Portfolio Website</image:title>
+      </image:image>
+      <image:image>
+        <image:loc>https://jonworld.vercel.app/images/drolatoye-full.webp</image:loc>
+        <image:title>Dr. Olatoye</image:title>
+      </image:image>
   </url>
   <url>
     <loc>https://jonworld.vercel.app/contact</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
