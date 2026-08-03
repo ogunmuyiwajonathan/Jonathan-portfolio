@@ -20,7 +20,7 @@ import {
     Heart,
     X
 } from 'lucide-react';
-import { FaReact, FaJava, FaFigma, FaGitAlt, FaHtml5, FaNodeJs } from 'react-icons/fa';
+import { FaReact, FaJava, FaFigma, FaHtml5, FaNodeJs } from 'react-icons/fa';
 import { SiTailwindcss, SiMysql, SiTypescript, SiMongodb, SiJavascript, SiNextdotjs,SiPython } from 'react-icons/si';
 import SpotlightCard from '../components/react-bits/SpotlightCard';
 import BlurText from '../components/react-bits/BlurText';
@@ -87,7 +87,6 @@ export default function About() {
         { icon: <SiMysql size={26} className="text-[#00758f]" />, label: "MySQL", title: "MySQL" },
         { icon: <SiMongodb size={26} className="text-[#00ed64]" />, label: "MongoDB", title: "MongoDB" },
         { icon: <FaFigma size={26} className="text-[#f24e1e]" />, label: "Figma", title: "Figma" },
-        { icon: <FaGitAlt size={26} className="text-[#f05032]" />, label: "Git", title: "Git" },
         { icon: <SiPython size={26} className="text-[#f05032]" />, label: "Python", title: "Python" },
     ];
 
@@ -131,10 +130,10 @@ export default function About() {
                         className="text-[clamp(1.6rem,5vw,2.2rem)] mt-[15px] font-bold leading-[1.2] text-white"
                     />
                     <p className="text-text-dim text-[1rem] max-w-[550px] mt-[12px] leading-relaxed">
-                        I am a passionate software engineer and creative designer based in Nigeria, dedicated to crafting exceptional digital experiences that bridge the gap between aesthetics and functionality. With a keen eye for detail and a deep understanding of modern web technologies, I specialize in building high-performance web applications that not only meet but exceed user expectations.
+                        I am a passionate software engineer and designer located in Nigeria. I focus on creating outstanding digital experiences that connect beauty and function. I have a sharp eye for detail and a strong grasp of modern web technologies. I specialize in building high-performance web applications that not only meet user expectations but also surpass them.
                     </p>
                     <p className="text-text-dim text-[1rem] max-w-[550px] mt-[12px] leading-relaxed">
-                        My journey in tech began with a curiosity about how things work on the internet, which quickly evolved into a professional pursuit of excellence in software development. Today, I combine technical expertise with creative problem-solving to deliver solutions that drive business growth and user satisfaction.
+                        My journey in tech started with a curiosity about how things work online. This quickly turned into a professional goal of achieving excellence in software development. Now, I combine my technical skills with creative problem-solving to provide solutions that support business growth and enhance user satisfaction.
                     </p>
                 </SpotlightCard>
 
@@ -366,7 +365,7 @@ export default function About() {
                             </div>
                             <div>
                                 <h4 className="font-semibold text-[0.95rem] text-white">Full Stack Web Development</h4>
-                                <p className={`text-text-dim text-[0.85rem] leading-relaxed ${!expandedServices['fullstack'] ? 'line-clamp-2' : ''}`}>Building scalable, high-performance web applications from concept to deployment using modern technologies like React, Next.js, Node.js, Express, TypeScript, and SQL/NoSQL databases. I develop responsive frontends, robust backend APIs, authentication systems, database architectures, third-party integrations, cloud deployment, performance optimization, and ongoing maintenance to deliver secure, user-focused digital experiences.</p>
+                                <p className={`text-text-dim text-[0.85rem] leading-relaxed ${!expandedServices['fullstack'] ? 'line-clamp-2' : ''}`}>I create scalable and high-performance web applications, progressing from initial concept through to deployment, by making use of modern technologies such as React, Next.js, Node.js, Express, TypeScript, and SQL/NoSQL databases. This involves developing responsive frontends, robust backend APIs, authentication systems, database architectures, integrating with third-party services, carrying out cloud deployment, optimising performance, and providing continuous maintenance in order to deliver secure and user-oriented digital experiences.</p>
                                 <button onClick={() => toggleReadMore('fullstack')} className="text-accent-blue text-[0.75rem] mt-1 hover:underline transition-colors">
                                     {expandedServices['fullstack'] ? 'Show less' : 'Read more \u2192'}
                                 </button>
@@ -378,7 +377,7 @@ export default function About() {
                             </div>
                             <div>
                                 <h4 className="font-semibold text-[0.95rem] text-white">UI/UX Design</h4>
-                                <p className="text-text-dim text-[0.85rem] leading-relaxed">Creating intuitive, beautiful interfaces in Figma that prioritize user experience and accessibility.</p>
+                                <p className="text-text-dim text-[0.85rem] leading-relaxed">Designing in Figma interfaces that are both intuitive and beautiful, with a focus on user experience and accessibility.</p>
                             </div>
                         </div>
                         <div className="flex items-start gap-3">
@@ -387,7 +386,7 @@ export default function About() {
                             </div>
                             <div>
                                 <h4 className="font-semibold text-[0.95rem] text-white">Performance Optimization</h4>
-                                <p className="text-text-dim text-[0.85rem] leading-relaxed">Speed optimization, SEO improvements, and best practices implementation for better rankings.</p>
+                                <p className="text-text-dim text-[0.85rem] leading-relaxed">Optimising speed, making SEO improvements, and putting into practice the best practices in order to achieve better rankings.</p>
                             </div>
                         </div>
                         <div className="flex items-start gap-3">
@@ -396,7 +395,7 @@ export default function About() {
                             </div>
                             <div>
                                 <h4 className="font-semibold text-[0.95rem] text-white">API Development</h4>
-                                <p className="text-text-dim text-[0.85rem] leading-relaxed">RESTful and GraphQL API design and integration for seamless data flow between systems.</p>
+                                <p className="text-text-dim text-[0.85rem] leading-relaxed">Design and integration of RESTful and GraphQL APIs to ensure a smooth flow of data between different systems.</p>
                             </div>
                         </div>
                         <div className="flex items-start gap-3">
@@ -405,7 +404,7 @@ export default function About() {
                             </div>
                             <div>
                                 <h4 className="font-semibold text-[0.95rem] text-white">AI Agent Automation</h4>
-                                <p className={`text-text-dim text-[0.85rem] leading-relaxed ${!expandedServices['aiautomation'] ? 'line-clamp-2' : ''}`}>Designing and deploying intelligent AI agents that automate repetitive tasks, streamline workflows, and improve business efficiency. I build custom agents capable of reasoning, using tools, integrating with APIs, managing workflows, processing documents, and connecting with platforms such as Slack, Discord, Gmail, Notion, GitHub, CRMs, and databases.</p>
+                                <p className={`text-text-dim text-[0.85rem] leading-relaxed ${!expandedServices['aiautomation'] ? 'line-clamp-2' : ''}`}>I design and deploy intelligent AI agents which automate routine tasks, simplify workflows, and enhance business efficiency; I create custom agents that are able to reason, use tools, integrate with APIs, manage workflows, process documents, and connect with platforms including Slack, Discord, Gmail, Notion, GitHub, CRMs, and databases.</p>
                                 <button onClick={() => toggleReadMore('aiautomation')} className="text-accent-blue text-[0.75rem] mt-1 hover:underline transition-colors">
                                     {expandedServices['aiautomation'] ? 'Show less' : 'Read more \u2192'}
                                 </button>
