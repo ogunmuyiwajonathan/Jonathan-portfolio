@@ -17,7 +17,7 @@ const PROJECT_OPTIONS = [
     { value: "ecommerce", label: "E-commerce Platform" },
     { value: "redesign", label: "Website Redesign" },
     { value: "mobile", label: "Mobile App (Flutter)" },
-    { value: "fullstack", label: "Full-Stack Development" },
+    { value: "fullstack", label: "Full Stack Development" },
     { value: "automation", label: "Python Automation & Scripting" },
     { value: "other", label: "Other" },
 ];

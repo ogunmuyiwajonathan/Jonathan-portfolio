@@ -21,11 +21,11 @@ import {
     X
 } from 'lucide-react';
 import { FaReact, FaJava, FaFigma, FaHtml5, FaNodeJs } from 'react-icons/fa';
-import { SiTailwindcss, SiMysql, SiTypescript, SiMongodb, SiJavascript, SiNextdotjs,SiPython } from 'react-icons/si';
+import { SiTailwindcss, SiMysql, SiTypescript, SiMongodb, SiJavascript, SiNextdotjs,SiPython, SiDart, SiFlutter } from 'react-icons/si';
 import SpotlightCard from '../components/react-bits/SpotlightCard';
 import BlurText from '../components/react-bits/BlurText';
 import Skeleton from '../components/Skeleton';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { usePageTitle } from '@/hooks/usePageTitle';
 
 
@@ -36,6 +36,7 @@ export default function About() {
     const [experienceExpanded, setExperienceExpanded] = useState(false);
     const [showAllSkills, setShowAllSkills] = useState(false);
     const [expandedServices, setExpandedServices] = useState<Record<string, boolean>>({});
+    const experienceScrollRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -60,6 +61,12 @@ export default function About() {
         };
         window.addEventListener('keydown', onKey);
         return () => window.removeEventListener('keydown', onKey);
+    }, [experienceExpanded]);
+
+    useEffect(() => {
+        if (!experienceExpanded && experienceScrollRef.current) {
+            experienceScrollRef.current.scrollTop = 0;
+        }
     }, [experienceExpanded]);
 
     useEffect(() => {
@@ -88,12 +95,19 @@ export default function About() {
         { icon: <SiMongodb size={26} className="text-[#00ed64]" />, label: "MongoDB", title: "MongoDB" },
         { icon: <FaFigma size={26} className="text-[#f24e1e]" />, label: "Figma", title: "Figma" },
         { icon: <SiPython size={26} className="text-[#f05032]" />, label: "Python", title: "Python" },
+        { icon: <SiDart size={26} className="text-[#0175C2]" />, label: "Dart", title: "Dart" },
+        { icon: <SiFlutter size={26} className="text-[#55C6F8]" />, label: "Flutter", title: "Flutter" },
     ];
 
     const hiddenSkillsCount = techSkills.length - SKILLS_LIMIT;
 
     const toggleReadMore = (title: string) => {
-        setExpandedServices(prev => ({ ...prev, [title]: !prev[title] }));
+        setExpandedServices(prev => {
+            const next: Record<string, boolean> = {};
+            for (const key of Object.keys(prev)) next[key] = false;
+            next[title] = !prev[title];
+            return next;
+        });
     };
 
     if (isLoading) {
@@ -195,6 +209,7 @@ export default function About() {
                                 )}
                             </div>
                             <div
+                                ref={experienceScrollRef}
                                 className={`space-y-6 min-h-0 ${
                                     experienceExpanded
                                         ? 'min-h-0 flex-1 overflow-y-auto overflow-x-hidden pr-1 -mr-1 [scrollbar-gutter:stable]'
@@ -203,23 +218,23 @@ export default function About() {
                             >
                                 <div className="border-l-2 border-accent-blue pl-4">
                                     <div className="text-text-dim text-[0.85rem] mb-[4px] font-medium">2026 - Present</div>
-                                    <div className="font-semibold text-[1.1rem] text-white">Full Stack Developer</div>
+                                    <div className="font-semibold text-[1.1rem] text-white">Full Stack Developer (Part Time)</div>
                                     <div className="text-text-dim text-[0.9rem] mt-[2px] leading-relaxed">
-                                        Building and maintaining full stack web applications at Stalworld Tech, working across the frontend and backend to ship reliable, scalable features.
+                                        At Stalworld Tech I work part-time building and maintaining full stack web applications, handling both the frontend and the backend to ensure reliable and scalable features are delivered.
                                     </div>
                                 </div>
                                 <div className="border-l-2 border-border-color pl-4">
                                     <div className="text-text-dim text-[0.85rem] mb-[4px] font-medium">2024 - Present</div>
                                     <div className="font-semibold text-[1.1rem] text-white">Freelance Full Stack Developer</div>
                                     <div className="text-text-dim text-[0.9rem] mt-[2px] leading-relaxed">
-                                        Crafted modern digital products for clients worldwide. Specialized in React-based applications, responsive design systems, and scalable backend solutions. Successfully delivered projects with 100% client satisfaction.
+                                        We created modern digital products for clients all around the world. Our specialty lies in React-based applications, responsive design systems, and scalable backend solutions. Projects have been successfully completed with 100% client satisfaction.
                                     </div>
                                 </div>
                                 <div className="border-l-2 border-border-color pl-4">
                                     <div className="text-text-dim text-[0.85rem] mb-[4px] font-medium">2023 - 2024</div>
                                     <div className="font-semibold text-[1.1rem] text-white">Junior Web Developer</div>
                                     <div className="text-text-dim text-[0.9rem] mt-[2px] leading-relaxed">
-                                        Collaborated with cross-functional teams to build and maintain web applications. Gained hands-on experience with modern JavaScript frameworks, RESTful APIs, and database management systems.
+                                        Worked alongside multi-departmental teams to develop and maintain web applications, and acquired practical experience in using modern JavaScript frameworks, RESTful APIs, and database management systems.
                                     </div>
                                 </div>
                             </div>
@@ -297,7 +312,7 @@ export default function About() {
                         >
                             <div className="border-l-2 border-accent-blue pl-4">
                                 <div className="text-text-dim text-[0.85rem] mb-[4px] font-medium">2024 - 2027</div>
-                                <div className="font-semibold text-[1.1rem] text-white">ADSE - Advanced Software Engineering</div>
+                                <div className="font-semibold text-[1.1rem] text-white">ADSE, Advanced Software Engineering</div>
                                 <div className="text-text-dim text-[0.9rem] mt-[2px] leading-relaxed">
                                     Currently pursuing a Diploma in Software Development and Artificial Intelligence at Aptech Computer Education.
                                 </div>
@@ -311,9 +326,9 @@ export default function About() {
                             <div className="border-l-2 border-border-color pl-4">
                                 <div className="text-text-dim text-[0.85rem] mb-[4px] font-medium">2022 - 2023</div>
                                 <div className="font-semibold text-[1.1rem] text-white">Web Development Fundamentals</div>
-                                <div className="text-text-dim text-[0.9rem] mt-[2px]">Self-Directed Learning & Online Bootcamps</div>
+                                <div className="text-text-dim text-[0.9rem] mt-[2px]">Self-Directed Learning and Online Bootcamps</div>
                                 <p className="text-text-dim text-[0.85rem] mt-2 leading-relaxed">
-                                    Mastered HTML, CSS, JavaScript, and React through intensive online courses, documentation study, and hands-on project building.
+                                    Mastered HTML, CSS, JavaScript, and React through intensive online courses, studying documentation, and building hands-on projects.
                                 </p>
                             </div>
                         </div>
@@ -359,51 +374,51 @@ export default function About() {
                         <Palette size={14} /> SERVICES I OFFER
                     </div>
                     <div className="space-y-4">
-                        <div className="flex items-start gap-3">
-                            <div className="w-8 h-8 rounded-lg bg-accent-blue/20 flex items-center justify-center shrink-0">
+                        <div className="flex items-start gap-3 group">
+                            <div className="w-8 h-8 rounded-lg bg-accent-blue/20 flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-110">
                                 <Code2 size={16} className="text-accent-blue" />
                             </div>
                             <div>
-                                <h4 className="font-semibold text-[0.95rem] text-white">Full Stack Web Development</h4>
-                                <p className={`text-text-dim text-[0.85rem] leading-relaxed ${!expandedServices['fullstack'] ? 'line-clamp-2' : ''}`}>I create scalable and high-performance web applications, progressing from initial concept through to deployment, by making use of modern technologies such as React, Next.js, Node.js, Express, TypeScript, and SQL/NoSQL databases. This involves developing responsive frontends, robust backend APIs, authentication systems, database architectures, integrating with third-party services, carrying out cloud deployment, optimising performance, and providing continuous maintenance in order to deliver secure and user-oriented digital experiences.</p>
+                                <h4 className="font-semibold text-[0.95rem] text-white group-hover:text-accent-blue transition-colors">Full Stack Development</h4>
+                                <p className={`text-text-dim text-[0.85rem] leading-relaxed ${!expandedServices['fullstack'] ? 'line-clamp-2' : ''}`}>I create scalable and high-performance web and mobile applications, progressing from initial concept through to deployment, by making use of modern technologies such as React, Next.js, Node.js, Express, TypeScript, and SQL/NoSQL databases. This involves developing responsive frontends, robust backend APIs, mobile apps, authentication systems, database architectures, integrating with third-party services, carrying out cloud deployment, optimising performance, and providing continuous maintenance in order to deliver secure and user-oriented digital experiences.</p>
                                 <button onClick={() => toggleReadMore('fullstack')} className="text-accent-blue text-[0.75rem] mt-1 hover:underline transition-colors">
                                     {expandedServices['fullstack'] ? 'Show less' : 'Read more \u2192'}
                                 </button>
                             </div>
                         </div>
-                        <div className="flex items-start gap-3">
-                            <div className="w-8 h-8 rounded-lg bg-accent-blue/20 flex items-center justify-center shrink-0">
+                        <div className="flex items-start gap-3 group">
+                            <div className="w-8 h-8 rounded-lg bg-accent-blue/20 flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-110">
                                 <Palette size={16} className="text-accent-blue" />
                             </div>
                             <div>
-                                <h4 className="font-semibold text-[0.95rem] text-white">UI/UX Design</h4>
+                                <h4 className="font-semibold text-[0.95rem] text-white group-hover:text-accent-blue transition-colors">UI/UX Design</h4>
                                 <p className="text-text-dim text-[0.85rem] leading-relaxed">Designing in Figma interfaces that are both intuitive and beautiful, with a focus on user experience and accessibility.</p>
                             </div>
                         </div>
-                        <div className="flex items-start gap-3">
-                            <div className="w-8 h-8 rounded-lg bg-accent-blue/20 flex items-center justify-center shrink-0">
+                        <div className="flex items-start gap-3 group">
+                            <div className="w-8 h-8 rounded-lg bg-accent-blue/20 flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-110">
                                 <Rocket size={16} className="text-accent-blue" />
                             </div>
                             <div>
-                                <h4 className="font-semibold text-[0.95rem] text-white">Performance Optimization</h4>
+                                <h4 className="font-semibold text-[0.95rem] text-white group-hover:text-accent-blue transition-colors">Performance Optimization</h4>
                                 <p className="text-text-dim text-[0.85rem] leading-relaxed">Optimising speed, making SEO improvements, and putting into practice the best practices in order to achieve better rankings.</p>
                             </div>
                         </div>
-                        <div className="flex items-start gap-3">
-                            <div className="w-8 h-8 rounded-lg bg-accent-blue/20 flex items-center justify-center shrink-0">
+                        <div className="flex items-start gap-3 group">
+                            <div className="w-8 h-8 rounded-lg bg-accent-blue/20 flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-110">
                                 <Zap size={16} className="text-accent-blue" />
                             </div>
                             <div>
-                                <h4 className="font-semibold text-[0.95rem] text-white">API Development</h4>
+                                <h4 className="font-semibold text-[0.95rem] text-white group-hover:text-accent-blue transition-colors">API Development</h4>
                                 <p className="text-text-dim text-[0.85rem] leading-relaxed">Design and integration of RESTful and GraphQL APIs to ensure a smooth flow of data between different systems.</p>
                             </div>
                         </div>
-                        <div className="flex items-start gap-3">
-                            <div className="w-8 h-8 rounded-lg bg-accent-blue/20 flex items-center justify-center shrink-0">
+                        <div className="flex items-start gap-3 group">
+                            <div className="w-8 h-8 rounded-lg bg-accent-blue/20 flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-110">
                                 <Bot size={16} className="text-accent-blue" />
                             </div>
                             <div>
-                                <h4 className="font-semibold text-[0.95rem] text-white">AI Agent Automation</h4>
+                                <h4 className="font-semibold text-[0.95rem] text-white group-hover:text-accent-blue transition-colors">AI Agent Automation</h4>
                                 <p className={`text-text-dim text-[0.85rem] leading-relaxed ${!expandedServices['aiautomation'] ? 'line-clamp-2' : ''}`}>I design and deploy intelligent AI agents which automate routine tasks, simplify workflows, and enhance business efficiency; I create custom agents that are able to reason, use tools, integrate with APIs, manage workflows, process documents, and connect with platforms including Slack, Discord, Gmail, Notion, GitHub, CRMs, and databases.</p>
                                 <button onClick={() => toggleReadMore('aiautomation')} className="text-accent-blue text-[0.75rem] mt-1 hover:underline transition-colors">
                                     {expandedServices['aiautomation'] ? 'Show less' : 'Read more \u2192'}
@@ -463,25 +478,25 @@ export default function About() {
                         <Lightbulb size={14} /> MY APPROACH
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div className="p-4 rounded-xl bg-white/5">
+                        <div className="p-4 rounded-xl bg-white/5 hover:-translate-y-1 hover:bg-white/10 transition-all duration-300">
                             <Target size={20} className="text-accent-blue mb-2" />
                             <h4 className="font-semibold text-[0.9rem] mb-1">User-Centric Design</h4>
-                            <p className="text-text-dim text-[0.8rem] leading-relaxed">Every pixel serves a purpose. I prioritize intuitive navigation and accessibility in every project.</p>
+                            <p className="text-text-dim text-[0.8rem] leading-relaxed">Every pixel has a purpose. I focus on intuitive navigation and accessibility in every project.</p>
                         </div>
-                        <div className="p-4 rounded-xl bg-white/5">
+                        <div className="p-4 rounded-xl bg-white/5 hover:-translate-y-1 hover:bg-white/10 transition-all duration-300">
                             <Zap size={20} className="text-accent-blue mb-2" />
                             <h4 className="font-semibold text-[0.9rem] mb-1">Performance First</h4>
-                            <p className="text-text-dim text-[0.8rem] leading-relaxed">Fast load times and smooth interactions are non-negotiable. I optimize for Core Web Vitals.</p>
+                            <p className="text-text-dim text-[0.8rem] leading-relaxed">Fast load times and smooth interactions are essential. I optimize for Core Web Vitals.</p>
                         </div>
-                        <div className="p-4 rounded-xl bg-white/5">
+                        <div className="p-4 rounded-xl bg-white/5 hover:-translate-y-1 hover:bg-white/10 transition-all duration-300">
                             <Heart size={20} className="text-accent-blue mb-2" />
                             <h4 className="font-semibold text-[0.9rem] mb-1">Clean Code</h4>
-                            <p className="text-text-dim text-[0.8rem] leading-relaxed">Maintainable, well-documented code that scales. I follow industry best practices and standards.</p>
+                            <p className="text-text-dim text-[0.8rem] leading-relaxed">I create maintainable, well-documented code that scales. I follow industry best practices and standards.</p>
                         </div>
-                        <div className="p-4 rounded-xl bg-white/5">
+                        <div className="p-4 rounded-xl bg-white/5 hover:-translate-y-1 hover:bg-white/10 transition-all duration-300">
                             <Award size={20} className="text-accent-blue mb-2" />
                             <h4 className="font-semibold text-[0.9rem] mb-1">Continuous Learning</h4>
-                            <p className="text-text-dim text-[0.8rem] leading-relaxed">Tech evolves rapidly. I stay current with emerging technologies and modern development patterns.</p>
+                            <p className="text-text-dim text-[0.8rem] leading-relaxed">Technology changes quickly. I keep up with new technologies and modern development patterns.</p>
                         </div>
                     </div>
                 </SpotlightCard>

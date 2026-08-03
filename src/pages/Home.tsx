@@ -25,7 +25,7 @@ const techStack = [
 ];
 
 const services = [
-    { icon: <Globe size={24} />, title: 'Full Stack Web', desc: 'React, Node, Python' },
+    { icon: <Globe size={24} />, title: 'Full Stack Development', desc: 'React, Node, Python' },
     { icon: <Palette size={24} />, title: 'UX Strategy', desc: 'Interface, Figma' },
     { icon: <Database size={24} />, title: 'Data Design', desc: 'SQL, NoSQL Hub' },
     { icon: <Smartphone size={24} />, title: 'App Precision', desc: 'Mobile-Optimized' },
@@ -35,13 +35,13 @@ const skills = [
     { label: 'Frontend Architecture', level: '90%' },
     { label: 'Backend Systems', level: '80%' },
     { label: 'Database & Cloud', level: '80%' },
-    { label: 'UI/UX Design Strategy', level: '90%' },
+    { label: 'UI/UX Design Strategy', level: '85%' },
     { label: 'Agentic AI Development', level: '85%' },
 ];
 
 
 const marqueeItems = [
-    "Full Stack Development", "UI/UX Design", "React",
+    "Full Stack Development", "UI/UX Design", "Agentic AI Automation",
     "Database Architecture", "API Development", "Performance Optimization"
 ];
 
@@ -129,7 +129,7 @@ export default function Home() {
 
                                 <SplitText
                                     text="Jonathan."
-                                    className="text-[clamp(2.4rem,5vw,3.4rem)] leading-[1.05] mb-5 font-bold text-foreground"
+                                    className="text-[clamp(2.4rem,5vw,3.4rem)] leading-[1.05] mb-5 font-bold text-foreground [text-shadow:0_2px_8px_rgba(0,0,0,0.85),0_6px_24px_rgba(0,0,0,0.55)]"
                                     delay={300}
                                     animationFrom={{ opacity: 0, y: 40 }}
                                     animationTo={{ opacity: 1, y: 0 }}
