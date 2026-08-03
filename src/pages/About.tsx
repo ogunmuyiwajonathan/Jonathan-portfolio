@@ -27,6 +27,7 @@ import BlurText from '../components/react-bits/BlurText';
 import Skeleton from '../components/Skeleton';
 import { useState, useEffect, useRef } from 'react';
 import { usePageTitle } from '@/hooks/usePageTitle';
+import ScrollReveal from '@/components/ScrollReveal';
 
 
 export default function About() {
@@ -152,8 +153,9 @@ export default function About() {
                 </SpotlightCard>
 
                 {/* Experience Card - click to bring forward and scroll full content */}
+                <ScrollReveal direction="left" className="lg:col-span-2">
                 <div
-                    className={`lg:col-span-2 ${experienceExpanded ? 'min-h-[min(88vh,680px)]' : ''}`}
+                    className={`${experienceExpanded ? 'min-h-[min(88vh,680px)]' : ''}`}
                     id="specialize"
                 >
                     {experienceExpanded && (
@@ -246,10 +248,12 @@ export default function About() {
                         </SpotlightCard>
                     </div>
                 </div>
+                </ScrollReveal>
 
                 {/* Education Card - click to bring forward and scroll full content */}
+                <ScrollReveal direction="right" className="lg:col-span-2">
                 <div
-                    className={`lg:col-span-2 ${educationExpanded ? 'min-h-[min(88vh,680px)]' : ''}`}
+                    className={`${educationExpanded ? 'min-h-[min(88vh,680px)]' : ''}`}
                 >
                     {educationExpanded && (
                         <button
@@ -340,6 +344,7 @@ export default function About() {
                     </SpotlightCard>
                     </div>
                 </div>
+                </ScrollReveal>
 
                 {/* Skills Card */}
                 <SpotlightCard className="card lg:col-span-2 flex flex-col h-full">
@@ -374,6 +379,7 @@ export default function About() {
                         <Palette size={14} /> SERVICES I OFFER
                     </div>
                     <div className="space-y-4">
+                        <ScrollReveal direction="up" delay={0}>
                         <div className="flex items-start gap-3 group">
                             <div className="w-8 h-8 rounded-lg bg-accent-blue/20 flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-110">
                                 <Code2 size={16} className="text-accent-blue" />
@@ -386,6 +392,8 @@ export default function About() {
                                 </button>
                             </div>
                         </div>
+                        </ScrollReveal>
+                        <ScrollReveal direction="up" delay={0.06}>
                         <div className="flex items-start gap-3 group">
                             <div className="w-8 h-8 rounded-lg bg-accent-blue/20 flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-110">
                                 <Palette size={16} className="text-accent-blue" />
@@ -395,6 +403,8 @@ export default function About() {
                                 <p className="text-text-dim text-[0.85rem] leading-relaxed">Designing in Figma interfaces that are both intuitive and beautiful, with a focus on user experience and accessibility.</p>
                             </div>
                         </div>
+                        </ScrollReveal>
+                        <ScrollReveal direction="up" delay={0.12}>
                         <div className="flex items-start gap-3 group">
                             <div className="w-8 h-8 rounded-lg bg-accent-blue/20 flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-110">
                                 <Rocket size={16} className="text-accent-blue" />
@@ -404,6 +414,8 @@ export default function About() {
                                 <p className="text-text-dim text-[0.85rem] leading-relaxed">Optimising speed, making SEO improvements, and putting into practice the best practices in order to achieve better rankings.</p>
                             </div>
                         </div>
+                        </ScrollReveal>
+                        <ScrollReveal direction="up" delay={0.18}>
                         <div className="flex items-start gap-3 group">
                             <div className="w-8 h-8 rounded-lg bg-accent-blue/20 flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-110">
                                 <Zap size={16} className="text-accent-blue" />
@@ -413,6 +425,8 @@ export default function About() {
                                 <p className="text-text-dim text-[0.85rem] leading-relaxed">Design and integration of RESTful and GraphQL APIs to ensure a smooth flow of data between different systems.</p>
                             </div>
                         </div>
+                        </ScrollReveal>
+                        <ScrollReveal direction="up" delay={0.24}>
                         <div className="flex items-start gap-3 group">
                             <div className="w-8 h-8 rounded-lg bg-accent-blue/20 flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-110">
                                 <Bot size={16} className="text-accent-blue" />
@@ -425,11 +439,13 @@ export default function About() {
                                 </button>
                             </div>
                         </div>
+                        </ScrollReveal>
                     </div>
                 </SpotlightCard>
 
                 {/* Social Card */}
-                <SpotlightCard className="card lg:col-span-1 flex flex-col">
+                <ScrollReveal direction="right" className="lg:col-span-1">
+                <SpotlightCard className="card flex flex-col h-full">
                     <div className="text-[0.75rem] font-semibold text-text-dim tracking-[1.5px] mb-[20px] flex items-center gap-[8px]">
                         <Users size={14} /> CONNECT
                     </div>
@@ -454,9 +470,11 @@ export default function About() {
                         <ArrowRight className="text-text-dim transition-all duration-300 group-hover:scale-110" />
                     </Link>
                 </SpotlightCard>
+                </ScrollReveal>
 
                 {/* Resume Card */}
-                <SpotlightCard className="card lg:col-span-1">
+                <ScrollReveal direction="up" delay={0.1} className="lg:col-span-1">
+                <SpotlightCard className="card h-full">
                     <div className="text-[0.75rem] font-semibold text-text-dim tracking-[1.5px] mb-[20px] flex items-center gap-[8px]">
                         <BookOpen size={14} /> DOCUMENTS
                     </div>
@@ -471,35 +489,46 @@ export default function About() {
                         <ArrowRight className="text-text-dim transition-all duration-300 group-hover:translate-x-1" />
                     </div>
                 </SpotlightCard>
+                </ScrollReveal>
 
                 {/* Philosophy Card */}
-                <SpotlightCard className="card lg:col-span-2">
+                <ScrollReveal direction="up" delay={0.05} className="lg:col-span-2">
+                <SpotlightCard className="card h-full">
                     <div className="text-[0.75rem] font-semibold text-text-dim tracking-[1.5px] mb-[20px] flex items-center gap-[8px]">
                         <Lightbulb size={14} /> MY APPROACH
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div className="p-4 rounded-xl bg-white/5 hover:-translate-y-1 hover:bg-white/10 transition-all duration-300">
+                        <ScrollReveal direction="none" delay={0}>
+                        <div className="p-4 rounded-xl bg-white/5 hover:-translate-y-1 hover:bg-white/10 transition-all duration-300 h-full">
                             <Target size={20} className="text-accent-blue mb-2" />
                             <h4 className="font-semibold text-[0.9rem] mb-1">User-Centric Design</h4>
                             <p className="text-text-dim text-[0.8rem] leading-relaxed">Every pixel has a purpose. I focus on intuitive navigation and accessibility in every project.</p>
                         </div>
-                        <div className="p-4 rounded-xl bg-white/5 hover:-translate-y-1 hover:bg-white/10 transition-all duration-300">
+                        </ScrollReveal>
+                        <ScrollReveal direction="none" delay={0.05}>
+                        <div className="p-4 rounded-xl bg-white/5 hover:-translate-y-1 hover:bg-white/10 transition-all duration-300 h-full">
                             <Zap size={20} className="text-accent-blue mb-2" />
                             <h4 className="font-semibold text-[0.9rem] mb-1">Performance First</h4>
                             <p className="text-text-dim text-[0.8rem] leading-relaxed">Fast load times and smooth interactions are essential. I optimize for Core Web Vitals.</p>
                         </div>
-                        <div className="p-4 rounded-xl bg-white/5 hover:-translate-y-1 hover:bg-white/10 transition-all duration-300">
+                        </ScrollReveal>
+                        <ScrollReveal direction="none" delay={0.1}>
+                        <div className="p-4 rounded-xl bg-white/5 hover:-translate-y-1 hover:bg-white/10 transition-all duration-300 h-full">
                             <Heart size={20} className="text-accent-blue mb-2" />
                             <h4 className="font-semibold text-[0.9rem] mb-1">Clean Code</h4>
                             <p className="text-text-dim text-[0.8rem] leading-relaxed">I create maintainable, well-documented code that scales. I follow industry best practices and standards.</p>
                         </div>
-                        <div className="p-4 rounded-xl bg-white/5 hover:-translate-y-1 hover:bg-white/10 transition-all duration-300">
+                        </ScrollReveal>
+                        <ScrollReveal direction="none" delay={0.15}>
+                        <div className="p-4 rounded-xl bg-white/5 hover:-translate-y-1 hover:bg-white/10 transition-all duration-300 h-full">
                             <Award size={20} className="text-accent-blue mb-2" />
                             <h4 className="font-semibold text-[0.9rem] mb-1">Continuous Learning</h4>
                             <p className="text-text-dim text-[0.8rem] leading-relaxed">Technology changes quickly. I keep up with new technologies and modern development patterns.</p>
                         </div>
+                        </ScrollReveal>
                     </div>
                 </SpotlightCard>
+                </ScrollReveal>
 
                 {/* CTA Card */}
                 <SpotlightCard className="glass-card lg:col-span-2 flex justify-end min-h-[220px] group relative overflow-hidden">

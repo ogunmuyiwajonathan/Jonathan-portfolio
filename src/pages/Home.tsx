@@ -156,6 +156,7 @@ export default function Home() {
                     </SpotlightCard>
 
                     {/* About Card */}
+                    <ScrollReveal direction="up" delay={0} className="h-full">
                     <Link to="/about" className="group h-full">
                         <SpotlightCard className="h-full flex flex-col p-8 transition-all duration-500 hover:-translate-y-1.5">
                             <div className="mb-8 text-foreground/80 transition-transform duration-500 group-hover:scale-110 w-fit">
@@ -172,8 +173,10 @@ export default function Home() {
                             </p>
                         </SpotlightCard>
                     </Link>
+                    </ScrollReveal>
 
                     {/* Works Card */}
+                    <ScrollReveal direction="up" delay={0.1} className="h-full">
                     <Link to="/works" className="group h-full">
                         <SpotlightCard className="h-full flex flex-col p-8 transition-all duration-500 hover:-translate-y-1.5">
                             <div className="mb-8 text-foreground/80 transition-transform duration-500 group-hover:scale-110 w-fit">
@@ -190,6 +193,7 @@ export default function Home() {
                             </p>
                         </SpotlightCard>
                     </Link>
+                    </ScrollReveal>
 
                     {/* Marquee â€” col-span-2 sits beside the hero's second row */}
                     <SpotlightCard className="card lg:col-span-full py-4 px-8 rounded-full overflow-hidden self-center">
@@ -210,7 +214,8 @@ export default function Home() {
           â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
 
                     {/* Tech Stack */}
-                    <SpotlightCard className="card lg:col-span-2 p-8 hover:bg-secondary transition-all duration-500 group">
+                    <ScrollReveal direction="left" className="lg:col-span-2">
+                    <SpotlightCard className="card p-8 hover:bg-secondary transition-all duration-500 group h-full">
                         <Link to="/about#specialize">
                             <div className="grid grid-cols-6 gap-5 mb-8">
                                 {techStack.map(({ icon, label, color }) => (
@@ -237,9 +242,11 @@ export default function Home() {
                             </span>
                         </Link>
                     </SpotlightCard>
+                    </ScrollReveal>
 
                     {/* Socials */}
-                    <SpotlightCard className="lg:col-span-1 p-8 flex flex-col justify-between group h-full">
+                    <ScrollReveal direction="right" className="lg:col-span-1">
+                    <SpotlightCard className="p-8 flex flex-col justify-between group h-full">
                         <div className="flex gap-3 flex-wrap">
                             {socials.map((social) => (
                                 <a
@@ -272,6 +279,7 @@ export default function Home() {
                             </Link>
                         </div>
                     </SpotlightCard>
+                    </ScrollReveal>
 
                     {/* Stats */}
                     <ScrollReveal direction="up" delay={0.1} className="lg:col-span-1">

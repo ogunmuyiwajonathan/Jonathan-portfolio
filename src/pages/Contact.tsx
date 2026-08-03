@@ -10,6 +10,7 @@ import SpotlightCard from '../components/react-bits/SpotlightCard';
 import BlurText from '../components/react-bits/BlurText';
 import Skeleton from '../components/Skeleton';
 import SlickDropdown from '../components/SlickDropdown';
+import ScrollReveal from '../components/ScrollReveal';
 
 const PROJECT_OPTIONS = [
     { value: "website", label: "Website Development" },
@@ -428,6 +429,7 @@ export default function Contact() {
                 </div>
 
                 {/* Email */}
+                <ScrollReveal direction="up" delay={0}>
                 <a href="mailto:ogunmuyiwajonathan@gmail.com" className="flex gap-[20px] mb-[30px] items-center no-underline group">
                     <div className="w-[54px] h-[54px] bg-gradient-to-br from-[#1e1e1e] to-[#141414] border border-border-color rounded-[14px] flex items-center justify-center shrink-0 text-accent-blue group-hover:border-accent-blue transition-colors">
                         <Mail size={22} />
@@ -438,8 +440,10 @@ export default function Contact() {
                         <p className="text-[0.75rem] text-text-dim mt-1">Best for detailed project inquiries</p>
                     </div>
                 </a>
+                </ScrollReveal>
 
                 {/* Phone */}
+                <ScrollReveal direction="up" delay={0.08}>
                 <div className="flex gap-[20px] mb-[30px] items-center no-underline">
                     <div className="w-[54px] h-[54px] bg-gradient-to-br from-[#1e1e1e] to-[#141414] border border-border-color rounded-[14px] flex items-center justify-center shrink-0 text-accent-blue">
                         <Phone size={22} />
@@ -450,8 +454,10 @@ export default function Contact() {
                         <p className="text-[0.75rem] text-text-dim mt-1">Available 9 AM - 6 PM WAT</p>
                     </div>
                 </div>
+                </ScrollReveal>
 
                 {/* WhatsApp */}
+                <ScrollReveal direction="up" delay={0.16}>
                 <a href="https://wa.me/2349157384644" target="_blank" rel="noopener noreferrer" className="flex gap-[20px] mb-[30px] items-center no-underline group">
                     <div className="w-[54px] h-[54px] bg-gradient-to-br from-[#1e1e1e] to-[#141414] border border-border-color rounded-[14px] flex items-center justify-center shrink-0 text-[#25d366] group-hover:border-[#25d366] transition-colors">
                         <svg className="w-[24px] h-[24px] fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -464,8 +470,10 @@ export default function Contact() {
                         <p className="text-[0.75rem] text-text-dim mt-1">Quick responses for urgent matters</p>
                     </div>
                 </a>
+                </ScrollReveal>
 
                 {/* Location */}
+                <ScrollReveal direction="up" delay={0.24}>
                 <div className="flex gap-[20px] mb-[35px] items-center no-underline">
                     <div className="w-[54px] h-[54px] bg-gradient-to-br from-[#1e1e1e] to-[#141414] border border-border-color rounded-[14px] flex items-center justify-center shrink-0 text-accent-blue">
                         <MapPin size={22} />
@@ -476,8 +484,10 @@ export default function Contact() {
                         <p className="text-[0.75rem] text-text-dim mt-1">Open to remote work worldwide</p>
                     </div>
                 </div>
+                </ScrollReveal>
 
                 {/* Availability Status */}
+                <ScrollReveal direction="up" delay={0.32}>
                 <div className="p-5 sm:p-6 rounded-[16px] bg-gradient-to-br from-accent-blue/10 to-accent-blue/5 border border-accent-blue/30 mb-8 backdrop-blur-xl">
                     <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 sm:gap-0">
                         <div className="flex items-center gap-4">
@@ -504,8 +514,10 @@ export default function Contact() {
                         </div>
                     </div>
                 </div>
+                </ScrollReveal>
 
                 {/* Social Profiles */}
+                <ScrollReveal direction="up" delay={0.4}>
                 <div id="connect" className="mt-[40px] scroll-mt-24">
                     <h2 className="text-[0.8rem] tracking-[2px] text-white mb-[20px] uppercase font-bold">Connect Online</h2>
                     <p className="text-text-dim text-[0.85rem] mb-4">
@@ -531,8 +543,10 @@ export default function Contact() {
                         </a>
                     </div>
                 </div>
+                </ScrollReveal>
 
                 {/* Working Hours */}
+                <ScrollReveal direction="up" delay={0.48}>
                 <div className="mt-8 p-6 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 shadow-xl">
   <div className="flex items-center gap-3 mb-4">
     <div className="p-2 rounded-xl bg-accent-blue/10 border border-accent-blue/20">
@@ -565,10 +579,12 @@ export default function Contact() {
     </p>
   </div>
 </div>
+</ScrollReveal>
             </div>
 
             {/* Right Column - Contact Form */}
-            <SpotlightCard className="bg-card-bg border border-border-color rounded-[24px] min-[900px]:rounded-[30px] p-[30px_20px] min-[900px]:p-[45px] relative" spotlightColor="rgba(61, 90, 241, 0.1)">
+            <ScrollReveal direction="right">
+            <SpotlightCard className="bg-card-bg border border-border-color rounded-[24px] min-[900px]:rounded-[30px] p-[30px_20px] min-[900px]:p-[45px] relative h-full" spotlightColor="rgba(61, 90, 241, 0.1)">
                 <div className="absolute top-[30px] right-[35px] text-text-dim opacity-30">
                     <Sparkles size={24} />
                 </div>
@@ -766,6 +782,7 @@ export default function Contact() {
                     </div>
                 </div>
             </SpotlightCard>
+            </ScrollReveal>
         </div>
     );
 }

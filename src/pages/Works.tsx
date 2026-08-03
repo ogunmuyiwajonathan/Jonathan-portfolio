@@ -4,6 +4,7 @@ import { ArrowRight, ExternalLink, X, Calendar, Tag } from 'lucide-react';
 import SpotlightCard from '../components/react-bits/SpotlightCard';
 import SplitText from '../components/react-bits/SplitText';
 import Skeleton from '../components/Skeleton';
+import ScrollReveal from '@/components/ScrollReveal';
 
 interface Project {
     title: string;
@@ -128,21 +129,6 @@ export default function Works() {
         return () => clearTimeout(timer);
     }, []);
 
-    useEffect(() => {
-        if (!isLoading) {
-            const cards = document.querySelectorAll('.animate-on-load');
-            cards.forEach((card, index) => {
-                (card as HTMLElement).style.opacity = '0';
-                (card as HTMLElement).style.transform = 'translateY(20px)';
-                setTimeout(() => {
-                    (card as HTMLElement).style.transition = 'opacity 0.8s ease, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)';
-                    (card as HTMLElement).style.opacity = '1';
-                    (card as HTMLElement).style.transform = 'translateY(0)';
-                }, 100 * (index + 1));
-            });
-        }
-    }, [isLoading]);
-
     // Prevent body scroll when modal is open
     useEffect(() => {
         if (selectedProject) {
@@ -191,7 +177,7 @@ export default function Works() {
                 ) : (
                     <>
                         {projects.map((project, i) => (
-                        <div key={i} className="group flex flex-col h-full animate-on-load">
+                        <ScrollReveal key={i} direction="up" delay={i * 0.05} className="group flex flex-col h-full">
                             <SpotlightCard className="p-6 flex flex-col h-full transition-all duration-500 group-hover:-translate-y-2 group-hover:bg-[#1f1f1f]/80 sm:p-8">
                                 {/* Image */}
                                 <div className={`w-full h-[220px] sm:h-[260px] rounded-[20px] overflow-hidden mb-6 flex items-center justify-center bg-gradient-to-tr ${project.gradient}`}>
@@ -257,11 +243,11 @@ export default function Works() {
                                     </button>
                                 </div>
                             </SpotlightCard>
-                        </div>
+                        </ScrollReveal>
                         ))}
                         
                         {/* Coming Soon Card */}
-                        <div className="group flex flex-col h-full animate-on-load">
+                        <ScrollReveal direction="up" delay={0.3} className="group flex flex-col h-full">
                             <SpotlightCard className="p-6 flex flex-col h-full transition-all duration-500 sm:p-8 items-center justify-center min-h-[350px] border-dashed border-2 border-white/10 bg-transparent opacity-60 hover:opacity-100 hover:border-white/30">
                                 <div className="text-center space-y-4">
                                     <div className="text-5xl mb-4">??</div>
@@ -271,7 +257,7 @@ export default function Works() {
                                     </p>
                                 </div>
                             </SpotlightCard>
-                        </div>
+                        </ScrollReveal>
                     </>
                 )}
             </div>
