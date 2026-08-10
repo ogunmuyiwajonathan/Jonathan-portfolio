@@ -209,10 +209,6 @@ export default function Home() {
                         </div>
                     </SpotlightCard>
 
-                    {/* â”€â”€ ROW 3 â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-               [ Tech Stack (col-span-2) ] [ Socials ] [ Stats ]
-          â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
-
                     {/* Tech Stack */}
                     <ScrollReveal direction="left" className="lg:col-span-2">
                     <SpotlightCard className="card p-8 hover:bg-secondary transition-all duration-500 group h-full">

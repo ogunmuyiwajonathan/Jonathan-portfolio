@@ -79,7 +79,7 @@ const projects: Project[] = [
         year: "2026"
     },
     {
-        title: "Tasty Crust",
+        title: "Tasty Crust (DEMO)",
         category: "Tailwind CSS / UI / UX",
         description: "An appetizing and responsive restaurant web application with fluid visual styling.",
         fullDescription: "Tasty Crust is a fully responsive web application for a bakery and restaurant, designed with a strong focus on UI/UX quality. I used Tailwind CSS to build a pixel-perfect, appetizing interface that draws the user in. The project included menus, booking sections, and a cart experience, all styled for maximum visual appeal and ease of use.",
@@ -91,8 +91,8 @@ const projects: Project[] = [
         year: "2025"
     },
     {
-        title: "Stalworld Tech",
-        category: "React.js / Web Design",
+        title: "Stalworld Tech (DEMO)",
+        category: "React.js ",
         description: "A professional landing page and marketing site designed for Stalworld Tech.",
         fullDescription: "Stalworld Tech is a professional landing page and marketing site I designed and built from the ground up. The goal was to create a clean, modern experience that communicates the company's brand credibility and highlights their services. I focused on optimized conversion flows, responsive design, and smooth visual transitions using React.js.",
         highlights: ["Built with React.js for a dynamic experience", "Custom responsive UI with smooth transitions", "Optimized for conversions and visual branding", "Deployed live on Vercel"],

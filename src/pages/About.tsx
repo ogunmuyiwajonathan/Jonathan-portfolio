@@ -35,6 +35,7 @@ export default function About() {
     usePageTitle('About');
     const [educationExpanded, setEducationExpanded] = useState(false);
     const [experienceExpanded, setExperienceExpanded] = useState(false);
+    const [summaryExpanded, setSummaryExpanded] = useState(false);
     const [showAllSkills, setShowAllSkills] = useState(false);
     const [expandedServices, setExpandedServices] = useState<Record<string, boolean>>({});
     const experienceScrollRef = useRef<HTMLDivElement>(null);
@@ -128,8 +129,8 @@ export default function About() {
         <>
             <div className="grid grid-cols-1 gap-6 mb-[60px] lg:grid-cols-4">
                 {/* Profile Image Card */}
-                <SpotlightCard className="lg:col-span-1 !p-0 bg-gradient-to-br from-[#2ea9ff] to-[#0056b3] h-[320px] lg:h-auto overflow-hidden group border border-border-color rounded-[30px]" spotlightColor="rgba(46, 169, 255, 0.2)">
-                    <img src="/images/profile.webp" alt="Jonathan Ogunmuyiwa - Full Stack Developer" width={400} height={500} loading="eager" fetchPriority="high" decoding="async" className="w-full h-full object-cover block transition-all duration-[800ms] group-hover:scale-110" />
+                <SpotlightCard className="lg:col-span-1 !p-0 bg-gradient-to-br from-[#2ea9ff] to-[#0056b3] h-[320px] md:h-[400px] lg:h-auto overflow-hidden group border border-border-color rounded-[30px]" spotlightColor="rgba(46, 169, 255, 0.2)">
+                    <img src="/images/profile.webp" alt="Jonathan Ogunmuyiwa - Full Stack Developer" width={400} height={500} loading="eager" fetchPriority="high" decoding="async" className="w-full h-full object-cover object-center md:object-[center_20%] lg:object-center block transition-all duration-[800ms] group-hover:scale-110" />
                 </SpotlightCard>
 
                 {/* Self Summary Card */}
@@ -144,12 +145,102 @@ export default function About() {
                         direction="top"
                         className="text-[clamp(1.6rem,5vw,2.2rem)] mt-[15px] font-bold leading-[1.2] text-white"
                     />
-                    <p className="text-text-dim text-[1rem] max-w-[550px] mt-[12px] leading-relaxed">
-                        I am a passionate software engineer and designer located in Nigeria. I focus on creating outstanding digital experiences that connect beauty and function. I have a sharp eye for detail and a strong grasp of modern web technologies. I specialize in building high-performance web applications that not only meet user expectations but also surpass them.
-                    </p>
-                    <p className="text-text-dim text-[1rem] max-w-[550px] mt-[12px] leading-relaxed">
-                        My journey in tech started with a curiosity about how things work online. This quickly turned into a professional goal of achieving excellence in software development. Now, I combine my technical skills with creative problem-solving to provide solutions that support business growth and enhance user satisfaction.
-                    </p>
+                    {/* Desktop: always full text */}
+                    <div className="hidden md:block max-w-[550px] mt-[12px]">
+                        <p className="text-text-dim text-[1rem] leading-relaxed">
+                            I'm a software engineer and designer based in Nigeria, building web applications where performance and craft aren't tradeoffs — they're the same requirement. I care about the pixel and the millisecond equally.
+                        </p>
+                        <p className="text-text-dim text-[1rem] mt-[12px] leading-relaxed">
+                            It started as curiosity about how the web actually works under the hood. That curiosity never really left — it just turned into a discipline. I'm still learning, still testing new tools and approaches, still chasing the version of "good" that's one step past what I currently know.
+                        </p>
+                        <p className="text-text-dim text-[1rem] mt-[12px] leading-relaxed">
+                            I bring that same restlessness to client work: solving real business problems with code and design that hold up under scrutiny, not just first impressions.
+                        </p>
+                    </div>
+                    {/* Mobile: truncated with modal expand */}
+                    <div className="md:hidden">
+                        {summaryExpanded && (
+                            <button
+                                type="button"
+                                aria-label="Close self-summary"
+                                className="fixed inset-0 z-[90] bg-black/65 backdrop-blur-[2px] cursor-default"
+                                onClick={() => setSummaryExpanded(false)}
+                            />
+                        )}
+                        <div
+                            role={summaryExpanded ? undefined : 'button'}
+                            tabIndex={summaryExpanded ? -1 : 0}
+                            aria-expanded={summaryExpanded}
+                            aria-label={summaryExpanded ? undefined : 'Expand self-summary'}
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                if (!summaryExpanded) setSummaryExpanded(true);
+                            }}
+                            onKeyDown={(e) => {
+                                if (!summaryExpanded && (e.key === 'Enter' || e.key === ' ')) {
+                                    e.preventDefault();
+                                    setSummaryExpanded(true);
+                                }
+                            }}
+                            className={`rounded-[30px] outline-none transition-shadow ${
+                                summaryExpanded ? 'cursor-default' : 'cursor-pointer focus-visible:ring-2 focus-visible:ring-accent-blue/50'
+                            }`}
+                        >
+                            <div
+                                className={`transition-all duration-300 ease-out ${
+                                    summaryExpanded
+                                        ? '!fixed !left-1/2 !top-1/2 !-translate-x-1/2 !-translate-y-1/2 z-[100] w-[min(92vw,560px)] max-h-[min(88vh,680px)] overflow-hidden shadow-2xl ring-1 ring-accent-blue/25 bg-[#161616] p-[32px_16px] sm:p-[32px] rounded-[30px]'
+                                        : 'max-h-[140px] overflow-hidden'
+                                }`}
+                            >
+                                {summaryExpanded && (
+                                    <div className="flex items-center justify-between gap-3 mb-[20px] shrink-0">
+                                        <div className="text-[0.75rem] font-semibold text-text-dim tracking-[1.5px] flex items-center gap-[8px]">
+                                            <Sparkles size={14} /> SELF-SUMMARY
+                                        </div>
+                                        <button
+                                            type="button"
+                                            aria-label="Close"
+                                            className="shrink-0 rounded-lg p-1.5 text-text-dim hover:bg-white/10 hover:text-white transition-colors"
+                                            onClick={(e) => {
+                                                e.stopPropagation();
+                                                setSummaryExpanded(false);
+                                            }}
+                                        >
+                                            <X size={18} />
+                                        </button>
+                                    </div>
+                                )}
+                                {summaryExpanded && (
+                                    <div className="font-bold text-[1.5rem] text-white mb-[16px]">
+                                        Jonathan Ogunmuyiwa
+                                    </div>
+                                )}
+                                <div
+                                    className={`space-y-[12px] min-h-0 ${
+                                        summaryExpanded
+                                            ? 'min-h-0 flex-1 overflow-y-auto overflow-x-hidden pr-1 -mr-1 [scrollbar-gutter:stable]'
+                                            : ''
+                                    }`}
+                                >
+                                    <p className="text-text-dim text-[1rem] leading-relaxed">
+                                        I'm a software engineer and designer based in Nigeria, building web applications where performance and craft aren't tradeoffs — they're the same requirement. I care about the pixel and the millisecond equally.
+                                    </p>
+                                    <p className="text-text-dim text-[1rem] leading-relaxed">
+                                        It started as curiosity about how the web actually works under the hood. That curiosity never really left — it just turned into a discipline. I'm still learning, still testing new tools and approaches, still chasing the version of "good" that's one step past what I currently know.
+                                    </p>
+                                    <p className="text-text-dim text-[1rem] leading-relaxed">
+                                        I bring that same restlessness to client work: solving real business problems with code and design that hold up under scrutiny, not just first impressions.
+                                    </p>
+                                </div>
+                            </div>
+                            {!summaryExpanded && (
+                                <p className="text-[0.7rem] text-accent-blue/90 mt-4 text-center font-medium tracking-wide shrink-0">
+                                    Click to expand — scroll for full details
+                                </p>
+                            )}
+                        </div>
+                    </div>
                 </SpotlightCard>
 
                 {/* Experience Card - click to bring forward and scroll full content */}
@@ -456,7 +547,7 @@ export default function About() {
                             </svg>
                         </a>
                         <a href="https://www.linkedin.com/in/jonathan-ogunmuyiwa" target="_blank" rel="noopener noreferrer" className="w-[50px] h-[50px] border border-border-color rounded-full flex items-center justify-center bg-[rgba(255,255,255,0.03)] transition-all duration-300 text-text-dim hover:bg-white hover:text-black hover:border-white hover:scale-110">
-                            <Linkedin size={20} />
+                            <Linkedin size={20}/>
                         </a>
                         <a href="https://github.com/ogunmuyiwajonathan" target="_blank" rel="noopener noreferrer" className="w-[50px] h-[50px] border border-border-color rounded-full flex items-center justify-center bg-[rgba(255,255,255,0.03)] transition-all duration-300 text-text-dim hover:bg-white hover:text-black hover:border-white hover:scale-110">
                             <Github size={20} />
