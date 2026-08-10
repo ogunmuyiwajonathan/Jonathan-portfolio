@@ -209,3 +209,16 @@
   );
   animation: shimmer 2s infinite;
 }
+
+/* Faster marquee on mobile/tablet */
+@media (max-width: 1023px) {
+  .animate-scroll {
+    animation-duration: 15s !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .animate-scroll {
+    animation-duration: 10s !important;
+  }
+}

@@ -22,7 +22,7 @@ interface Project {
 const projects: Project[] = [
     {
         title: "Dr. Olatoye",
-        category: "React / Tailwind CSS / Framer Motion",
+        category: "React / Tailwind CSS",
         description: "A professional landing page for a Nigerian educational consultant serving schools across Nigeria and Ghana.",
         fullDescription: "Dr. Olatoye is a professional landing page built for an educational consultant with over 30 years of experience serving private schools across Nigeria. The site showcases Dr. Olatoye's services, school growth programmes, teacher training, clinical school diagnosis, and consultancy, alongside an educational materials catalog featuring 40+ authored books. It features an animated hero with rotating taglines and live statistics counters, a comprehensive services showcase, WhatsApp integration for instant client communication and ordering, client testimonials, and multiple conversion touchpoints. Built with React, Tailwind CSS, and Framer Motion, the site uses a professional navy-and-green aesthetic that communicates trust and educational expertise. The layout is fully responsive and mobile-first, optimized for the African market where most users browse on smartphones.",
         highlights: [
@@ -67,7 +67,7 @@ const projects: Project[] = [
         year: "2026"
     },
     {
-        title: "Belleville Dental Care",
+        title: "Belleville Dental Care (DEMO)",
         category: "React / TypeScript",
         description: "A modern platform for a dental clinic featuring appointment scheduling and patient resources.",
         fullDescription: "Belleville Dental Care is a modern, highly-performant healthcare web application built with React and TypeScript. It features a complete appointment scheduling system, detailed service descriptions, a patient resources section, and a clean professional look that instills confidence in patients. TypeScript was used throughout for type safety and scalability.",
@@ -168,9 +168,9 @@ export default function Works() {
                             <Skeleton className="w-1/4 h-3 mb-4 rounded-full" />
                             <Skeleton className="w-3/4 h-8 mb-4 rounded-lg" />
                             <Skeleton className="w-full h-20 mb-6 rounded-lg" />
-                            <div className="flex gap-3 mt-auto">
-                                <Skeleton className="w-32 h-10 rounded-full" />
-                                <Skeleton className="w-32 h-10 rounded-full" />
+                            <div className="flex flex-col sm:flex-row gap-3 mt-auto">
+                                <Skeleton className="w-full sm:w-32 h-11 rounded-full" />
+                                <Skeleton className="w-full sm:w-32 h-11 rounded-full" />
                             </div>
                         </div>
                     ))
@@ -208,12 +208,12 @@ export default function Works() {
                                 </p>
 
                                 {/* Action Buttons */}
-                                <div className="flex items-center gap-3 mt-auto">
+                                <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 mt-auto">
                                     <a
                                         href={project.link}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="relative flex items-center gap-2 px-5 py-2.5 text-white rounded-full text-[0.8rem] font-bold transition-all duration-300 hover:scale-105 overflow-hidden group/btn shadow-lg shadow-black/20 hover:shadow-xl hover:shadow-black/30" style={{ backgroundColor: project.accentColor }}
+                                        className="relative flex items-center justify-center sm:justify-start gap-2 px-5 min-h-[44px] py-2.5 text-white rounded-full text-[0.85rem] sm:text-[0.8rem] font-bold transition-all duration-300 hover:scale-105 overflow-hidden group/btn shadow-lg shadow-black/20 hover:shadow-xl hover:shadow-black/30" style={{ backgroundColor: project.accentColor }}
                                     >
                                         <span className="relative z-10 flex items-center gap-2 transition-transform duration-300 group-hover/btn:translate-x-1">
                                             <ExternalLink size={14} className="transition-transform duration-300 group-hover/btn:rotate-[-12deg] group-hover/btn:scale-110" />
@@ -228,7 +228,7 @@ export default function Works() {
                                     </a>
                                     <button
                                         onClick={() => setSelectedProject(project)}
-                                        className="relative flex items-center gap-2 px-5 py-2.5 border border-white/10 text-text-dim rounded-full text-[0.8rem] font-bold transition-all duration-300 hover:border-white/30 hover:text-foreground hover:scale-105 cursor-pointer overflow-hidden group/btn"
+                                        className="relative flex items-center justify-center sm:justify-start gap-2 px-5 min-h-[44px] py-2.5 border border-white/10 text-text-dim rounded-full text-[0.85rem] sm:text-[0.8rem] font-bold transition-all duration-300 hover:border-white/30 hover:text-foreground hover:scale-105 cursor-pointer overflow-hidden group/btn"
                                     >
                                         <span className="relative z-10 flex items-center gap-2 transition-transform duration-300 group-hover/btn:translate-x-1">
                                             Read More
@@ -265,15 +265,15 @@ export default function Works() {
             {/* Modal */}
             {selectedProject && (
                 <div
-                    className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-md"
+                    className="fixed inset-0 z-50 flex items-end md:items-center justify-center bg-black/70 backdrop-blur-md animate-in fade-in duration-300"
                     onClick={() => setSelectedProject(null)}
                 >
                     <div
-                        className="relative w-full max-w-lg bg-[#111] border border-white/10 rounded-[28px] overflow-y-auto shadow-2xl max-h-[85vh]"
+                        className="relative w-full max-w-lg bg-[#111] border-t md:border border-white/10 rounded-t-[32px] md:rounded-[28px] overflow-y-auto shadow-2xl h-[85vh] md:h-auto md:max-h-[85vh] animate-in slide-in-from-bottom-8 md:slide-in-from-bottom-0 md:zoom-in-95 duration-300"
                         onClick={e => e.stopPropagation()}
                     >
                         {/* Modal Image - compact strip */}
-                        <div className={`w-full h-[100px] bg-gradient-to-tr ${selectedProject.gradient} flex items-center justify-center overflow-hidden`}>
+                        <div className={`sticky top-0 z-20 w-full h-[100px] bg-gradient-to-tr ${selectedProject.gradient} flex items-center justify-center overflow-hidden rounded-t-[32px] md:rounded-t-none`}>
                             <img
                                 src={selectedProject.image}
                                 alt={selectedProject.title}
@@ -283,15 +283,15 @@ export default function Works() {
                                 decoding="async"
                                 className="h-full object-contain"
                             />
-                        </div>
 
-                        {/* Close Button */}
-                        <button
-                            onClick={() => setSelectedProject(null)}
-                            className="absolute top-4 right-4 w-10 h-10 bg-black/50 hover:bg-black/80 text-white rounded-full flex items-center justify-center transition-all duration-300 backdrop-blur-sm border border-white/10"
-                        >
-                            <X size={18} />
-                        </button>
+                            {/* Close Button */}
+                            <button
+                                onClick={() => setSelectedProject(null)}
+                                className="absolute top-4 right-4 w-10 h-10 bg-black/50 hover:bg-black/80 text-white rounded-full flex items-center justify-center transition-all duration-300 backdrop-blur-sm border border-white/10"
+                            >
+                                <X size={18} />
+                            </button>
+                        </div>
 
                         {/* Modal Content */}
                         <div className="p-5">

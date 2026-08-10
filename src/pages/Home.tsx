@@ -33,10 +33,10 @@ const services = [
 
 const skills = [
     { label: 'Frontend Architecture', level: '90%' },
-    { label: 'Backend Systems', level: '80%' },
+    { label: 'Backend Systems', level: '75%' },
     { label: 'Database & Cloud', level: '80%' },
     { label: 'UI/UX Design Strategy', level: '85%' },
-    { label: 'Agentic AI Development', level: '85%' },
+    { label: 'Agentic AI Development', level: '75%' },
 ];
 
 
@@ -74,7 +74,7 @@ export default function Home() {
         return (
             <div className="min-h-screen bg-background">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-                    <div className="grid grid-cols-1 gap-6 mb-24 lg:grid-cols-4">
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-24">
                         <Skeleton className="lg:col-span-3 lg:row-span-2 h-[450px] rounded-[50px]" />
                         <Skeleton className="h-[250px] rounded-[30px]" />
                         <Skeleton className="h-[250px] rounded-[30px]" />
@@ -93,7 +93,7 @@ export default function Home() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
                 <div className="grid grid-cols-1 gap-6 mb-24 lg:grid-cols-4">
 
-                    <SpotlightCard className="lg:col-span-3 lg:row-span-2 p-10 md:p-14 flex items-center group relative overflow-hidden">
+                    <SpotlightCard className="md:col-span-2 lg:col-span-3 lg:row-span-2 p-10 md:p-14 flex items-center group relative overflow-hidden">
                         {/* Ambient glow */}
                         <div className="absolute inset-0 bg-gradient-to-br from-accent-blue/5 via-transparent to-transparent pointer-events-none" />
 
@@ -196,7 +196,7 @@ export default function Home() {
                     </ScrollReveal>
 
                     {/* Marquee â€” col-span-2 sits beside the hero's second row */}
-                    <SpotlightCard className="card lg:col-span-full py-4 px-8 rounded-full overflow-hidden self-center">
+                    <SpotlightCard className="card md:col-span-2 lg:col-span-full py-4 px-8 rounded-full overflow-hidden self-center">
                         <div className="flex animate-scroll whitespace-nowrap gap-10">
                             {[...marqueeItems, ...marqueeItems].map((text, i) => (
                                 <span
@@ -296,10 +296,6 @@ export default function Home() {
                         </SpotlightCard>
                     </ScrollReveal>
 
-                    {/* â”€â”€ ROW 4 â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-               [ Services (col-span-2) ] [ Skills (col-span-2) ]
-          â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
-
                     {/* Services */}
                     <SpotlightCard className="card lg:col-span-2 p-8">
                         <div className="text-[0.7rem] font-bold text-muted-foreground tracking-[2px] mb-8 flex items-center gap-2">
@@ -319,7 +315,7 @@ export default function Home() {
                     </SpotlightCard>
 
                     {/* Skills */}
-                    <ScrollReveal direction="right" delay={0.1} className="lg:col-span-2">
+                    <ScrollReveal direction="right" delay={0.1} className="md:col-span-2 lg:col-span-2">
                     <SpotlightCard className="card p-8">
                         <div className="text-[0.7rem] font-bold text-muted-foreground tracking-[2px] mb-8 flex items-center gap-2">
                             <Code2 size={14} className="text-accent-blue" /> MASTERY LEVELS
@@ -344,32 +340,8 @@ export default function Home() {
                     </SpotlightCard>
                     </ScrollReveal>
 
-                    {/* --- ROW: Testimonials --- */}
-                    {/*
-                    <ScrollReveal direction="up" delay={0} className="lg:col-span-4">
-                        <SpotlightCard className="p-8 md:p-12">
-                            <div className="text-[0.7rem] font-bold text-muted-foreground tracking-[2px] mb-8 flex items-center gap-2">
-                                <Quote size={14} className="text-accent-blue" /> WHAT THEY SAY
-                            </div>
-                            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                                {testimonials.map((t) => (
-                                    <div key={t.name} className="flex flex-col gap-4 p-6 rounded-2xl bg-secondary/50 border border-border/50">
-                                        <p className="text-muted-foreground text-sm leading-relaxed italic">
-                                            &ldquo;{t.quote}&rdquo;
-                                        </p>
-                                        <div>
-                                            <p className="text-foreground font-bold text-sm">{t.name}</p>
-                                            <p className="text-muted-foreground text-xs">{t.role}</p>
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
-                        </SpotlightCard>
-                    </ScrollReveal>
-                    */}
-
                     {/* CTA */}
-                    <ScrollReveal direction="up" delay={0.1} className="lg:col-span-4">
+                    <ScrollReveal direction="up" delay={0.1} className="md:col-span-2 lg:col-span-4">
                     <SpotlightCard
                         className="glass-card p-10 md:p-16 group relative
               overflow-hidden transition-all duration-700 hover:scale-[1.005]"

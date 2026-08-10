@@ -1,0 +1,30 @@
+- generic [ref=f1e2]:
+  - heading "Jonathan." [level=1] [ref=f1e5]
+  - generic [ref=f1e10]:
+    - generic:
+      - generic:
+        - img "Earth"
+      - generic:
+        - generic:
+          - img "Moon"
+    - navigation [ref=f1e11]:
+      - link "Jonathan." [ref=f1e12] [cursor=pointer]:
+        - /url: /
+      - button "Open menu" [ref=f1e14] [cursor=pointer]
+    - contentinfo [ref=f1e24]:
+      - link "Jonathan." [ref=f1e25] [cursor=pointer]:
+        - /url: /
+      - list [ref=f1e26]:
+        - listitem [ref=f1e27]:
+          - link "Home" [ref=f1e28] [cursor=pointer]:
+            - /url: /
+        - listitem [ref=f1e29]:
+          - link "About" [ref=f1e30] [cursor=pointer]:
+            - /url: /about
+        - listitem [ref=f1e31]:
+          - link "Works" [ref=f1e32] [cursor=pointer]:
+            - /url: /works
+        - listitem [ref=f1e33]:
+          - link "Contact" [ref=f1e34] [cursor=pointer]:
+            - /url: /contact
+      - paragraph [ref=f1e35]: © 2026 Jonathan Ogunmuyiwa. All rights reserved.

@@ -55,7 +55,7 @@ export default function SlickDropdown({
                 onClick={() => setIsOpen(!isOpen)}
                 className={`
                     w-full flex items-center justify-between text-left
-                    bg-[#1d1d1d] border rounded-[12px] p-[16px_20px] text-[0.95rem] 
+                    bg-[#1d1d1d] border rounded-[12px] p-[16px_20px] sm:p-[20px_28px] text-[0.95rem] 
                     transition-all duration-300 focus:outline-none focus:bg-[#222]
                     ${disabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}
                     ${value ? 'text-white' : 'text-text-dim'}

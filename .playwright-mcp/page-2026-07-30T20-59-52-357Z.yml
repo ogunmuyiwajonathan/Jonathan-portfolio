@@ -1,0 +1,223 @@
+- generic [ref=e3]:
+  - navigation [ref=e4]:
+    - generic [ref=e6]:
+      - link "Dr. Olatoye DR. OLATOYE EDUCATIONAL CONSULTANT" [ref=e7] [cursor=pointer]:
+        - /url: "#home"
+        - img "Dr. Olatoye" [ref=e9]
+        - generic [ref=e11]:
+          - generic [ref=e12]: DR. OLATOYE
+          - generic [ref=e13]: EDUCATIONAL CONSULTANT
+      - generic [ref=e14]:
+        - link "Home" [ref=e15] [cursor=pointer]:
+          - /url: "#home"
+        - link "About" [ref=e17] [cursor=pointer]:
+          - /url: "#about"
+        - link "Services" [ref=e18] [cursor=pointer]:
+          - /url: "#services"
+        - link "Materials" [ref=e19] [cursor=pointer]:
+          - /url: "#materials"
+        - link "Testimonials" [ref=e20] [cursor=pointer]:
+          - /url: "#testimonials"
+      - link "Chat Now" [ref=e22] [cursor=pointer]:
+        - /url: https://wa.me/2348054104962
+  - generic [ref=e26]:
+    - generic [ref=e29]:
+      - generic [ref=e30]:
+        - generic [ref=e31]: Helping Schools Grow in Excellence
+        - heading "DR. OLATOYE TAIWO AKEEM" [level=1] [ref=e32]: DR. OLATOYETAIWO AKEEM
+        - generic [ref=e33]: Educational Consultant | Conference Speaker
+        - generic [ref=e37]: Helping Schools Grow in Excellence, Enrolment and Profitability
+        - generic [ref=e40]:
+          - generic [ref=e45]:
+            - generic [ref=e46]: 30+
+            - generic [ref=e47]: YearsExperience
+          - generic [ref=e54]:
+            - generic [ref=e55]: 40+
+            - generic [ref=e56]: BooksAuthored
+          - generic [ref=e65]:
+            - generic [ref=e66]: 1000+
+            - generic [ref=e67]: SchoolsImpacted
+          - generic [ref=e74]:
+            - generic [ref=e75]: Practical
+            - generic [ref=e76]: Solutions thatWork
+      - generic [ref=e78]:
+        - heading "TRANSFORM YOUR SCHOOL TODAY FOR A BETTER TOMORROW!" [level=2] [ref=e79]
+        - generic [ref=e80]:
+          - generic [ref=e81]: More Enrolment
+          - generic [ref=e86]: Better Academic Results
+          - generic [ref=e91]: Motivated Teachers
+          - generic [ref=e96]: Happy Parents
+          - generic [ref=e101]: Increased Profitability
+        - generic [ref=e106]:
+          - generic [ref=e107]: Chat with me now on
+          - link "WHATSAPP Click to chat instantly!" [ref=e108] [cursor=pointer]:
+            - /url: https://wa.me/2348054104962
+            - generic [ref=e109]: WHATSAPP
+            - generic [ref=e113]: Click to chat instantly!
+    - generic [ref=e115]:
+      - generic [ref=e116]: ABOUT DR. OLATOYE TAIWO
+      - generic [ref=e118]:
+        - img "Dr. Olatoye Taiwo" [ref=e121]
+        - generic [ref=e122]:
+          - paragraph [ref=e123]: I am an Educational Consultant with over 30 years of experience helping private schools across Nigeria achieve excellence. I have authored over 40 educational books and developed numerous teaching and learning resources for Nursery, Primary, JSS and SSS.
+          - generic [ref=e124]:
+            - paragraph [ref=e125]: "My mission is simple:"
+            - blockquote [ref=e126]: “To help every school become outstanding, financially sustainable and highly respected.”
+    - generic [ref=e129]:
+      - generic [ref=e130]: What I Do For Schools
+      - generic [ref=e132]:
+        - generic [ref=e133]:
+          - img "School Growth & Development Programmes" [ref=e135]
+          - heading "School Growth & Development Programmes" [level=3] [ref=e136]
+          - paragraph [ref=e138]: More Enrolment
+          - paragraph [ref=e139]: More Profit
+        - generic [ref=e140]:
+          - img "Clinical Diagnosis of Schools" [ref=e142]
+          - heading "Clinical Diagnosis of Schools" [level=3] [ref=e143]
+          - paragraph [ref=e145]: Identify Problems
+          - paragraph [ref=e146]: Get Solutions
+        - generic [ref=e147]:
+          - img "Teachers' Training & Development" [ref=e149]
+          - heading "Teachers' Training & Development" [level=3] [ref=e150]
+          - paragraph [ref=e152]: Better Teachers
+          - paragraph [ref=e153]: Better Results
+        - generic [ref=e154]:
+          - img "School Consultancy Services" [ref=e156]
+          - heading "School Consultancy Services" [level=3] [ref=e157]
+          - paragraph [ref=e159]: Build • Improve
+          - paragraph [ref=e160]: Sustain
+    - generic [ref=e163]:
+      - generic [ref=e164]: Educational Materials
+      - generic [ref=e166]:
+        - generic [ref=e167]:
+          - heading "MY FIRST BOOK SERIES (NURSERY)" [level=3] [ref=e169]:
+            - text: MY FIRST BOOK SERIES
+            - generic [ref=e170]: (NURSERY)
+          - img "My First Book Series Nursery" [ref=e172]
+          - list [ref=e174]:
+            - listitem [ref=e175]:
+              - generic [ref=e176]: •Mathematics
+              - generic [ref=e177]: •English
+            - listitem [ref=e178]:
+              - generic [ref=e179]: •Science
+              - generic [ref=e180]: •Social Studies
+            - listitem [ref=e181]:
+              - generic [ref=e182]: •Health Education
+              - generic [ref=e183]: •Handwriting
+          - generic [ref=e184]:
+            - link "Download Sample" [ref=e185] [cursor=pointer]:
+              - /url: "#"
+            - link "Order on WhatsApp" [ref=e188] [cursor=pointer]:
+              - /url: https://wa.me/2348054104962
+        - generic [ref=e191]:
+          - heading "LESSON NOTES" [level=3] [ref=e193]
+          - img "Lesson Notes" [ref=e195]
+          - paragraph [ref=e197]: Nursery, Primary, JSS & SSS
+          - generic [ref=e198]:
+            - link "Download Sample" [ref=e199] [cursor=pointer]:
+              - /url: "#"
+            - link "Order on WhatsApp" [ref=e202] [cursor=pointer]:
+              - /url: https://wa.me/2348054104962
+        - generic [ref=e205]:
+          - heading "SCHEMES OF WORK" [level=3] [ref=e207]
+          - generic [ref=e208]:
+            - img "Schemes of Work"
+          - paragraph [ref=e210]: Government Approved All Classes
+          - generic [ref=e211]:
+            - link "Download Sample" [ref=e212] [cursor=pointer]:
+              - /url: "#"
+            - link "Order on WhatsApp" [ref=e215] [cursor=pointer]:
+              - /url: https://wa.me/2348054104962
+        - generic [ref=e218]:
+          - heading "EXAMINATION QUESTIONS" [level=3] [ref=e220]
+          - generic [ref=e221]:
+            - img "Examination Questions"
+          - paragraph [ref=e223]: Nursery, Primary, JSS & SSS
+          - generic [ref=e224]:
+            - link "Download Sample" [ref=e225] [cursor=pointer]:
+              - /url: "#"
+            - link "Order on WhatsApp" [ref=e228] [cursor=pointer]:
+              - /url: https://wa.me/2348054104962
+        - generic [ref=e231]:
+          - heading "TEACHERS' & SCHOOL RESOURCES" [level=3] [ref=e233]
+          - generic [ref=e234]:
+            - img "Teachers & School Resources"
+          - list [ref=e236]:
+            - listitem [ref=e237]:
+              - generic [ref=e238]: •Record Books
+              - generic [ref=e239]: •Report Sheets
+            - listitem [ref=e240]:
+              - generic [ref=e241]: •Assessment Formats
+            - listitem [ref=e242]:
+              - generic [ref=e243]: •Teaching Aids & More
+          - generic [ref=e244]:
+            - link "Download Sample" [ref=e245] [cursor=pointer]:
+              - /url: "#"
+            - link "Order on WhatsApp" [ref=e248] [cursor=pointer]:
+              - /url: https://wa.me/2348054104962
+  - generic [ref=e252]:
+    - generic [ref=e254]:
+      - generic [ref=e255]:
+        - generic [ref=e256]: WHAT SCHOOL OWNERS SAY
+        - generic [ref=e258]:
+          - generic [ref=e259]:
+            - paragraph [ref=e271]: "\"Our school experienced remarkable improvement after implementing Dr. Olatoye's recommendations."
+            - generic [ref=e272]: — School Proprietor, Lagos
+          - generic [ref=e277]:
+            - paragraph [ref=e289]: "\"The lesson notes saved our teachers countless hours of preparation. Highly recommended!"
+            - generic [ref=e290]: — Head Teacher, Ogun State
+          - generic [ref=e295]:
+            - paragraph [ref=e307]: "\"The school diagnosis opened our eyes to problems we never noticed. Today we are a better school."
+            - generic [ref=e308]: — School Director, Abuja
+      - generic [ref=e313]:
+        - generic [ref=e314]: FREE SAMPLES AVAILABLE!
+        - generic [ref=e315]:
+          - generic [ref=e316]:
+            - heading "Download FREE samples of:" [level=4] [ref=e317]
+            - list [ref=e318]:
+              - listitem [ref=e319]: Detailed Lesson Plans
+              - listitem [ref=e320]: Comprehensive Schemes of Work
+              - listitem [ref=e321]: Topic & Mock Exam Papers
+              - listitem [ref=e322]: Teacher Resource Guides
+              - listitem [ref=e323]: Interactive Worksheets
+              - listitem [ref=e324]: Early Years Storybooks
+          - img "Free sample books"
+        - link "DOWNLOAD NOW" [ref=e326] [cursor=pointer]:
+          - /url: https://wa.me/2348054104962
+    - generic [ref=e332]:
+      - generic [ref=e333]:
+        - heading "CONTACT ME" [level=3] [ref=e334]
+        - generic [ref=e335]:
+          - generic [ref=e340]:
+            - paragraph [ref=e341]: WhatsApp
+            - paragraph [ref=e342]: Chat Instantly
+          - generic [ref=e348]:
+            - paragraph [ref=e349]: "08054104962"
+            - paragraph [ref=e350]: "07032288611"
+          - paragraph [ref=e356]: oolatoyetaiwo@gmail.com
+          - generic [ref=e362]:
+            - paragraph [ref=e363]: Lagos, Nigeria
+            - paragraph [ref=e364]: Serving schools across Nigeria & Ghana
+      - generic [ref=e365]:
+        - heading "FOLLOW ME" [level=3] [ref=e366]
+        - generic [ref=e367]:
+          - link [ref=e368] [cursor=pointer]:
+            - /url: https://facebook.com
+          - link [ref=e371] [cursor=pointer]:
+            - /url: https://wa.me/2348054104962
+          - link [ref=e374] [cursor=pointer]:
+            - /url: https://youtube.com
+          - link [ref=e377] [cursor=pointer]:
+            - /url: https://t.me
+    - generic [ref=e381]:
+      - generic [ref=e382]:
+        - img "Rocket CTA"
+        - generic [ref=e383]:
+          - heading "READY TO TAKE YOUR SCHOOL TO THE NEXT LEVEL?" [level=3] [ref=e384]
+          - link "Click the WhatsApp Link Now and Let's Talk!" [ref=e385] [cursor=pointer]:
+            - /url: https://wa.me/2348054104962
+      - generic [ref=e387]:
+        - paragraph [ref=e389]: YOUR PERMANENT LINK
+        - link "www.DrOlatoye.com" [ref=e395] [cursor=pointer]:
+          - /url: https://www.DrOlatoye.com
+        - paragraph [ref=e397]: Save this link. Share it anywhere. Anytime.

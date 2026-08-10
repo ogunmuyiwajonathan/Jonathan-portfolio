@@ -1,0 +1,118 @@
+- generic [ref=f1e10]:
+  - generic:
+    - generic:
+      - img "Earth"
+    - generic:
+      - generic:
+        - img "Moon"
+  - navigation [ref=f1e11]:
+    - link "Jonathan." [ref=f1e12] [cursor=pointer]:
+      - /url: /
+    - button "Open menu" [ref=f1e14] [cursor=pointer]
+  - generic [ref=f1e17]:
+    - generic [ref=f1e36]:
+      - generic [ref=f1e37]:
+        - heading "Contact Information" [level=2] [ref=f1e38]
+        - paragraph [ref=f1e41]: I'm currently available for freelance projects, full-time positions, and consulting opportunities. Whether you have a specific project in mind or just want to explore possibilities, I'd love to hear from you.
+      - link [ref=f1e43] [cursor=pointer]:
+        - /url: mailto:ogunmuyiwajonathan@gmail.com
+        - generic [ref=f1e48]:
+          - heading "Email Me" [level=3] [ref=f1e49]
+          - paragraph [ref=f1e50]: ogunmuyiwajonathan@gmail.com
+          - paragraph [ref=f1e51]: Best for detailed project inquiries
+      - generic [ref=f1e57]:
+        - heading "Call Me" [level=3] [ref=f1e58]
+        - paragraph [ref=f1e59]: +234 814 872 3337
+        - paragraph [ref=f1e60]: Available 9 AM - 9 PM WAT
+      - link [ref=f1e62] [cursor=pointer]:
+        - /url: https://wa.me/2349157384644
+        - generic [ref=f1e66]:
+          - heading "WhatsApp" [level=3] [ref=f1e67]
+          - paragraph [ref=f1e68]: +234 915 738 4644
+          - paragraph [ref=f1e69]: Quick responses for urgent matters
+      - generic [ref=f1e76]:
+        - heading "Location" [level=3] [ref=f1e77]
+        - paragraph [ref=f1e78]: Ogun State, Nigeria
+        - paragraph [ref=f1e79]: Open to remote work worldwide
+      - generic [ref=f1e82]:
+        - generic [ref=f1e87]:
+          - generic [ref=f1e88]: Open for new projects
+          - paragraph [ref=f1e89]: "Typical response time: 24–48 hours"
+        - generic [ref=f1e90]: Available Now
+      - generic [ref=f1e92]:
+        - heading "Connect Online" [level=2] [ref=f1e93]
+        - paragraph [ref=f1e94]: Follow my work and get insights into my development process across these platforms.
+        - generic [ref=f1e95]:
+          - link "GitHub" [ref=f1e96] [cursor=pointer]:
+            - /url: https://github.com/ogunmuyiwajonathan
+          - link "LinkedIn" [ref=f1e100] [cursor=pointer]:
+            - /url: https://www.linkedin.com/in/jonathan-ogunmuyiwa
+          - link "WhatsApp" [ref=f1e105] [cursor=pointer]:
+            - /url: https://wa.me/2349157384644
+          - link "Instagram" [ref=f1e108] [cursor=pointer]:
+            - /url: "#"
+          - link "YouTube" [ref=f1e112] [cursor=pointer]:
+            - /url: "#"
+      - generic [ref=f1e117]:
+        - generic [ref=f1e118]: Working Hours
+        - generic [ref=f1e124]:
+          - generic [ref=f1e125]:
+            - generic [ref=f1e126]: Monday — Saturday
+            - generic [ref=f1e127]: 10:00 AM — 7:00 PM
+          - generic [ref=f1e128]:
+            - generic [ref=f1e129]: Sunday
+            - generic [ref=f1e130]: 3:00 PM — 9:00 PM
+        - paragraph [ref=f1e132]: All times are in West Africa Time (WAT, UTC+1)
+    - generic [ref=f1e135]:
+      - generic [ref=f1e140]:
+        - paragraph [ref=f1e141]:
+          - generic [ref=f1e142]: Let's
+          - generic [ref=f1e143]: work
+          - generic [ref=f1e144]: together.
+        - paragraph [ref=f1e145]: Have a project in mind? Fill out the form below and I'll get back to you as soon as possible. I typically respond within 24-48 hours.
+      - generic [ref=f1e146]:
+        - generic [ref=f1e147]:
+          - generic [ref=f1e148]:
+            - generic [ref=f1e149]: Your Name *
+            - textbox "James Paul" [ref=f1e150]
+          - generic [ref=f1e151]:
+            - generic [ref=f1e152]: Email Address *
+            - textbox "james@example.com" [ref=f1e153]
+        - generic [ref=f1e154]:
+          - generic [ref=f1e155]: Project Type *
+          - button "Select a project type" [ref=f1e157] [cursor=pointer]
+        - generic [ref=f1e161]:
+          - generic [ref=f1e162]: Subject *
+          - 'textbox "Project Inquiry: E-commerce Website" [ref=f1e163]'
+        - generic [ref=f1e164]:
+          - generic [ref=f1e165]: Tell me about your project *
+          - textbox "Describe your project, goals, timeline, and any specific requirements..." [ref=f1e166]
+        - generic [ref=f1e167]:
+          - checkbox "Keep me updated with occasional emails about new projects, articles, and industry insights. Unsubscribe anytime." [ref=f1e168]
+          - generic [ref=f1e169] [cursor=pointer]: Keep me updated with occasional emails about new projects, articles, and industry insights. Unsubscribe anytime.
+        - button "Send Message" [ref=f1e170] [cursor=pointer]
+        - paragraph [ref=f1e175]:
+          - text: By submitting this form, you agree to my
+          - link "privacy policy" [ref=f1e176] [cursor=pointer]:
+            - /url: "#"
+          - text: .
+      - generic [ref=f1e182]:
+        - paragraph [ref=f1e183]: Fast Response Guaranteed
+        - paragraph [ref=f1e184]: I typically reply to all inquiries within 24-48 hours during business days.
+  - contentinfo [ref=f1e24]:
+    - link "Jonathan." [ref=f1e25] [cursor=pointer]:
+      - /url: /
+    - list [ref=f1e26]:
+      - listitem [ref=f1e27]:
+        - link "Home" [ref=f1e28] [cursor=pointer]:
+          - /url: /
+      - listitem [ref=f1e29]:
+        - link "About" [ref=f1e30] [cursor=pointer]:
+          - /url: /about
+      - listitem [ref=f1e31]:
+        - link "Works" [ref=f1e32] [cursor=pointer]:
+          - /url: /works
+      - listitem [ref=f1e33]:
+        - link "Contact" [ref=f1e34] [cursor=pointer]:
+          - /url: /contact
+    - paragraph [ref=f1e35]: © 2026 Jonathan Ogunmuyiwa. All rights reserved.

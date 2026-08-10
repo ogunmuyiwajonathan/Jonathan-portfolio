@@ -68,6 +68,10 @@ export default function Contact() {
 
     const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+        if (!projectType) {
+            setFormStatus({ state: 'error', errorType: 'validation', message: 'Please select a project type.' });
+            return;
+        }
         setFormStatus({ state: 'submitting' });
 
         const form = e.currentTarget;
@@ -182,7 +186,7 @@ export default function Contact() {
     };
 
     return (
-        <div className="max-w-[1100px] mx-auto my-[40px] lg:my-[60px] px-[20px] grid grid-cols-1 min-[900px]:grid-cols-[380px_1fr] gap-[40px] min-[900px]:gap-[60px] relative">
+        <div className="max-w-[1100px] mx-auto my-[40px] lg:my-[60px] px-2 grid grid-cols-1 min-[900px]:grid-cols-[380px_1fr] gap-[40px] min-[900px]:gap-[60px] relative">
             {/* Success Modal */}
             <AnimatePresence>
                 {showSuccessModal && (
@@ -264,7 +268,7 @@ export default function Contact() {
                                     initial={{ opacity: 0, y: 10 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ delay: 0.4 }}
-                                    className="text-text-dim mb-6"
+                                    className="text-white/80 mb-6"
                                 >
                                     Thank you for reaching out! I've received your message and will get back to you within 24-48 hours.
                                 </motion.p>
@@ -293,7 +297,7 @@ export default function Contact() {
                             {/* Close Button */}
                             <button
                                 onClick={closeSuccessModal}
-                                className="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-text-dim hover:text-white hover:bg-white/20 transition-colors"
+                                className="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white/80 hover:text-white hover:bg-white/20 transition-colors"
                             >
                                 <X size={18} />
                             </button>
@@ -367,7 +371,7 @@ export default function Contact() {
                                 initial={{ opacity: 0, y: 10 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.3 }}
-                                className="text-text-dim mb-2"
+                                className="text-white/80 mb-2"
                             >
                                 {formStatus.message}
                             </motion.p>
@@ -416,7 +420,7 @@ export default function Contact() {
             </AnimatePresence>
 
             {/* Left Column - Contact Info */}
-            <div className="max-[900px]:order-2 max-[900px]:mt-[20px]">
+            <div className="max-[900px]:order-1">
                 <div className="mb-8">
                     <h2 className="text-[0.8rem] tracking-[2px] text-white mb-[30px] uppercase font-bold flex items-center gap-2">
                         <MessageSquare size={16} /> Contact Information
@@ -430,358 +434,357 @@ export default function Contact() {
 
                 {/* Email */}
                 <ScrollReveal direction="up" delay={0}>
-                <a href="mailto:ogunmuyiwajonathan@gmail.com" className="flex gap-[20px] mb-[30px] items-center no-underline group">
-                    <div className="w-[54px] h-[54px] bg-gradient-to-br from-[#1e1e1e] to-[#141414] border border-border-color rounded-[14px] flex items-center justify-center shrink-0 text-accent-blue group-hover:border-accent-blue transition-colors">
-                        <Mail size={22} />
-                    </div>
-                    <div>
-                        <h3 className="text-[0.7rem] text-text-dim uppercase mb-[4px] tracking-[1px] font-semibold">Email Me</h3>
-                        <p className="text-[0.95rem] text-white font-medium group-hover:text-accent-blue transition-colors">ogunmuyiwajonathan@gmail.com</p>
-                        <p className="text-[0.75rem] text-text-dim mt-1">Best for detailed project inquiries</p>
-                    </div>
-                </a>
+                    <a href="mailto:ogunmuyiwajonathan@gmail.com" className="flex gap-[20px] mb-[30px] items-center no-underline group">
+                        <div className="w-[54px] h-[54px] bg-gradient-to-br from-[#1e1e1e] to-[#141414] border border-border-color rounded-[14px] flex items-center justify-center shrink-0 text-accent-blue group-hover:border-accent-blue transition-colors">
+                            <Mail size={22} />
+                        </div>
+                        <div>
+                            <h3 className="text-[0.7rem] text-white/80 uppercase mb-[4px] tracking-[1px] font-semibold">Email Me</h3>
+                            <p className="text-[0.95rem] text-white font-medium group-hover:text-accent-blue transition-colors">ogunmuyiwajonathan@gmail.com</p>
+                            <p className="text-[0.75rem] text-white/80 mt-1">Best for detailed project inquiries</p>
+                        </div>
+                    </a>
                 </ScrollReveal>
 
                 {/* Phone */}
                 <ScrollReveal direction="up" delay={0.08}>
-                <div className="flex gap-[20px] mb-[30px] items-center no-underline">
-                    <div className="w-[54px] h-[54px] bg-gradient-to-br from-[#1e1e1e] to-[#141414] border border-border-color rounded-[14px] flex items-center justify-center shrink-0 text-accent-blue">
-                        <Phone size={22} />
+                    <div className="flex gap-[20px] mb-[30px] items-center no-underline">
+                        <div className="w-[54px] h-[54px] bg-gradient-to-br from-[#1e1e1e] to-[#141414] border border-border-color rounded-[14px] flex items-center justify-center shrink-0 text-accent-blue">
+                            <Phone size={22} />
+                        </div>
+                        <div>
+                            <h3 className="text-[0.7rem] text-white/80 uppercase mb-[4px] tracking-[1px] font-semibold">Call Me</h3>
+                            <p className="text-[0.95rem] text-white font-medium">+234 814 872 3337</p>
+                            <p className="text-[0.75rem] text-white/80 mt-1">Available 9 AM - 9 PM WAT</p>
+                        </div>
                     </div>
-                    <div>
-                        <h3 className="text-[0.7rem] text-text-dim uppercase mb-[4px] tracking-[1px] font-semibold">Call Me</h3>
-                        <p className="text-[0.95rem] text-white font-medium">+234 814 872 3337</p>
-                        <p className="text-[0.75rem] text-text-dim mt-1">Available 9 AM - 6 PM WAT</p>
-                    </div>
-                </div>
                 </ScrollReveal>
 
                 {/* WhatsApp */}
                 <ScrollReveal direction="up" delay={0.16}>
-                <a href="https://wa.me/2349157384644" target="_blank" rel="noopener noreferrer" className="flex gap-[20px] mb-[30px] items-center no-underline group">
-                    <div className="w-[54px] h-[54px] bg-gradient-to-br from-[#1e1e1e] to-[#141414] border border-border-color rounded-[14px] flex items-center justify-center shrink-0 text-[#25d366] group-hover:border-[#25d366] transition-colors">
-                        <svg className="w-[24px] h-[24px] fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-                        </svg>
-                    </div>
-                    <div>
-                        <h3 className="text-[0.7rem] text-text-dim uppercase mb-[4px] tracking-[1px] font-semibold">WhatsApp</h3>
-                        <p className="text-[0.95rem] text-white font-medium group-hover:text-[#25d366] transition-colors">+234 915 738 4644</p>
-                        <p className="text-[0.75rem] text-text-dim mt-1">Quick responses for urgent matters</p>
-                    </div>
-                </a>
+                    <a href="https://wa.me/2349157384644" target="_blank" rel="noopener noreferrer" className="flex gap-[20px] mb-[30px] items-center no-underline group">
+                        <div className="w-[54px] h-[54px] bg-gradient-to-br from-[#1e1e1e] to-[#141414] border border-border-color rounded-[14px] flex items-center justify-center shrink-0 text-[#25d366] group-hover:border-[#25d366] transition-colors">
+                            <svg className="w-[24px] h-[24px] fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 className="text-[0.7rem] text-white/80 uppercase mb-[4px] tracking-[1px] font-semibold">WhatsApp</h3>
+                            <p className="text-[0.95rem] text-white font-medium group-hover:text-[#25d366] transition-colors">+234 915 738 4644</p>
+                            <p className="text-[0.75rem] text-white/80 mt-1">Quick responses for urgent matters</p>
+                        </div>
+                    </a>
                 </ScrollReveal>
 
                 {/* Location */}
                 <ScrollReveal direction="up" delay={0.24}>
-                <div className="flex gap-[20px] mb-[35px] items-center no-underline">
-                    <div className="w-[54px] h-[54px] bg-gradient-to-br from-[#1e1e1e] to-[#141414] border border-border-color rounded-[14px] flex items-center justify-center shrink-0 text-accent-blue">
-                        <MapPin size={22} />
+                    <div className="flex gap-[20px] mb-[35px] items-center no-underline">
+                        <div className="w-[54px] h-[54px] bg-gradient-to-br from-[#1e1e1e] to-[#141414] border border-border-color rounded-[14px] flex items-center justify-center shrink-0 text-accent-blue">
+                            <MapPin size={22} />
+                        </div>
+                        <div>
+                            <h3 className="text-[0.7rem] text-white/80 uppercase mb-[4px] tracking-[1px] font-semibold">Location</h3>
+                            <p className="text-[0.95rem] text-white font-medium">Ogun State, Nigeria</p>
+                            <p className="text-[0.75rem] text-white/80 mt-1">Open to remote work worldwide</p>
+                        </div>
                     </div>
-                    <div>
-                        <h3 className="text-[0.7rem] text-text-dim uppercase mb-[4px] tracking-[1px] font-semibold">Location</h3>
-                        <p className="text-[0.95rem] text-white font-medium">Ogun State, Nigeria</p>
-                        <p className="text-[0.75rem] text-text-dim mt-1">Open to remote work worldwide</p>
-                    </div>
-                </div>
                 </ScrollReveal>
 
                 {/* Availability Status */}
                 <ScrollReveal direction="up" delay={0.32}>
-                <div className="p-5 sm:p-6 rounded-[16px] bg-gradient-to-br from-accent-blue/10 to-accent-blue/5 border border-accent-blue/30 mb-8 backdrop-blur-xl">
-                    <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 sm:gap-0">
-                        <div className="flex items-center gap-4">
-                            {/* Animated Glowing Status Indicator */}
-                            <div className="relative flex items-center justify-center shrink-0">
-                                <div className="w-3 h-3 rounded-full bg-green-500 animate-pulse" />
-                                <div className="absolute w-5 h-5 rounded-full border border-green-500/30 animate-ping" />
+                    <div className="p-5 sm:p-6 rounded-[16px] bg-gradient-to-br from-accent-blue/10 to-accent-blue/5 border border-accent-blue/30 mb-8 backdrop-blur-xl">
+                        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 sm:gap-0">
+                            <div className="flex items-center gap-4">
+                                {/* Animated Glowing Status Indicator */}
+                                <div className="relative flex items-center justify-center shrink-0">
+                                    <div className="w-3 h-3 rounded-full bg-green-500 animate-pulse" />
+                                    <div className="absolute w-5 h-5 rounded-full border border-green-500/30 animate-ping" />
+                                </div>
+
+                                {/* Informational Text */}
+                                <div>
+                                    <span className="text-[0.95rem] sm:text-[1rem] font-semibold tracking-tight text-white block mb-0.5">
+                                        Open for new projects
+                                    </span>
+                                    <p className="text-[0.8rem] text-white/80">
+                                        Typical response time: <br /><span className="text-green-400 font-medium">24–48 hours</span>
+                                    </p>
+                                </div>
                             </div>
 
-                            {/* Informational Text */}
-                            <div>
-                                <span className="text-[0.95rem] sm:text-[1rem] font-semibold tracking-tight text-white block mb-0.5">
-                                    Open for new projects
-                                </span>
-                                <p className="text-[0.8rem] text-text-dim">
-                                    Typical response time: <br /><span className="text-green-400 font-medium">24–48 hours</span>
-                                </p>
+                            {/* Availability Badge */}
+                            <div className="px-3 py-1.5 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-[0.65rem] font-bold tracking-[1.5px] uppercase shrink-0">
+                                Available Now
                             </div>
-                        </div>
-
-                        {/* Availability Badge */}
-                        <div className="px-3 py-1.5 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-[0.65rem] font-bold tracking-[1.5px] uppercase shrink-0">
-                            Available Now
                         </div>
                     </div>
-                </div>
                 </ScrollReveal>
 
                 {/* Social Profiles */}
                 <ScrollReveal direction="up" delay={0.4}>
-                <div id="connect" className="mt-[40px] scroll-mt-24">
-                    <h2 className="text-[0.8rem] tracking-[2px] text-white mb-[20px] uppercase font-bold">Connect Online</h2>
-                    <p className="text-text-dim text-[0.85rem] mb-4">
-                        Follow my work and get insights into my development process across these platforms.
-                    </p>
-                    <div className="flex gap-[12px] mt-[20px]">
-                        <a href="https://github.com/ogunmuyiwajonathan" target="_blank" rel="noopener noreferrer" className="w-[48px] h-[48px] border border-border-color rounded-full flex items-center justify-center transition-all duration-300 bg-[#161616] text-white no-underline hover:bg-white hover:text-black hover:-translate-y-[5px]" title="GitHub">
-                            <Github size={20} />
-                        </a>
-                        <a href="https://www.linkedin.com/in/jonathan-ogunmuyiwa" target="_blank" rel="noopener noreferrer" className="w-[48px] h-[48px] border border-border-color rounded-full flex items-center justify-center transition-all duration-300 bg-[#161616] text-white no-underline hover:bg-[#0077b5] hover:text-white hover:border-[#0077b5] hover:-translate-y-[5px]" title="LinkedIn">
-                            <Linkedin size={20} />
-                        </a>
-                        <a href="https://wa.me/2349157384644" target="_blank" rel="noopener noreferrer" className="w-[48px] h-[48px] border border-border-color rounded-full flex items-center justify-center transition-all duration-300 bg-[#161616] text-white no-underline hover:bg-[#25d366] hover:text-white hover:border-[#25d366] hover:-translate-y-[5px]" title="WhatsApp">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-                            </svg>
-                        </a>
-                        <a href="#" className="w-[48px] h-[48px] border border-border-color rounded-full flex items-center justify-center transition-all duration-300 bg-[#161616] text-white no-underline hover:bg-[#e4405f] hover:text-white hover:border-[#e4405f] hover:-translate-y-[5px]" title="Instagram">
-                            <Instagram size={20} />
-                        </a>
-                        <a href="#" className="w-[48px] h-[48px] border border-border-color rounded-full flex items-center justify-center transition-all duration-300 bg-[#161616] text-white no-underline hover:bg-[#ff0000] hover:text-white hover:border-[#ff0000] hover:-translate-y-[5px]" title="YouTube">
-                            <Youtube size={20} />
-                        </a>
+                    <div id="connect" className="mt-[40px] scroll-mt-24">
+                        <h2 className="text-[0.8rem] tracking-[2px] text-white mb-[20px] uppercase font-bold">Connect Online</h2>
+                        <p className="text-white/80 text-[0.85rem] mb-4">
+                            Follow my work and get insights into my development process across these platforms.
+                        </p>
+                        <div className="flex gap-[12px] mt-[20px]">
+                            <a href="https://github.com/ogunmuyiwajonathan" target="_blank" rel="noopener noreferrer" className="w-[48px] h-[48px] border border-border-color rounded-full flex items-center justify-center transition-all duration-300 bg-[#161616] text-white no-underline hover:bg-white hover:text-black hover:-translate-y-[5px]" title="GitHub">
+                                <Github size={20} />
+                            </a>
+                            <a href="https://www.linkedin.com/in/jonathan-ogunmuyiwa" target="_blank" rel="noopener noreferrer" className="w-[48px] h-[48px] border border-border-color rounded-full flex items-center justify-center transition-all duration-300 bg-[#161616] text-white no-underline hover:bg-[#0077b5] hover:text-white hover:border-[#0077b5] hover:-translate-y-[5px]" title="LinkedIn">
+                                <Linkedin size={20} />
+                            </a>
+                            <a href="https://wa.me/2349157384644" target="_blank" rel="noopener noreferrer" className="w-[48px] h-[48px] border border-border-color rounded-full flex items-center justify-center transition-all duration-300 bg-[#161616] text-white no-underline hover:bg-[#25d366] hover:text-white hover:border-[#25d366] hover:-translate-y-[5px]" title="WhatsApp">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                                </svg>
+                            </a>
+                            <a href="#" className="w-[48px] h-[48px] border border-border-color rounded-full flex items-center justify-center transition-all duration-300 bg-[#161616] text-white no-underline hover:bg-[#e4405f] hover:text-white hover:border-[#e4405f] hover:-translate-y-[5px]" title="Instagram">
+                                <Instagram size={20} />
+                            </a>
+                            <a href="#" className="w-[48px] h-[48px] border border-border-color rounded-full flex items-center justify-center transition-all duration-300 bg-[#161616] text-white no-underline hover:bg-[#ff0000] hover:text-white hover:border-[#ff0000] hover:-translate-y-[5px]" title="YouTube">
+                                <Youtube size={20} />
+                            </a>
+                        </div>
                     </div>
-                </div>
                 </ScrollReveal>
 
                 {/* Working Hours */}
                 <ScrollReveal direction="up" delay={0.48}>
-                <div className="mt-8 p-6 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 shadow-xl">
-  <div className="flex items-center gap-3 mb-4">
-    <div className="p-2 rounded-xl bg-accent-blue/10 border border-accent-blue/20">
-      <Clock size={18} className="text-accent-blue" />
-    </div>
-    <span className="text-sm font-semibold tracking-tight text-white">
-      Working Hours
-    </span>
-  </div>
+                    <div className="mt-8 p-6 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 shadow-xl">
+                        <div className="flex items-center gap-3 mb-4">
+                            <div className="p-2 rounded-xl bg-accent-blue/10 border border-accent-blue/20">
+                                <Clock size={18} className="text-accent-blue" />
+                            </div>
+                            <span className="text-sm font-semibold tracking-tight text-white">
+                                Working Hours
+                            </span>
+                        </div>
 
-  <div className="space-y-4 text-sm">
-    {/* Monday - Saturday */}
-    <div className="flex justify-between items-center py-1">
-      <span className="text-text-dim">Monday — Saturday</span>
-      <span className="font-medium text-white">6:00 AM — 12:00 AM</span>
-    </div>
+                        <div className="space-y-4 text-sm">
+                            {/* Monday - Saturday */}
+                            <div className="flex justify-between items-center py-1">
+                                <span className="text-white/80">Monday — Saturday</span>
+                                <span className="font-medium text-white">10:00 AM — 7:00 PM</span>
+                            </div>
 
-    {/* Sunday */}
-    <div className="flex justify-between items-center py-1">
-      <span className="text-text-dim">Sunday</span>
-      <span className="font-medium text-white">3:00 PM — 11:00 PM</span>
-    </div>
-  </div>
+                            {/* Sunday */}
+                            <div className="flex justify-between items-center py-1">
+                                <span className="text-white/80">Sunday</span>
+                                <span className="font-medium text-white">3:00 PM — 9:00 PM</span>
+                            </div>
+                        </div>
 
-  {/* Footer note with subtle separator */}
-  <div className="mt-5 pt-4 border-t border-white/10">
-    <p className="text-[0.8rem] text-text-dim flex items-center gap-1.5">
-      <span className="inline-block w-1 h-1 rounded-full bg-accent-blue/60" />
-      All times are in West Africa Time (WAT, UTC+1)
-    </p>
-  </div>
-</div>
-</ScrollReveal>
+                        {/* Footer note with subtle separator */}
+                        <div className="mt-5 pt-4 border-t border-white/10">
+                            <p className="text-[0.8rem] text-white/80 flex items-center gap-1.5">
+                                <span className="inline-block w-1 h-1 rounded-full bg-accent-blue/60" />
+                                All times are in West Africa Time (WAT, UTC+1)
+                            </p>
+                        </div>
+                    </div>
+                </ScrollReveal>
             </div>
 
             {/* Right Column - Contact Form */}
-            <ScrollReveal direction="right">
-            <SpotlightCard className="bg-card-bg border border-border-color rounded-[24px] min-[900px]:rounded-[30px] p-[30px_20px] min-[900px]:p-[45px] relative h-full" spotlightColor="rgba(61, 90, 241, 0.1)">
-                <div className="absolute top-[30px] right-[35px] text-text-dim opacity-30">
-                    <Sparkles size={24} />
-                </div>
+            <ScrollReveal direction="right" className="max-[900px]:order-2">
+                <SpotlightCard className="bg-card-bg border border-border-color rounded-[30px] p-[32px_16px] sm:p-[40px_24px] md:p-[56px_36px] min-[900px]:p-[45px] relative h-full" spotlightColor="rgba(61, 90, 241, 0.1)">
+                    <div className="absolute top-[30px] right-[35px] text-white/80 opacity-30">
+                        <Sparkles size={24} />
+                    </div>
 
-                <div className="mb-8">
-                    <BlurText
-                        text="Let's work together."
-                        delay={150}
-                        animateBy="words"
-                        direction="top"
-                        className="text-[clamp(1.8rem,4vw,2.5rem)] font-bold mb-3 leading-[1.1] text-white"
-                    />
-                    <p className="text-text-dim text-[0.9rem] leading-relaxed">
-                        Have a project in mind? Fill out the form below and I'll get back to you as soon as possible.
-                        I typically respond within 24-48 hours.
-                    </p>
-                </div>
+                    <div className="mb-8">
+                        <BlurText
+                            text="Let's work together."
+                            delay={150}
+                            animateBy="words"
+                            direction="top"
+                            className="text-[clamp(1.8rem,4vw,2.5rem)] font-bold mb-3 leading-[1.1] text-white"
+                        />
+                        <p className="text-white/80 text-[0.9rem] leading-relaxed">
+                            Have a project in mind? Fill out the form below and I'll get back to you as soon as possible.
+                            I typically respond within 24-48 hours.
+                        </p>
+                    </div>
 
-                <form className="flex flex-col gap-[20px]" onSubmit={handleSubmit}>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div>
-                            <label className="text-[0.75rem] text-text-dim uppercase tracking-[1px] font-semibold mb-2 block">Your Name *</label>
-                            <input
-                                className={`
-                                    w-full bg-[#1d1d1d] border rounded-[12px] p-[16px_20px] text-white text-[0.95rem] transition-all duration-300 font-inherit focus:outline-none focus:bg-[#222]
+                    <form className="flex flex-col gap-[36px]" onSubmit={handleSubmit}>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                            <div>
+                                <label className="text-[0.75rem] text-white/80 uppercase tracking-[1px] font-semibold mb-2 block">Your Name *</label>
+                                <input
+                                    className={`
+                                    w-full bg-[#1d1d1d] border rounded-[12px] p-[16px_16px] sm:p-[20px_28px] text-white text-[0.95rem] transition-all duration-300 font-inherit focus:outline-none focus:bg-[#222]
                                     ${formStatus.state === 'error' ? 'border-red-500/50 focus:border-red-500' : 'border-transparent focus:border-[#444]'}
                                 `}
+                                    type="text"
+                                    name="name"
+                                    placeholder="James Paul"
+                                    required
+                                    disabled={formStatus.state === 'submitting'}
+                                />
+                            </div>
+                            <div>
+                                <label className="text-[0.75rem] text-white/80 uppercase tracking-[1px] font-semibold mb-2 block">Email Address *</label>
+                                <input
+                                    className={`
+                                    w-full bg-[#1d1d1d] border rounded-[12px] p-[16px_16px] sm:p-[20px_28px] text-white text-[0.95rem] transition-all duration-300 font-inherit focus:outline-none focus:bg-[#222]
+                                    ${formStatus.state === 'error' ? 'border-red-500/50 focus:border-red-500' : 'border-transparent focus:border-[#444]'}
+                                `}
+                                    type="email"
+                                    name="email"
+                                    placeholder="james@example.com"
+                                    required
+                                    disabled={formStatus.state === 'submitting'}
+                                />
+                            </div>
+                        </div>
+
+                        {/* Project Type Select */}
+                        <div>
+                            <label className="text-[0.75rem] text-white/80 uppercase tracking-[1px] font-semibold mb-2 block">Project Type *</label>
+                            <SlickDropdown
+                                options={PROJECT_OPTIONS}
+                                value={projectType}
+                                onChange={(val) => setProjectType(val)}
+                                placeholder="Select a project type"
+                                disabled={formStatus.state === 'submitting'}
+                                hasError={formStatus.state === 'error'}
+                            />
+                        </div>
+
+                        <div>
+                                <label className="text-[0.75rem] text-white/80 uppercase tracking-[1px] font-semibold mb-2 block">Subject (Optional)</label>
+                            <input
+                                className={`
+                                w-full bg-[#1d1d1d] border rounded-[12px] p-[16px_16px] sm:p-[20px_28px] text-white text-[0.95rem] transition-all duration-300 font-inherit focus:outline-none focus:bg-[#222]
+                                ${formStatus.state === 'error' ? 'border-red-500/50 focus:border-red-500' : 'border-transparent focus:border-[#444]'}
+                            `}
                                 type="text"
-                                name="name"
-                                placeholder="John Doe"
-                                required
+                                name="subject"
+                                placeholder="Project Inquiry: E-commerce Website"
                                 disabled={formStatus.state === 'submitting'}
                             />
                         </div>
+
                         <div>
-                            <label className="text-[0.75rem] text-text-dim uppercase tracking-[1px] font-semibold mb-2 block">Email Address *</label>
-                            <input
+                            <label className="text-[0.75rem] text-white/80 uppercase tracking-[1px] font-semibold mb-2 block">Tell me about your project *</label>
+                            <textarea
                                 className={`
-                                    w-full bg-[#1d1d1d] border rounded-[12px] p-[16px_20px] text-white text-[0.95rem] transition-all duration-300 font-inherit focus:outline-none focus:bg-[#222]
-                                    ${formStatus.state === 'error' ? 'border-red-500/50 focus:border-red-500' : 'border-transparent focus:border-[#444]'}
-                                `}
-                                type="email"
-                                name="email"
-                                placeholder="john@example.com"
+                                w-full bg-[#1d1d1d] border rounded-[12px] p-[16px_16px] sm:p-[20px_28px] text-white text-[0.95rem] transition-all duration-300 font-inherit focus:outline-none focus:bg-[#222] min-h-[180px] resize-none
+                                ${formStatus.state === 'error' ? 'border-red-500/50 focus:border-red-500' : 'border-transparent focus:border-[#444]'}
+                            `}
+                                name="message"
+                                placeholder="Describe your project, goals, timeline, and any specific requirements..."
                                 required
                                 disabled={formStatus.state === 'submitting'}
-                            />
+                            ></textarea>
                         </div>
-                    </div>
 
-                    {/* Project Type Select */}
-                    <div>
-                        <label className="text-[0.75rem] text-text-dim uppercase tracking-[1px] font-semibold mb-2 block">Project Type</label>
-                        <SlickDropdown
-                            options={PROJECT_OPTIONS}
-                            value={projectType}
-                            onChange={(val) => setProjectType(val)}
-                            placeholder="Select a project type"
+                        <div className="flex items-start gap-3 p-4 rounded-xl bg-white/5 border border-border-color">
+                            <input
+                                type="checkbox"
+                                id="newsletter"
+                                name="newsletter"
+                                className="mt-1 w-4 h-4 rounded border-border-color bg-[#1d1d1d] text-accent-blue focus:ring-accent-blue"
+                                disabled={formStatus.state === 'submitting'}
+                            />
+                            <label htmlFor="newsletter" className="text-[0.85rem] text-white/80 cursor-pointer">
+                                Keep me updated with occasional emails about new projects, articles, and industry insights.
+                                Unsubscribe anytime.
+                            </label>
+                        </div>
+
+                        {/* Submit Button with States */}
+                        <button
+                            type="submit"
                             disabled={formStatus.state === 'submitting'}
-                            hasError={formStatus.state === 'error'}
-                        />
-                    </div>
-
-                    <div>
-                        <label className="text-[0.75rem] text-text-dim uppercase tracking-[1px] font-semibold mb-2 block">Subject *</label>
-                        <input
                             className={`
-                                w-full bg-[#1d1d1d] border rounded-[12px] p-[16px_20px] text-white text-[0.95rem] transition-all duration-300 font-inherit focus:outline-none focus:bg-[#222]
-                                ${formStatus.state === 'error' ? 'border-red-500/50 focus:border-red-500' : 'border-transparent focus:border-[#444]'}
-                            `}
-                            type="text"
-                            name="subject"
-                            placeholder="Project Inquiry: E-commerce Website"
-                            required
-                            disabled={formStatus.state === 'submitting'}
-                        />
-                    </div>
-
-                    <div>
-                        <label className="text-[0.75rem] text-text-dim uppercase tracking-[1px] font-semibold mb-2 block">Tell me about your project *</label>
-                        <textarea
-                            className={`
-                                w-full bg-[#1d1d1d] border rounded-[12px] p-[16px_20px] text-white text-[0.95rem] transition-all duration-300 font-inherit focus:outline-none focus:bg-[#222] min-h-[160px] resize-none
-                                ${formStatus.state === 'error' ? 'border-red-500/50 focus:border-red-500' : 'border-transparent focus:border-[#444]'}
-                            `}
-                            name="message"
-                            placeholder="Describe your project, goals, timeline, and any specific requirements..."
-                            required
-                            disabled={formStatus.state === 'submitting'}
-                        ></textarea>
-                    </div>
-
-                    <div className="flex items-start gap-3 p-4 rounded-xl bg-white/5 border border-border-color">
-                        <input
-                            type="checkbox"
-                            id="newsletter"
-                            name="newsletter"
-                            className="mt-1 w-4 h-4 rounded border-border-color bg-[#1d1d1d] text-accent-blue focus:ring-accent-blue"
-                            disabled={formStatus.state === 'submitting'}
-                        />
-                        <label htmlFor="newsletter" className="text-[0.85rem] text-text-dim cursor-pointer">
-                            Keep me updated with occasional emails about new projects, articles, and industry insights.
-                            Unsubscribe anytime.
-                        </label>
-                    </div>
-
-                    {/* Submit Button with States */}
-                    <button
-                        type="submit"
-                        disabled={formStatus.state === 'submitting'}
-                        className={`
                             border-none p-[18px] rounded-[12px] font-semibold cursor-pointer transition-all duration-300 text-[1rem] 
                             flex items-center justify-center gap-2 group relative overflow-hidden
                             ${formStatus.state === 'submitting'
-                                ? 'bg-text-dim text-white cursor-not-allowed'
-                                : formStatus.state === 'error'
-                                    ? 'bg-red-500 text-white hover:bg-red-600'
-                                    : 'bg-white text-black hover:bg-accent-blue hover:text-white'
-                            }
+                                    ? 'bg-text-dim text-white cursor-not-allowed'
+                                    : formStatus.state === 'error'
+                                        ? 'bg-red-500 text-white hover:bg-red-600'
+                                        : 'bg-white text-black hover:bg-blue-700 hover:text-white'
+                                }
                         `}
-                    >
-                        {/* Error shake animation */}
-                        <motion.div
-                            animate={formStatus.state === 'error' ? { x: [0, -5, 5, -5, 5, 0] } : {}}
-                            transition={{ duration: 0.4 }}
-                            className="flex items-center gap-2"
                         >
-                            {formStatus.state === 'submitting' ? (
-                                <>
-                                    <Loader2 size={18} className="animate-spin" />
-                                    Sending...
-                                </>
-                            ) : formStatus.state === 'error' ? (
-                                <>
-                                    <AlertCircle size={18} />
-                                    Failed to Send - Click to Retry
-                                </>
-                            ) : formStatus.state === 'success' ? (
-                                <>
-                                    <CheckCircle2 size={18} />
-                                    Message Sent!
-                                </>
-                            ) : (
-                                <>
-                                    <Send size={18} className="transition-transform group-hover:translate-x-1" />
-                                    Send Message
-                                </>
-                            )}
-                        </motion.div>
-                    </button>
-
-                    {/* Inline Error Alert */}
-                    <AnimatePresence>
-                        {formStatus.state === 'error' && !showErrorModal && (
+                            {/* Error shake animation */}
                             <motion.div
-                                initial={{ opacity: 0, height: 0 }}
-                                animate={{ opacity: 1, height: 'auto' }}
-                                exit={{ opacity: 0, height: 0 }}
-                                className="overflow-hidden"
+                                animate={formStatus.state === 'error' ? { x: [0, -5, 5, -5, 5, 0] } : {}}
+                                transition={{ duration: 0.4 }}
+                                className="flex items-center gap-2"
                             >
-                                <div className="p-4 rounded-xl bg-red-500/10 border border-red-500/30 text-red-400 text-sm flex items-start gap-3">
-                                    <AlertCircle size={18} className="shrink-0 mt-0.5" />
-                                    <div className="flex-1">
-                                        <p className="font-semibold mb-1">Message failed to send</p>
-                                        <p className="text-red-300/80">{formStatus.message}</p>
-                                        <button
-                                            type="button"
-                                            onClick={() => setShowErrorModal(true)}
-                                            className="mt-2 text-red-400 underline hover:text-red-300 text-xs"
-                                        >
-                                            View Details
-                                        </button>
-                                    </div>
-                                </div>
+                                {formStatus.state === 'submitting' ? (
+                                    <>
+                                        <Loader2 size={18} className="animate-spin" />
+                                        Sending...
+                                    </>
+                                ) : formStatus.state === 'error' ? (
+                                    <>
+                                        <AlertCircle size={18} />
+                                        Failed to Send - Click to Retry
+                                    </>
+                                ) : formStatus.state === 'success' ? (
+                                    <>
+                                        <CheckCircle2 size={18} />
+                                        Message Sent!
+                                    </>
+                                ) : (
+                                    <>
+                                        <Send size={18} className="transition-transform group-hover:translate-x-1" />
+                                        Send Message
+                                    </>
+                                )}
                             </motion.div>
-                        )}
-                    </AnimatePresence>
+                        </button>
 
-                    <p className="text-[0.75rem] text-text-dim text-center">
-                        By submitting this form, you agree to my{' '}
-                        <a href="#" className="text-accent-blue hover:underline">privacy policy</a>.
-                    </p>
-                </form>
+                        {/* Inline Error Alert */}
+                        <AnimatePresence>
+                            {formStatus.state === 'error' && !showErrorModal && (
+                                <motion.div
+                                    initial={{ opacity: 0, height: 0 }}
+                                    animate={{ opacity: 1, height: 'auto' }}
+                                    exit={{ opacity: 0, height: 0 }}
+                                    className="overflow-hidden"
+                                >
+                                    <div className="p-4 rounded-xl bg-red-500/10 border border-red-500/30 text-red-400 text-sm flex items-start gap-3">
+                                        <AlertCircle size={18} className="shrink-0 mt-0.5" />
+                                        <div className="flex-1">
+                                            <p className="font-semibold mb-1">Message failed to send</p>
+                                            <p className="text-red-300/80">{formStatus.message}</p>
+                                            <button
+                                                type="button"
+                                                onClick={() => setShowErrorModal(true)}
+                                                className="mt-2 text-red-400 underline hover:text-red-300 text-xs"
+                                            >
+                                                View Details
+                                            </button>
+                                        </div>
+                                    </div>
+                                </motion.div>
+                            )}
+                        </AnimatePresence>
 
-                {/* Quick Response Promise */}
-                <div className="mt-8 pt-6 border-t border-border-color">
-                    <div className="flex items-center gap-3 text-[0.85rem]">
-                        <div className="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center">
-                            <Calendar size={18} className="text-green-500" />
-                        </div>
-                        <div>
-                            <p className="text-white font-medium">Fast Response Guaranteed</p>
-                            <p className="text-text-dim">I typically reply to all inquiries within 24-48 hours during business days.</p>
+                        <p className="text-[0.75rem] text-white/80 text-center">
+                            By submitting this form, you agree to my{' '}
+                            <a href="#" className="text-accent-blue hover:underline">privacy policy</a>.
+                        </p>
+                    </form>
+
+                    {/* Quick Response Promise */}
+                    <div className="mt-8 pt-6 border-t border-border-color">
+                        <div className="flex items-center gap-3 text-[0.85rem]">
+                            <div className="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center">
+                                <Calendar size={18} className="text-green-500" />
+                            </div>
+                            <div>
+                                <p className="text-white font-medium">Fast Response Guaranteed</p>
+                                <p className="text-white/80">I typically reply to all inquiries within 24-48 hours during business days.</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </SpotlightCard>
+                </SpotlightCard>
             </ScrollReveal>
         </div>
     );

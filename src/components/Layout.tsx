@@ -186,13 +186,6 @@ export default function Layout() {
                         exit={{ opacity: 0 }}
                         className="fixed inset-0 z-[1000] bg-black/95 backdrop-blur-md md:hidden flex flex-col items-center justify-center gap-10"
                     >
-                        <button
-                            className="absolute top-8 right-6 text-white p-2"
-                            onClick={() => setIsMenuOpen(false)}
-                            aria-label="Close menu"
-                        >
-                            <X size={32} />
-                        </button>
                         {[
                             { to: '/', label: 'Home' },
                             { to: '/about', label: 'About' },
@@ -216,7 +209,7 @@ export default function Layout() {
             </AnimatePresence>
 
             {/* Glassmorphism Social Sidebar */}
-            <div className="hidden lg:flex fixed right-6 top-1/2 -translate-y-1/2 flex-col gap-6 p-4 rounded-full bg-white/5 border border-white/10 backdrop-blur-xl z-[1000] shadow-[0_0_30px_rgba(0,100,255,0.15)]">
+            <div className="hidden md:flex fixed right-6 top-1/2 -translate-y-1/2 flex-col gap-6 p-4 rounded-full bg-white/5 border border-white/10 backdrop-blur-xl z-[1000] shadow-[0_0_30px_rgba(0,100,255,0.15)]">
                 {[
                     { icon: Github, href: "https://github.com/ogunmuyiwajonathan", label: "GitHub" },
                     { icon: Linkedin, href: "https://www.linkedin.com/in/jonathan-ogunmuyiwa", label: "LinkedIn" },
