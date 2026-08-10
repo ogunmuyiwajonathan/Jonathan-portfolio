@@ -23,5 +23,8 @@ dist-ssr
 *.sln
 *.sw?
 
+# Playwright MCP test artifacts
+.playwright-mcp/
+
 # Keep original images as backup but don't push them
 *.original.*
