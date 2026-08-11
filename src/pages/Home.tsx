@@ -107,7 +107,7 @@ export default function Home() {
                 transition-transform duration-700 group-hover:scale-[1.04]
                 mx-auto md:mx-0">
                                 <img
-                                    src="/images/image.webp"
+                                    src="/images/logo.webp"
                                     alt="Jonathan Ogunmuyiwa"
                                     width={190}
                                     height={190}

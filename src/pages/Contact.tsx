@@ -587,7 +587,7 @@ export default function Contact() {
             </div>
 
             {/* Right Column - Contact Form */}
-            <ScrollReveal direction="right" className="max-[900px]:order-2">
+            <ScrollReveal direction="right" className="hidden md:block max-[900px]:order-2">
                 <SpotlightCard className="bg-card-bg border border-border-color rounded-[30px] p-[32px_16px] sm:p-[40px_24px] md:p-[56px_36px] min-[900px]:p-[45px] relative h-full" spotlightColor="rgba(61, 90, 241, 0.1)">
                     <div className="absolute top-[30px] right-[35px] text-white/80 opacity-30">
                         <Sparkles size={24} />
