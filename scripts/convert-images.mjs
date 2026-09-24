@@ -8,7 +8,7 @@ const IMAGES_DIR = join(__dirname, "..", "public", "images");
 const QUALITY = 80;
 
 const IMAGE_CONFIG = {
-  "image":       { w: 190, h: 190, retina: true, srcset: false, eager: true },
+  "logo":        { w: 190, h: 190, retina: true, srcset: false, eager: true },
   "profile":     { w: 400, h: 500, retina: true, srcset: false, eager: true },
   "earth-bg":    { w: 800, h: 800, retina: false, srcset: false, eager: true },
   "moon":        { w: 80, h: 80, retina: false, srcset: false, eager: false },
