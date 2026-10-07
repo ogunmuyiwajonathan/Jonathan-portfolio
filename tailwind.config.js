@@ -67,10 +67,11 @@ export default {
 				custom: 'cubic-bezier(0.16, 1, 0.3, 1)'
 			},
 			animation: {
-				scroll: 'scroll 40s linear infinite'
+				marquee: 'marquee var(--marquee-duration, 25s) linear infinite',
+				marqueeReverse: 'marquee var(--marquee-duration, 25s) linear infinite reverse'
 			},
 			keyframes: {
-				scroll: {
+				marquee: {
 					'0%': {
 						transform: 'translateX(0)'
 					},

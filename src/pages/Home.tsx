@@ -11,6 +11,7 @@ import SplitText from '@/components/react-bits/SplitText';
 import BlurText from '@/components/react-bits/BlurText';
 import Skeleton from '@/components/Skeleton';
 import ScrollReveal from '@/components/ScrollReveal';
+import Marquee from '@/components/Marquee';
 import CountUp from '@/components/CountUp';
 import { useState, useEffect } from 'react';
 import { usePageTitle } from '@/hooks/usePageTitle';
@@ -198,16 +199,16 @@ export default function Home() {
 
                     {/* Marquee â€” col-span-2 sits beside the hero's second row */}
                     <SpotlightCard className="card md:col-span-2 lg:col-span-full py-4 px-8 rounded-full overflow-hidden self-center">
-                        <div className="flex animate-scroll whitespace-nowrap gap-10">
-                            {[...marqueeItems, ...marqueeItems].map((text, i) => (
+                        <Marquee pauseOnHover className="marquee-fade">
+                            {marqueeItems.map((text) => (
                                 <span
-                                    key={i}
-                                    className="text-[0.7rem] uppercase tracking-[2px] text-muted-foreground flex items-center gap-3 font-bold"
+                                    key={text}
+                                    className="text-[0.7rem] uppercase tracking-[2px] text-muted-foreground flex items-center gap-3 font-bold whitespace-nowrap"
                                 >
                                     ✔ {text}
                                 </span>
                             ))}
-                        </div>
+                        </Marquee>
                     </SpotlightCard>
 
                     {/* Tech Stack */}

@@ -210,15 +210,28 @@
   animation: shimmer 2s infinite;
 }
 
-/* Faster marquee on mobile/tablet */
-@media (max-width: 1023px) {
-  .animate-scroll {
-    animation-duration: 15s !important;
-  }
+/* Marquee edge fade. Masking rather than overlaying gradients keeps the strip's
+   own background transparent, so the card behind shows through the fade. */
+.marquee-fade {
+  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
 }
 
-@media (max-width: 768px) {
-  .animate-scroll {
-    animation-duration: 10s !important;
+/* Honour the OS setting: stop the motion, but let the visitor scroll the strip
+   by hand rather than losing the content. Declared after @tailwind utilities so
+   the overflow override wins over the .overflow-hidden on the viewport. */
+@media (prefers-reduced-motion: reduce) {
+  .marquee-fade {
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+
+  [data-marquee-track] {
+    animation: none !important;
+  }
+
+  [data-marquee-viewport] {
+    overflow-x: auto;
+    overflow-y: hidden;
   }
 }
