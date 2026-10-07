@@ -3,8 +3,8 @@ import {
     ShieldCheck, FolderKanban, ArrowUpRight, Sparkle,
     Code2, Palette, Zap, Globe, Database, Smartphone
 } from 'lucide-react';
-import { FaHtml5, FaJava, FaReact } from 'react-icons/fa';
-import { SiTailwindcss, SiTypescript, SiJavascript } from 'react-icons/si';
+import { FaNodeJs, FaReact } from 'react-icons/fa';
+import { SiTailwindcss, SiJavascript, SiFlutter, SiMongodb } from 'react-icons/si';
 import { Linkedin, Github } from 'lucide-react';
 import SpotlightCard from '@/components/react-bits/SpotlightCard';
 import SplitText from '@/components/react-bits/SplitText';
@@ -16,19 +16,19 @@ import { useState, useEffect } from 'react';
 import { usePageTitle } from '@/hooks/usePageTitle';
 
 const techStack = [
-    { icon: <FaHtml5 size={30} />, label: 'HTML/CSS', color: 'text-[#e34f26]' },
     { icon: <SiTailwindcss size={30} />, label: 'Tailwind', color: 'text-[#38bdf8]' },
     { icon: <SiJavascript size={30} />, label: 'JavaScript', color: 'text-[#f7df1e]' },
-    { icon: <SiTypescript size={30} />, label: 'TypeScript', color: 'text-[#3178c6]' },
     { icon: <FaReact size={30} />, label: 'React', color: 'text-[#61dafb]' },
-    { icon: <FaJava size={30} />, label: 'Java', color: 'text-foreground' },
+    { icon: <SiMongodb size={30} className="text-[#00ed64]" />, label: "MongoDB", title:"MongoDB" },
+    { icon: <FaNodeJs size={30} className="text-[#339933]" />, label: "Node.js", title: "Node.js" },
+    { icon: <SiFlutter size={30} className="text-[#55C6F8]" />, label: "Flutter", title: "Flutter" },
 ];
 
 const services = [
     { icon: <Globe size={24} />, title: 'Full Stack Development', desc: 'React, Node, Python' },
-    { icon: <Palette size={24} />, title: 'UX Strategy', desc: 'Interface, Figma' },
-    { icon: <Database size={24} />, title: 'Data Design', desc: 'SQL, NoSQL Hub' },
-    { icon: <Smartphone size={24} />, title: 'App Precision', desc: 'Mobile-Optimized' },
+    { icon: <Palette size={24} />, title: 'UX Strategy', desc: 'Figma' },
+    { icon: <Database size={24} />, title: 'Data Design', desc: 'SQL, Mongo Db' },
+    { icon: <Smartphone size={24} />, title: 'App Precision', desc: 'Flutter, React Native' },
 ];
 
 const skills = [
@@ -45,11 +45,12 @@ const marqueeItems = [
     "Database Architecture", "API Development", "Performance Optimization"
 ];
 
+// All three icons are entry points to the contact page rather than outbound
+// profile links, so there is one destination and no per-item href to keep in sync.
 const socials = [
-    { href: "https://www.linkedin.com/in/jonathan-ogunmuyiwa", icon: <Linkedin size={22} />, label: "LinkedIn" },
-    { href: "https://github.com/ogunmuyiwajonathan", icon: <Github size={22} />, label: "GitHub" },
+    { icon: <Linkedin size={22} />, label: "LinkedIn" },
+    { icon: <Github size={22} />, label: "GitHub" },
     {
-        href: "https://wa.me/2349157384644",
         icon: (
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
@@ -74,7 +75,7 @@ export default function Home() {
         return (
             <div className="min-h-screen bg-background">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-24">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-24">
                         <Skeleton className="lg:col-span-3 lg:row-span-2 h-[450px] rounded-[50px]" />
                         <Skeleton className="h-[250px] rounded-[30px]" />
                         <Skeleton className="h-[250px] rounded-[30px]" />
@@ -157,42 +158,42 @@ export default function Home() {
 
                     {/* About Card */}
                     <ScrollReveal direction="up" delay={0} className="h-full">
-                    <Link to="/about" className="group h-full">
-                        <SpotlightCard className="h-full flex flex-col p-8 transition-all duration-500 hover:-translate-y-1.5">
-                            <div className="mb-8 text-foreground/80 transition-transform duration-500 group-hover:scale-110 w-fit">
-                                <ShieldCheck size={48} strokeWidth={1} />
-                            </div>
-                            <span className="text-[0.65rem] text-muted-foreground uppercase tracking-[2px] mb-2 font-bold">
-                                DISCOVER MORE
-                            </span>
-                            <div className="text-xl font-bold mt-auto flex justify-between items-center text-foreground">
-                                About Me
-                            </div>
-                            <p className="text-muted-foreground text-sm mt-2 leading-relaxed">
-                                Technical expertise & professional journey.
-                            </p>
-                        </SpotlightCard>
-                    </Link>
+                        <Link to="/about" className="group h-full">
+                            <SpotlightCard className="h-full flex flex-col p-8 transition-all duration-500 hover:-translate-y-1.5">
+                                <div className="mb-8 text-foreground/80 transition-transform duration-500 group-hover:scale-110 w-fit">
+                                    <ShieldCheck size={48} strokeWidth={1} />
+                                </div>
+                                <span className="text-[0.65rem] text-muted-foreground uppercase tracking-[2px] mb-2 font-bold">
+                                    DISCOVER MORE
+                                </span>
+                                <div className="text-xl font-bold mt-auto flex justify-between items-center text-foreground">
+                                    About Me
+                                </div>
+                                <p className="text-muted-foreground text-sm mt-2 leading-relaxed">
+                                    Technical expertise & professional journey.
+                                </p>
+                            </SpotlightCard>
+                        </Link>
                     </ScrollReveal>
 
                     {/* Works Card */}
                     <ScrollReveal direction="up" delay={0.1} className="h-full">
-                    <Link to="/works" className="group h-full">
-                        <SpotlightCard className="h-full flex flex-col p-8 transition-all duration-500 hover:-translate-y-1.5">
-                            <div className="mb-8 text-foreground/80 transition-transform duration-500 group-hover:scale-110 w-fit">
-                                <FolderKanban size={48} strokeWidth={1} />
-                            </div>
-                            <span className="text-[0.65rem] text-muted-foreground uppercase tracking-[2px] mb-2 font-bold">
-                                PORTFOLIO
-                            </span>
-                            <div className="text-xl font-bold mt-auto flex justify-between items-center text-foreground">
-                                My Works
-                            </div>
-                            <p className="text-muted-foreground text-sm mt-2 leading-relaxed">
-                                A collection of precision-built applications.
-                            </p>
-                        </SpotlightCard>
-                    </Link>
+                        <Link to="/works" className="group h-full">
+                            <SpotlightCard className="h-full flex flex-col p-8 transition-all duration-500 hover:-translate-y-1.5">
+                                <div className="mb-8 text-foreground/80 transition-transform duration-500 group-hover:scale-110 w-fit">
+                                    <FolderKanban size={48} strokeWidth={1} />
+                                </div>
+                                <span className="text-[0.65rem] text-muted-foreground uppercase tracking-[2px] mb-2 font-bold">
+                                    PORTFOLIO
+                                </span>
+                                <div className="text-xl font-bold mt-auto flex justify-between items-center text-foreground">
+                                    My Works
+                                </div>
+                                <p className="text-muted-foreground text-sm mt-2 leading-relaxed">
+                                    A collection of precision-built applications.
+                                </p>
+                            </SpotlightCard>
+                        </Link>
                     </ScrollReveal>
 
                     {/* Marquee â€” col-span-2 sits beside the hero's second row */}
@@ -211,70 +212,69 @@ export default function Home() {
 
                     {/* Tech Stack */}
                     <ScrollReveal direction="left" className="lg:col-span-2">
-                    <SpotlightCard className="card p-8 hover:bg-secondary transition-all duration-500 group h-full">
-                        <Link to="/about#specialize">
-                            <div className="grid grid-cols-6 gap-5 mb-8">
-                                {techStack.map(({ icon, label, color }) => (
-                                    <div
-                                        key={label}
-                                        className={`flex justify-center transition-all duration-300 group-hover:scale-110 ${color}`}
-                                        title={label}
-                                    >
-                                        {icon}
-                                    </div>
-                                ))}
-                            </div>
-                            <div className="text-xl font-bold flex justify-between items-center text-foreground">
-                                Core Arsenal
-                            </div>
-                            <span className="flex group-hover:text-accent-blue justify-between items-center">
-                                <p className="text-muted-foreground text-sm mt-2">
-                                    Specialized in modern, highly efficient technology stacks.
-                                </p>
-                                <ArrowUpRight
-                                    size={20}
-                                    className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"
-                                />
-                            </span>
-                        </Link>
-                    </SpotlightCard>
+                        <SpotlightCard className="card p-8 hover:bg-secondary transition-all duration-500 group h-full">
+                            <Link to="/about#specialize">
+                                <div className="grid grid-cols-6 gap-5 mb-8">
+                                    {techStack.map(({ icon, label, color }) => (
+                                        <div
+                                            key={label}
+                                            className={`flex justify-center transition-all duration-300 group-hover:scale-110 ${color}`}
+                                            title={label}
+                                        >
+                                            {icon}
+                                        </div>
+                                    ))}
+                                </div>
+                                <div className="text-xl font-bold flex justify-between items-center text-foreground">
+                                    Core Arsenal
+                                </div>
+                                <span className="flex group-hover:text-accent-blue justify-between items-center">
+                                    <p className="text-muted-foreground text-sm mt-2">
+                                        Specialized in modern, highly efficient technology stacks.
+                                    </p>
+                                    <ArrowUpRight
+                                        size={20}
+                                        className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"
+                                    />
+                                </span>
+                            </Link>
+                        </SpotlightCard>
                     </ScrollReveal>
 
                     {/* Socials */}
                     <ScrollReveal direction="right" className="lg:col-span-1">
-                    <SpotlightCard className="p-8 flex flex-col justify-between group h-full">
-                        <div className="flex gap-3 flex-wrap">
-                            {socials.map((social) => (
-                                <a
-                                    key={social.label}
-                                    href={social.href}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    title={social.label}
-                                    className="w-11 h-11 border border-border rounded-full flex items-center justify-center
+                        <SpotlightCard className="p-8 flex flex-col justify-between group h-full">
+                            <div className="flex gap-3 flex-wrap">
+                                {socials.map((social) => (
+                                    <Link
+                                        key={social.label}
+                                        to="/contact#connect"
+                                        title={social.label}
+                                        aria-label={`${social.label} - connect with me`}
+                                        className="w-11 h-11 border border-border rounded-full flex items-center justify-center
                     text-foreground transition-all duration-300 hover:bg-foreground hover:text-background hover:scale-110"
-                                >
-                                    {social.icon}
-                                </a>
-                            ))}
-                        </div>
-                        <div className="mt-6 ">
-                            <span className="text-[0.65rem] text-muted-foreground uppercase tracking-[2px] mb-2 block font-bold">
-                                CONNECT
-                            </span>
-                            <Link
-                                to="/contact"
-                                className="text-xl font-bold flex justify-between items-center
+                                    >
+                                        {social.icon}
+                                    </Link>
+                                ))}
+                            </div>
+                            <div className="mt-6 ">
+                                <span className="text-[0.65rem] text-muted-foreground uppercase tracking-[2px] mb-2 block font-bold">
+                                    CONNECT
+                                </span>
+                                <Link
+                                    to="/contact#connect"
+                                    className="text-xl font-bold flex justify-between items-center
                   text-foreground group-hover:text-accent-blue transition-colors"
-                            >
-                                Profiles
-                                <ArrowUpRight
-                                    size={20}
-                                    className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"
-                                />
-                            </Link>
-                        </div>
-                    </SpotlightCard>
+                                >
+                                    Profiles
+                                    <ArrowUpRight
+                                        size={20}
+                                        className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"
+                                    />
+                                </Link>
+                            </div>
+                        </SpotlightCard>
                     </ScrollReveal>
 
                     {/* Stats */}
@@ -282,7 +282,7 @@ export default function Home() {
                         <SpotlightCard className="p-8 flex flex-col justify-center gap-7 h-full">
                             {[
                                 { end: 4, suffix: '+', label: 'Years of Impact' },
-                                { end: 8, suffix: '+', label: 'Live Deployments' },
+                                { end: 9, suffix: '+', label: 'Live Deployments' },
                             ].map(({ end, suffix, label }) => (
                                 <div key={label}>
                                     <h3 className="text-4xl font-bold text-foreground leading-none tracking-tight">
@@ -316,62 +316,62 @@ export default function Home() {
 
                     {/* Skills */}
                     <ScrollReveal direction="right" delay={0.1} className="md:col-span-2 lg:col-span-2">
-                    <SpotlightCard className="card p-8">
-                        <div className="text-[0.7rem] font-bold text-muted-foreground tracking-[2px] mb-8 flex items-center gap-2">
-                            <Code2 size={14} className="text-accent-blue" /> MASTERY LEVELS
-                        </div>
-                        <div className="space-y-5">
-                            {skills.map((skill) => (
-                                <div key={skill.label}>
-                                    <div className="flex justify-between text-sm mb-1.5 font-bold">
-                                        <span className="text-foreground">{skill.label}</span>
-                                        <span className="text-accent-blue tabular-nums">{skill.level}</span>
-                                    </div>
-                                    <div className="h-2 bg-secondary rounded-full overflow-hidden">
-                                        <div
-                                            className="h-full bg-gradient-to-r from-accent-blue to-accent-blue-light
+                        <SpotlightCard className="card p-8">
+                            <div className="text-[0.7rem] font-bold text-muted-foreground tracking-[2px] mb-8 flex items-center gap-2">
+                                <Code2 size={14} className="text-accent-blue" /> MASTERY LEVELS
+                            </div>
+                            <div className="space-y-5">
+                                {skills.map((skill) => (
+                                    <div key={skill.label}>
+                                        <div className="flex justify-between text-sm mb-1.5 font-bold">
+                                            <span className="text-foreground">{skill.label}</span>
+                                            <span className="text-accent-blue tabular-nums">{skill.level}</span>
+                                        </div>
+                                        <div className="h-2 bg-secondary rounded-full overflow-hidden">
+                                            <div
+                                                className="h-full bg-gradient-to-r from-accent-blue to-accent-blue-light
                         rounded-full transition-all duration-1000 ease-out"
-                                            style={{ width: skill.level }}
-                                        />
+                                                style={{ width: skill.level }}
+                                            />
+                                        </div>
                                     </div>
-                                </div>
-                            ))}
-                        </div>
-                    </SpotlightCard>
+                                ))}
+                            </div>
+                        </SpotlightCard>
                     </ScrollReveal>
 
                     {/* CTA */}
                     <ScrollReveal direction="up" delay={0.1} className="md:col-span-2 lg:col-span-4">
-                    <SpotlightCard
-                        className="glass-card p-10 md:p-16 group relative
+                        <SpotlightCard
+                            className="glass-card p-10 md:p-16 group relative
               overflow-hidden transition-all duration-700 hover:scale-[1.005]"
-                    >
-                        <Link to="/contact">
-                            <Sparkle className="absolute top-8 left-8 opacity-10 text-foreground" size={80} />
-                            <div className="absolute top-0 right-0 w-80 h-80 bg-accent-blue/5 rounded-full
+                        >
+                            <Link to="/contact">
+                                <Sparkle className="absolute top-8 left-8 opacity-10 text-foreground" size={80} />
+                                <div className="absolute top-0 right-0 w-80 h-80 bg-accent-blue/5 rounded-full
               blur-[100px] -translate-y-1/2 translate-x-1/2 pointer-events-none" />
 
-                            <div className="relative z-10 flex flex-col md:flex-row justify-between
+                                <div className="relative z-10 flex flex-col md:flex-row justify-between
               items-center gap-10 text-center md:text-left">
-                                <div className="flex-1">
-                                    <h2 className="text-[clamp(2rem,6vw,3.5rem)] font-bold leading-[1.05]
+                                    <div className="flex-1">
+                                        <h2 className="text-[clamp(2rem,6vw,3.5rem)] font-bold leading-[1.05]
                   tracking-tight text-foreground m-0">
-                                        Partnering for <br />
-                                        the <span className="text-muted-foreground">Extraordinary.</span>
-                                    </h2>
-                                    <p className="text-muted-foreground text-base mt-5 max-w-[500px] leading-relaxed">
-                                        I'm currently accepting select freelance partnerships and collaborative ventures.
-                                        Let's build something that matters.
-                                    </p>
-                                </div>
-                                <div className="w-20 h-20 rounded-full border border-border text-foreground flex items-center
+                                            Partnering for <br />
+                                            the <span className="text-muted-foreground">Extraordinary.</span>
+                                        </h2>
+                                        <p className="text-muted-foreground text-base mt-5 max-w-[500px] leading-relaxed">
+                                            I'm currently accepting select freelance partnerships and collaborative ventures.
+                                            Let's build something that matters.
+                                        </p>
+                                    </div>
+                                    <div className="w-20 h-20 rounded-full border border-border text-foreground flex items-center
   justify-center transition-all duration-500 shrink-0
   group-hover:scale-110 group-hover:bg-foreground group-hover:text-background shadow-2xl">
-                                    <ArrowUpRight size={36} strokeWidth={2} />
+                                        <ArrowUpRight size={36} strokeWidth={2} />
+                                    </div>
                                 </div>
-                            </div>
-                        </Link>
-                    </SpotlightCard>
+                            </Link>
+                        </SpotlightCard>
                     </ScrollReveal>
 
 
