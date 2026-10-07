@@ -22,6 +22,7 @@ import {
 } from 'lucide-react';
 import { FaReact, FaJava, FaFigma, FaHtml5, FaNodeJs } from 'react-icons/fa';
 import { SiTailwindcss, SiMysql, SiTypescript, SiMongodb, SiJavascript, SiNextdotjs,SiPython, SiDart, SiFlutter } from 'react-icons/si';
+import { TbBrandReactNative } from 'react-icons/tb';
 import SpotlightCard from '../components/react-bits/SpotlightCard';
 import BlurText from '../components/react-bits/BlurText';
 import Skeleton from '../components/Skeleton';
@@ -99,6 +100,7 @@ export default function About() {
         { icon: <SiPython size={26} className="text-[#f05032]" />, label: "Python", title: "Python" },
         { icon: <SiDart size={26} className="text-[#0175C2]" />, label: "Dart", title: "Dart" },
         { icon: <SiFlutter size={26} className="text-[#55C6F8]" />, label: "Flutter", title: "Flutter" },
+        { icon: <TbBrandReactNative size={26} className="text-[#0BA5EC]" />, label: "React Native", title: "React Native" },
     ];
 
     const hiddenSkillsCount = techSkills.length - SKILLS_LIMIT;
