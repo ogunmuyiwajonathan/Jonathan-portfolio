@@ -18,8 +18,14 @@ const IMAGE_CONFIG = {
   "graphic":     { w: 510, h: 260, retina: true, srcset: true, eager: false },
   "port":        { w: 510, h: 260, retina: true, srcset: true, eager: false },
   "drolatoye":   { w: 510, h: 260, retina: true, srcset: true, eager: false },
-  "solibu":      { w: 510, h: 260, retina: true, srcset: true, eager: false }
+  "solibu":      { w: 510, h: 260, retina: true, srcset: true, eager: false },
+  "campuscoin":  { w: 510, h: 260, retina: true, srcset: false, eager: false }
 };
+
+// sharp's metadata() has no `size` field - read it off the written file instead.
+async function sizeKb(outPath) {
+  return ((await stat(outPath)).size / 1024).toFixed(1);
+}
 
 function getMaxDimensions(name) {
   const cfg = IMAGE_CONFIG[name];
@@ -44,7 +50,7 @@ async function convertImage(srcPath) {
     const outPath = join(IMAGES_DIR, imageName + ".webp");
     await sharp(srcPath).webp({ quality: QUALITY }).toFile(outPath);
     const m = await sharp(outPath).metadata();
-    console.log("  -> " + imageName + ".webp (" + m.width + "x" + m.height + ", " + (m.size / 1024).toFixed(1) + " KB)");
+    console.log("  -> " + imageName + ".webp (" + m.width + "x" + m.height + ", " + (await sizeKb(outPath)) + " KB)");
     return;
   }
 
@@ -68,13 +74,13 @@ async function convertImage(srcPath) {
       const outPath = join(IMAGES_DIR, imageName + "-" + suffix + ".webp");
       await sharp(srcPath).resize({ width, withoutEnlargement: true }).webp({ quality: QUALITY }).toFile(outPath);
       const m = await sharp(outPath).metadata();
-      console.log("  -> " + imageName + "-" + suffix + ".webp (" + m.width + "x" + m.height + ", " + (m.size / 1024).toFixed(1) + " KB)");
+      console.log("  -> " + imageName + "-" + suffix + ".webp (" + m.width + "x" + m.height + ", " + (await sizeKb(outPath)) + " KB)");
     }
   } else {
     const outPath = join(IMAGES_DIR, imageName + ".webp");
     await sharp(srcPath).resize({ width: resizeW, height: resizeH, fit: "inside", withoutEnlargement: true }).webp({ quality: QUALITY }).toFile(outPath);
     const m = await sharp(outPath).metadata();
-    console.log("  -> " + imageName + ".webp (" + m.width + "x" + m.height + ", " + (m.size / 1024).toFixed(1) + " KB)");
+    console.log("  -> " + imageName + ".webp (" + m.width + "x" + m.height + ", " + (await sizeKb(outPath)) + " KB)");
   }
 }
 

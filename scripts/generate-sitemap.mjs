@@ -7,7 +7,7 @@ const ROOT = join(__dirname, "..");
 const OUT_PATH = join(ROOT, "public", "sitemap.xml");
 
 const BASE_URL = "https://jonworld.vercel.app";
-const LASTMOD = "2026-07-27";
+const LASTMOD = "2026-10-07";
 
 const ROUTES = [
   { path: "/", changefreq: "weekly", priority: "1.0" },
@@ -24,6 +24,7 @@ const WORK_IMAGES = [
   { src: "/images/graphic-full.webp", title: "Stalworld Tech" },
   { src: "/images/port-full.webp", title: "Portfolio Website" },
   { src: "/images/drolatoye-full.webp", title: "Dr. Olatoye" },
+  { src: "/images/campuscoin.webp", title: "CampusCoin" },
 ];
 
 function escapeXml(str) {

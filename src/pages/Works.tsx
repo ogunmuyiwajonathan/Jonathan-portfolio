@@ -19,7 +19,33 @@ interface Project {
     year: string;
 }
 
+// The seven legacy cards ship three widths each (-300w / -600w / -full). A project
+// with a single WebP has no -full. in its path, and String.replace would no-op and
+// emit three descriptors for one file, so those cards get no srcSet at all.
+function cardSrcSet(image: string): string | undefined {
+    if (!image.includes('-full.')) return undefined;
+    return `${image.replace('-full.', '-300w.')} 300w, ${image.replace('-full.', '-600w.')} 600w, ${image} 1024w`;
+}
+
 const projects: Project[] = [
+    {
+        title: "CampusCoin",
+        category: "React / Express / MongoDB",
+        description: "A full-stack student budget tracker with an AI assistant, built as a TechWiz 7 competition entry.",
+        fullDescription: "CampusCoin is a full-stack student budget tracker built as a TechWiz 7 competition entry. Students log income and expenses manually, set per-category budgets, and get plain-language insights, with no bank linking and no real money handling, making it a private alternative to adult-oriented finance apps. The React 19 frontend uses Tailwind CSS v4, React Router 7 and Recharts 3 and talks to an Express 5 API backed by MongoDB and Mongoose 9. It ships CSV import with per-row validation and whole-batch undo, budget alerts, stored monthly insights, a tips engine ranked by savings impact, four-tier AI categorisation, PDF and image report export, and Rix, a server-side assistant that reads the student's own figures. Sessions are real HTTP-only cookies, passwords are bcrypt-hashed, and the ledger lives in the database rather than the browser.",
+        highlights: [
+            "Full-stack React 19 + Express 5 + MongoDB with HTTP-only cookie sessions",
+            "Rix, an AI assistant that reads the student's own budgets and transactions server-side",
+            "CSV import with per-row validation, an accepted/rejected report and whole-batch undo",
+            "Four-tier AI categorisation, budget alerts and PDF report export",
+            "Built as a TechWiz 7 competition entry"
+        ],
+        image: "/images/campuscoin.webp",
+        link: "https://campus-coin-nine.vercel.app/",
+        gradient: "from-[#e0fcee] to-[#f8fafc]",
+        accentColor: "#047857",
+        year: "2026"
+    },
     {
         title: "Dr. Olatoye",
         category: "React / Tailwind CSS",
@@ -183,7 +209,7 @@ export default function Works() {
                                 <div className={`w-full h-[220px] sm:h-[260px] rounded-[20px] overflow-hidden mb-6 flex items-center justify-center bg-gradient-to-tr ${project.gradient}`}>
                                     <img
                                         src={project.image}
-                                        srcSet={`${project.image.replace('-full.', '-300w.')} 300w, ${project.image.replace('-full.', '-600w.')} 600w, ${project.image} 1024w`}
+                                        srcSet={cardSrcSet(project.image)}
                                         sizes="(max-width: 768px) calc(100vw - 48px), calc((1140px - 48px) / 2)"
                                         alt={project.title}
                                         width={400}
