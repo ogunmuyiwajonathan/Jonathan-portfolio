@@ -574,13 +574,17 @@ export default function About() {
                     <div className="text-center opacity-20 text-[1.4rem] italic mt-[10px] font-bold">
                         Jonathan. OG
                     </div>
-                    <div className="flex justify-between items-center mt-auto pt-[20px] border-t border-border-color cursor-pointer group">
+                    <a
+                        href="/Jonathan_Ogunmuyiwa_CV.pdf"
+                        download="Jonathan_Ogunmuyiwa_CV.pdf"
+                        className="flex justify-between items-center mt-auto pt-[20px] border-t border-border-color group"
+                    >
                         <div>
                             <span className="text-[0.65rem] text-text-dim uppercase tracking-[1px]">Download</span>
                             <p className="font-semibold text-[0.9rem] group-hover:text-accent-blue transition-colors">Detailed CV</p>
                         </div>
                         <ArrowRight className="text-text-dim transition-all duration-300 group-hover:translate-x-1" />
-                    </div>
+                    </a>
                 </SpotlightCard>
                 </ScrollReveal>
 
