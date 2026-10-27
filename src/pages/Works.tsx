@@ -17,6 +17,8 @@ interface Project {
     gradient: string;
     accentColor: string;
     year: string;
+    type: "web" | "desktop" | "mobile";
+    hidden?: boolean;
 }
 
 // The seven legacy cards ship three widths each (-300w / -600w / -full). A project
@@ -26,6 +28,51 @@ function cardSrcSet(image: string): string | undefined {
     if (!image.includes('-full.')) return undefined;
     return `${image.replace('-full.', '-300w.')} 300w, ${image.replace('-full.', '-600w.')} 600w, ${image} 1024w`;
 }
+
+// Placeholder entries for desktop and mobile projects — NOT rendered on the live
+// site (hidden: true). Fill in the real details and delete the hidden flag to
+// enable them; they will then appear under their filter tab.
+const desktopPlaceholders: Project[] = [
+    {
+        title: "Desktop Project Placeholder",
+        category: "Electron / Desktop App",
+        description: "TODO: one-line description of the desktop application.",
+        fullDescription: "TODO: full description — what the app does, why it was built, the stack, and your role.",
+        highlights: [
+            "TODO: key feature 1",
+            "TODO: key feature 2",
+            "TODO: key feature 3"
+        ],
+        image: "/images/TODO-desktop-screenshot.webp",
+        link: "TODO: live/store/demo link or remove this field usage",
+        gradient: "from-[#1e293b] to-[#0f172a]",
+        accentColor: "#38bdf8",
+        year: "TODO",
+        type: "desktop",
+        hidden: true
+    }
+];
+
+const mobilePlaceholders: Project[] = [
+    {
+        title: "Mobile Project Placeholder",
+        category: "Flutter / Mobile App",
+        description: "TODO: one-line description of the mobile application.",
+        fullDescription: "TODO: full description — what the app does, why it was built, the stack (Flutter or React Native), and your role.",
+        highlights: [
+            "TODO: key feature 1",
+            "TODO: key feature 2",
+            "TODO: key feature 3"
+        ],
+        image: "/images/TODO-mobile-screenshot.webp",
+        link: "TODO: Play Store / App Store / demo link",
+        gradient: "from-[#312e81] to-[#1e1b4b]",
+        accentColor: "#818cf8",
+        year: "TODO",
+        type: "mobile",
+        hidden: true
+    }
+];
 
 const projects: Project[] = [
     {
@@ -44,7 +91,8 @@ const projects: Project[] = [
         link: "https://campus-coin-nine.vercel.app/",
         gradient: "from-[#e0fcee] to-[#f8fafc]",
         accentColor: "#047857",
-        year: "2026"
+        year: "2026",
+        type: "web"
     },
     {
         title: "Dr. Olatoye",
@@ -61,7 +109,8 @@ const projects: Project[] = [
         link: "https://dr-olatoye.vercel.app/",
         gradient: "from-[#052653] to-[#2E7D32]",
         accentColor: "#2E7D32",
-        year: "2026"
+        year: "2026",
+        type: "web"
     },
     {
         title: "Solibu Stories",
@@ -78,7 +127,8 @@ const projects: Project[] = [
         link: "https://solibu-stories.vercel.app/",
         gradient: "from-[#0d0d10] to-[#b1862f]",
         accentColor: "#b1862f",
-        year: "2026"
+        year: "2026",
+        type: "web"
     },
     {
         title: "LifeOS",
@@ -90,7 +140,8 @@ const projects: Project[] = [
         link: "https://life-o-system.vercel.app/",
         gradient: "from-[#081a14] to-[#081a14]",
         accentColor: "#10b981",
-        year: "2026"
+        year: "2026",
+        type: "web"
     },
     {
         title: "Belleville Dental Care (DEMO)",
@@ -102,7 +153,8 @@ const projects: Project[] = [
         link: "https://project-belleville-dental.vercel.app/",
         gradient: "from-[#2b5876] to-[#4e4376]",
         accentColor: "#4e4376",
-        year: "2026"
+        year: "2026",
+        type: "web"
     },
     {
         title: "Tasty Crust (DEMO)",
@@ -114,7 +166,8 @@ const projects: Project[] = [
         link: "https://tasty-crust.vercel.app/",
         gradient: "from-[#f12711] to-[#f5af19]",
         accentColor: "#f12711",
-        year: "2025"
+        year: "2025",
+        type: "web"
     },
     {
         title: "Stalworld Tech (DEMO)",
@@ -126,7 +179,8 @@ const projects: Project[] = [
         link: "https://stalworldtech.vercel.app/",
         gradient: "from-[#07424e] to-[#05706d]",
         accentColor: "#05706d",
-        year: "2025"
+        year: "2025",
+        type: "web"
     },
     {
         title: "Portfolio Website",
@@ -138,13 +192,17 @@ const projects: Project[] = [
         link: "https://port-murex-tau.vercel.app/",
         gradient: "from-[#1e1e1e] to-[#333333]",
         accentColor: "#6b7280",
-        year: "2025"
+        year: "2025",
+        type: "web"
     },
+    ...desktopPlaceholders,
+    ...mobilePlaceholders
 ];
 
 export default function Works() {
     const [selectedProject, setSelectedProject] = useState<Project | null>(null);
     const [isLoading, setIsLoading] = useState(true);
+    const [filter, setFilter] = useState<"all" | "web" | "desktop" | "mobile">("all");
 
     usePageTitle('Works');
     useEffect(() => {
@@ -154,6 +212,21 @@ export default function Works() {
         }, 1500);
         return () => clearTimeout(timer);
     }, []);
+
+    // Filtered list: placeholders (hidden: true) never render on the live site.
+    const visibleProjects = projects.filter(
+        (p) => !p.hidden && (filter === "all" || p.type === filter)
+    );
+
+    // A tab only shows for a type that has at least one visible project.
+    const typesPresent = [...new Set(projects.filter((p) => !p.hidden).map((p) => p.type))];
+
+    // If the active filter has no visible projects (e.g. placeholders got hidden again), fall back to All.
+    useEffect(() => {
+        if (filter !== "all" && visibleProjects.length === 0) {
+            setFilter("all");
+        }
+    }, [filter, visibleProjects.length]);
 
     // Prevent body scroll when modal is open
     useEffect(() => {
@@ -185,6 +258,27 @@ export default function Works() {
                 />
             </header>
 
+            {/* Project type filter — segmented tabs, only shown for types with visible projects */}
+            <div className="flex flex-wrap items-center gap-2 mb-8" role="tablist" aria-label="Filter projects by type">
+                {(["all", "web", "desktop", "mobile"] as const).map((t) => (
+                    (t === "all" || typesPresent.includes(t)) && (
+                        <button
+                            key={t}
+                            role="tab"
+                            aria-selected={filter === t}
+                            onClick={() => setFilter(t)}
+                            className={`px-5 py-2 rounded-full text-[0.8rem] font-semibold capitalize transition-all duration-300 ${
+                                filter === t
+                                    ? "bg-white text-black shadow-lg"
+                                    : "bg-white/5 text-foreground/70 border border-white/10 hover:bg-white/10 hover:text-foreground"
+                            }`}
+                        >
+                            {t}
+                        </button>
+                    )
+                ))}
+            </div>
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {isLoading ? (
                     // Skeleton Grid
@@ -200,9 +294,13 @@ export default function Works() {
                             </div>
                         </div>
                     ))
+                ) : visibleProjects.length === 0 ? (
+                    <p className="text-foreground/60 col-span-full py-10 text-center">
+                        No projects in this category yet.
+                    </p>
                 ) : (
                     <>
-                        {projects.map((project, i) => (
+                        {visibleProjects.map((project, i) => (
                         <ScrollReveal key={i} direction="up" delay={i * 0.05} className="group flex flex-col h-full">
                             <SpotlightCard className="p-6 flex flex-col h-full transition-all duration-500 group-hover:-translate-y-2 group-hover:bg-[#1f1f1f]/80 sm:p-8">
                                 {/* Image */}

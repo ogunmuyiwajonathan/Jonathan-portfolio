@@ -21,7 +21,7 @@ import {
     X
 } from 'lucide-react';
 import { FaReact, FaJava, FaFigma, FaHtml5, FaNodeJs } from 'react-icons/fa';
-import { SiTailwindcss, SiMysql, SiTypescript, SiMongodb, SiJavascript, SiNextdotjs,SiPython, SiDart, SiFlutter } from 'react-icons/si';
+import { SiTailwindcss, SiMysql, SiTypescript, SiMongodb, SiJavascript, SiNextdotjs,SiPython, SiDart, SiFlutter, SiElectron } from 'react-icons/si';
 import { TbBrandReactNative } from 'react-icons/tb';
 import SpotlightCard from '../components/react-bits/SpotlightCard';
 import BlurText from '../components/react-bits/BlurText';
@@ -101,6 +101,7 @@ export default function About() {
         { icon: <SiDart size={26} className="text-[#0175C2]" />, label: "Dart", title: "Dart" },
         { icon: <SiFlutter size={26} className="text-[#55C6F8]" />, label: "Flutter", title: "Flutter" },
         { icon: <TbBrandReactNative size={26} className="text-[#0BA5EC]" />, label: "React Native", title: "React Native" },
+        { icon: <SiElectron size={26} className="text-[#9feaf9]" />, label: "Electron", title: "Electron" },
     ];
 
     const hiddenSkillsCount = techSkills.length - SKILLS_LIMIT;
@@ -150,7 +151,7 @@ export default function About() {
                     {/* Desktop: always full text */}
                     <div className="hidden md:block max-w-[550px] mt-[12px]">
                         <p className="text-text-dim text-[1rem] leading-relaxed">
-                            I'm a software engineer and designer based in Nigeria, building web applications where performance and craft aren't tradeoffs — they're the same requirement. I care about the pixel and the millisecond equally.
+                            I'm a software engineer and designer based in Nigeria, building web, desktop, and mobile applications where performance and craft aren't tradeoffs — they're the same requirement. I care about the pixel and the millisecond equally.
                         </p>
                         <p className="text-text-dim text-[1rem] mt-[12px] leading-relaxed">
                             It started as curiosity about how the web actually works under the hood. That curiosity never really left — it just turned into a discipline. I'm still learning, still testing new tools and approaches, still chasing the version of "good" that's one step past what I currently know.
@@ -226,7 +227,7 @@ export default function About() {
                                     }`}
                                 >
                                     <p className="text-text-dim text-[1rem] leading-relaxed">
-                                        I'm a software engineer and designer based in Nigeria, building web applications where performance and craft aren't tradeoffs — they're the same requirement. I care about the pixel and the millisecond equally.
+                                        I'm a software engineer and designer based in Nigeria, building web, desktop, and mobile applications where performance and craft aren't tradeoffs — they're the same requirement. I care about the pixel and the millisecond equally.
                                     </p>
                                     <p className="text-text-dim text-[1rem] leading-relaxed">
                                         It started as curiosity about how the web actually works under the hood. That curiosity never really left — it just turned into a discipline. I'm still learning, still testing new tools and approaches, still chasing the version of "good" that's one step past what I currently know.
@@ -479,7 +480,7 @@ export default function About() {
                             </div>
                             <div>
                                 <h4 className="font-semibold text-[0.95rem] text-white group-hover:text-accent-blue transition-colors">Full Stack Development</h4>
-                                <p className={`text-text-dim text-[0.85rem] leading-relaxed ${!expandedServices['fullstack'] ? 'line-clamp-2' : ''}`}>I create scalable and high-performance web and mobile applications, progressing from initial concept through to deployment, by making use of modern technologies such as React, Next.js, Node.js, Express, TypeScript, and SQL/NoSQL databases. This involves developing responsive frontends, robust backend APIs, mobile apps, authentication systems, database architectures, integrating with third-party services, carrying out cloud deployment, optimising performance, and providing continuous maintenance in order to deliver secure and user-oriented digital experiences.</p>
+                                <p className={`text-text-dim text-[0.85rem] leading-relaxed ${!expandedServices['fullstack'] ? 'line-clamp-2' : ''}`}>I create scalable and high-performance web, mobile, and desktop applications, progressing from initial concept through to deployment, by making use of modern technologies such as React, Next.js, Node.js, Express, TypeScript, and SQL/NoSQL databases. This involves developing responsive frontends, robust backend APIs, mobile apps, authentication systems, database architectures, integrating with third-party services, carrying out cloud deployment, optimising performance, and providing continuous maintenance in order to deliver secure and user-oriented digital experiences.</p>
                                 <button onClick={() => toggleReadMore('fullstack')} className="text-accent-blue text-[0.75rem] mt-1 hover:underline transition-colors">
                                     {expandedServices['fullstack'] ? 'Show less' : 'Read more \u2192'}
                                 </button>

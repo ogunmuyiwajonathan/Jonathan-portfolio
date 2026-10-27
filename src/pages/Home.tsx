@@ -4,7 +4,7 @@ import {
     Code2, Palette, Zap, Globe, Database, Smartphone
 } from 'lucide-react';
 import { FaNodeJs, FaReact } from 'react-icons/fa';
-import { SiTailwindcss, SiJavascript, SiFlutter, SiMongodb } from 'react-icons/si';
+import { SiTailwindcss, SiJavascript, SiFlutter, SiMongodb, SiElectron } from 'react-icons/si';
 import { Linkedin, Github } from 'lucide-react';
 import SpotlightCard from '@/components/react-bits/SpotlightCard';
 import SplitText from '@/components/react-bits/SplitText';
@@ -23,13 +23,14 @@ const techStack = [
     { icon: <SiMongodb size={30} className="text-[#00ed64]" />, label: "MongoDB", title:"MongoDB" },
     { icon: <FaNodeJs size={30} className="text-[#339933]" />, label: "Node.js", title: "Node.js" },
     { icon: <SiFlutter size={30} className="text-[#55C6F8]" />, label: "Flutter", title: "Flutter" },
+    { icon: <SiElectron size={30} className="text-[#9feaf9]" />, label: "Electron", title: "Electron" },
 ];
 
 const services = [
-    { icon: <Globe size={24} />, title: 'Full Stack Development', desc: 'React, Node, Python' },
+    { icon: <Globe size={24} />, title: 'Full Stack Development', desc: 'React, Node, Electron' },
     { icon: <Palette size={24} />, title: 'UX Strategy', desc: 'Figma' },
     { icon: <Database size={24} />, title: 'Data Design', desc: 'SQL, Mongo Db' },
-    { icon: <Smartphone size={24} />, title: 'App Precision', desc: 'Flutter, React Native' },
+    { icon: <Smartphone size={24} />, title: 'App Precision', desc: 'Flutter, React Native, Electron' },
 ];
 
 const skills = [
@@ -43,7 +44,8 @@ const skills = [
 
 const marqueeItems = [
     "Full Stack Development", "UI/UX Design", "Agentic AI Automation",
-    "Database Architecture", "API Development", "Performance Optimization"
+    "Database Architecture", "API Development", "Performance Optimization",
+    "Electron Desktop Apps", "Flutter Mobile Apps"
 ];
 
 // All three icons are entry points to the contact page rather than outbound
@@ -139,8 +141,10 @@ export default function Home() {
                                 />
 
                                 <p className="text-muted-foreground text-[0.95rem] leading-[1.75] max-w-[420px]">
-                                    I craft high-performance digital experiences that bridge
-                                    the gap between technical excellence and intuitive design.
+                                    I build web, desktop, and mobile experiences — React
+                                    web apps, Electron desktop apps, and Flutter /
+                                    React Native apps — that bridge the gap between
+                                    technical excellence and intuitive design.
                                 </p>
 
                                 <div className="flex flex-wrap gap-3 mt-7 justify-center md:justify-start">
