@@ -76,6 +76,25 @@ const mobilePlaceholders: Project[] = [
 
 const projects: Project[] = [
     {
+        title: "Stalworld Media",
+        category: "Next.js 16 / React 19 / Tailwind CSS v4",
+        description: "A marketing site for a Lagos design, printing and branding studio, with a print catalogue and WhatsApp-first enquiries.",
+        fullDescription: "Stalworld Media is a production marketing site for a Lagos-based creative studio covering design, printing, branding and web solutions. Built on Next.js 16 App Router with React 19 and Tailwind CSS v4, it has five routes — home, services, work, about and contact — plus a /portfolio redirect to /works. Enquiries never hit a backend: the contact form composes a prefilled WhatsApp message or email, so there is nothing extra to host and no lead is lost. A product catalogue driven by a single data file powers both the home carousel (Embla) and the work page grid, so copy and images never diverge. Every content image is served as WebP with lazy loading, taking the heaviest hero from 1.6 MB to 73 KB. Below the lg breakpoint navigation switches to an app-style bottom bar, and the floating WhatsApp button is draggable but clamped away from the header and bottom nav.",
+        highlights: [
+            "Next.js 16 App Router, React 19 and Tailwind CSS v4 with strict TypeScript",
+            "Five routes plus a /portfolio → /works redirect",
+            "Contact form builds a prefilled WhatsApp message or email — no backend and no environment variables",
+            "One data file drives the home carousel and the work page catalogue",
+            "All content images converted to WebP with lazy loading (~90% smaller)"
+        ],
+        image: "/images/stalworld-full.webp",
+        link: "https://stalworld.vercel.app/",
+        gradient: "from-[#071732] to-[#0A1E3D]",
+        accentColor: "#F5A623",
+        year: "2026",
+        type: "web"
+    },
+    {
         title: "CampusCoin",
         category: "React / Express / MongoDB",
         description: "A full-stack student budget tracker with an AI assistant, built as a TechWiz 7 competition entry.",
